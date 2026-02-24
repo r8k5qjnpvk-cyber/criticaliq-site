@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CriticalIQ — Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0b0f1a;--sidebar:#0d1220;--card:#111827;--card2:#141d2e;--border:rgba(255,255,255,0.07);--text:#e2e8f0;--muted:#64748b;--dim:#94a3b8;--azure:#3b82f6;--azure-d:#2563eb;--azure-l:rgba(59,130,246,0.1);--green:#10b981;--green-l:rgba(16,185,129,0.1);--amber:#f59e0b;--amber-l:rgba(245,158,11,0.1);--red:#ef4444;--red-l:rgba(239,68,68,0.1);--purple:#8b5cf6;--purple-l:rgba(139,92,246,0.1);--w:260px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-family:'Outfit',sans-serif}
+body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:14px}
+
+.sidebar{width:var(--w);flex-shrink:0;background:var(--sidebar);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:50}
+.sidebar-head{padding:1.5rem 1.5rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.logo-badge{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--azure),#6366f1);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.78rem;color:white}
+.logo-text{font-weight:800;font-size:1.1rem;letter-spacing:-.3px}
+.logo-text span{color:var(--azure)}
+.admin-chip{margin-left:auto;background:rgba(239,68,68,0.15);color:#f87171;font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:3px;letter-spacing:.1em}
+.nav-section{padding:1rem 1rem .3rem}
+.nav-label{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:0 .5rem;margin-bottom:.4rem}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:500;font-size:.875rem;color:var(--dim);transition:all .15s;margin-bottom:2px;text-decoration:none}
+.nav-item:hover{background:rgba(255,255,255,0.05);color:var(--text)}
+.nav-item.active{background:var(--azure-l);color:var(--azure);font-weight:600}
+.nav-icon{font-size:1rem;width:20px;text-align:center}
+.nav-badge{margin-left:auto;background:var(--azure);color:white;font-size:.65rem;font-weight:700;padding:1px 7px;border-radius:10px;min-width:20px;text-align:center}
+.nav-badge.red{background:var(--red)}
+.nav-badge.green{background:var(--green)}
+.sidebar-footer{margin-top:auto;padding:1rem 1.5rem;border-top:1px solid var(--border)}
+.admin-avatar{display:flex;align-items:center;gap:10px}
+.avatar-circle{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--azure),var(--purple));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:white;flex-shrink:0}
+.avatar-name{font-weight:600;font-size:.85rem}
+.avatar-role{font-size:.72rem;color:var(--muted)}
+
+.main{margin-left:var(--w);flex:1;display:flex;flex-direction:column;min-height:100vh}
+.topbar{background:var(--sidebar);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:40}
+.topbar-title{font-weight:800;font-size:1.1rem}
+.topbar-right{display:flex;align-items:center;gap:1rem}
+.date-chip{background:var(--card);border:1px solid var(--border);padding:5px 12px;border-radius:6px;font-size:.82rem;color:var(--dim)}
+.content{padding:2rem;flex:1}
+
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:1.8rem}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.metric-card.blue::before{background:var(--azure)}
+.metric-card.green::before{background:var(--green)}
+.metric-card.amber::before{background:var(--amber)}
+.metric-card.purple::before{background:var(--purple)}
+.metric-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.9rem}
+.ic-blue{background:var(--azure-l)}.ic-green{background:var(--green-l)}.ic-amber{background:var(--amber-l)}.ic-purple{background:var(--purple-l)}
+.metric-val{font-weight:800;font-size:2rem;line-height:1;letter-spacing:-1px;margin-bottom:4px}
+.metric-label{font-size:.78rem;color:var(--muted);margin-bottom:.8rem}
+.metric-delta{display:flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600}
+.delta-up{color:var(--green)}.delta-down{color:var(--red)}.delta-text{color:var(--muted);font-weight:400}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.8rem}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-bottom:1.8rem}
+.grid-60-40{display:grid;grid-template-columns:1.6fr 1fr;gap:1.2rem;margin-bottom:1.8rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.card-head{padding:1.1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-title{font-weight:700;font-size:.92rem}
+.card-sub{font-size:.75rem;color:var(--muted);margin-top:2px}
+.card-body{padding:1.5rem}
+.tag-btn{padding:4px 10px;border-radius:5px;font-size:.72rem;font-weight:600;background:var(--card2);border:1px solid var(--border);color:var(--dim);cursor:pointer;font-family:'Outfit',sans-serif}
+
+.plan-list{display:flex;flex-direction:column;gap:12px}
+.plan-row{display:flex;align-items:center;gap:12px}
+.plan-name{min-width:90px;font-weight:600;font-size:.85rem}
+.plan-bar-track{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
+.plan-bar-fill{height:100%;border-radius:4px}
+.plan-count{font-weight:700;font-size:.85rem;color:var(--text);min-width:30px;text-align:right}
+.plan-rev{font-size:.75rem;color:var(--muted);min-width:55px;text-align:right}
+
+.activity{display:flex;flex-direction:column;gap:0}
+.act-item{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border)}
+.act-item:last-child{border-bottom:none}
+.act-avatar{width:30px;height:30px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.7rem;flex-shrink:0}
+.act-text{flex:1}
+.act-msg{font-size:.83rem;color:var(--text);line-height:1.4}
+.act-msg strong{color:var(--azure)}
+.act-time{font-size:.72rem;color:var(--muted);margin-top:2px}
+.act-type{flex-shrink:0;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:.05em}
+.at-signup{background:var(--green-l);color:var(--green)}
+.at-upgrade{background:var(--azure-l);color:var(--azure)}
+.at-payment{background:var(--amber-l);color:var(--amber)}
+.at-cancel{background:var(--red-l);color:var(--red)}
+.at-trial{background:var(--purple-l);color:var(--purple)}
+
+.rev-breakdown{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.rev-item{padding:1.2rem 1.5rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-item:nth-child(even){border-right:none}
+.rev-item:nth-last-child(-n+2){border-bottom:none}
+.rev-item-val{font-weight:800;font-size:1.6rem;letter-spacing:-.5px;line-height:1}
+.rev-item-label{font-size:.74rem;color:var(--muted);margin-top:4px}
+.rev-item-delta{font-size:.75rem;font-weight:600;margin-top:6px}
+
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:700px}
+thead tr{background:rgba(255,255,255,0.02)}
+th{padding:10px 14px;text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tbody tr{border-top:1px solid var(--border);transition:background .15s}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:11px 14px;font-size:.85rem;color:var(--dim);vertical-align:middle}
+td.name{color:var(--text);font-weight:600}
+
+.plan-pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.03em}
+.plan-free{background:var(--card2);color:var(--muted);border:1px solid var(--border)}
+.plan-pro{background:var(--azure-l);color:var(--azure);border:1px solid rgba(59,130,246,0.2)}
+.plan-firm{background:var(--purple-l);color:var(--purple);border:1px solid rgba(139,92,246,0.2)}
+.status-dot{display:inline-flex;align-items:center;gap:5px}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.dot.active{background:var(--green);box-shadow:0 0 6px var(--green)}
+.dot.trial{background:var(--amber)}
+.dot.churned{background:var(--red)}
+.dot.free{background:var(--muted)}
+
+.geo-list{display:flex;flex-direction:column;gap:10px}
+.geo-row{display:flex;align-items:center;gap:10px}
+.geo-flag{font-size:1.1rem;width:24px}
+.geo-name{font-weight:500;font-size:.85rem;min-width:110px}
+.geo-bar-track{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.geo-bar-fill{height:100%;border-radius:3px;background:var(--azure)}
+.geo-pct{font-size:.78rem;font-weight:700;color:var(--text);min-width:35px;text-align:right}
+
+.funnel{display:flex;flex-direction:column;gap:8px}
+.funnel-step{display:flex;align-items:center;gap:12px}
+.funnel-bar-wrap{flex:1}
+.funnel-bar{height:32px;border-radius:5px;display:flex;align-items:center;padding-left:10px;font-size:.8rem;font-weight:600;color:white}
+.funnel-nums{font-size:.78rem;color:var(--muted);min-width:90px;text-align:right}
+
+.alert-bar{background:var(--green-l);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:10px 16px;margin-bottom:1.8rem;display:flex;align-items:center;gap:10px;font-size:.84rem}
+
+.quick-actions{display:flex;flex-direction:column;gap:8px}
+.qbtn{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;transition:background .15s;background:var(--card2);border:1px solid var(--border);font-size:.85rem;font-weight:500;color:var(--text);text-decoration:none}
+.qbtn:hover{border-color:var(--azure);background:var(--azure-l)}
+
+.risk-list{display:flex;flex-direction:column;gap:0}
+.risk-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.risk-item:last-child{border-bottom:none}
+.risk-score{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
+.risk-high{background:var(--red-l);color:var(--red)}
+.risk-med{background:var(--amber-l);color:var(--amber)}
+.risk-name{font-weight:600;font-size:.85rem;color:var(--text)}
+.risk-reason{font-size:.75rem;color:var(--muted);margin-top:2px}
+.risk-action{margin-left:auto;font-size:.72rem;color:var(--azure);cursor:pointer;font-weight:600}
+
+.comp-table{width:100%;border-collapse:collapse}
+.comp-table th{padding:10px 14px;text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,0.02)}
+.comp-table td{padding:12px 14px;font-size:.86rem;border-top:1px solid var(--border)}
+.comp-table td:first-child{color:var(--text);font-weight:600}
+.comp-iq{color:var(--azure);font-weight:700}
+.comp-ci{color:var(--dim)}
+.comp-win{color:var(--green);font-weight:700}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sidebar-head">
+    <div class="logo-badge">IQ</div>
+    <span class="logo-text">Critical<span>IQ</span></span>
+    <span class="admin-chip">ADMIN</span>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Overview</div>
+    <a class="nav-item active" href="#"><span class="nav-icon">📊</span> Dashboard</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📈</span> Analytics</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💰</span> Revenue <span class="nav-badge green">+12%</span></a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Users</div>
+    <a class="nav-item" href="#"><span class="nav-icon">👥</span> All Users <span class="nav-badge">1,847</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">🆕</span> Sign-ups <span class="nav-badge green">23</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">⬆️</span> Upgrades <span class="nav-badge">8</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">⚠️</span> Churn Risk <span class="nav-badge red">14</span></a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Payments</div>
+    <a class="nav-item" href="#"><span class="nav-icon">💳</span> Transactions</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🔄</span> Subscriptions</a>
+    <a class="nav-item" href="#"><span class="nav-icon">❌</span> Failed Payments <span class="nav-badge red">3</span></a>
+    <a class="nav-item" href="#"><span class="nav-icon">↩️</span> Refunds</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Platform</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📋</span> Policy Database</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🔔</span> Update Alerts</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> PDF Reports</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📣</span> Ad Revenue</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">System</div>
+    <a class="nav-item" href="#"><span class="nav-icon">⚙️</span> Settings</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🔒</span> Security</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📧</span> Email Campaigns</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="admin-avatar">
+      <div class="avatar-circle">AD</div>
+      <div><div class="avatar-name">Admin</div><div class="avatar-role">Super Administrator</div></div>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title">📊 Dashboard Overview</div>
+    <div class="topbar-right">
+      <div class="date-chip">📅 Mon 23 Feb 2026 · 09:41 GMT</div>
+    </div>
+  </div>
+  <div class="content">
+
+    <div class="alert-bar">
+      <strong>🚀 Today:</strong> 23 new sign-ups · 8 trial→Pro conversions · £1,892 new MRR · <span style="color:var(--red)">3 failed payments need attention</span>
+      <span style="margin-left:auto;cursor:pointer;color:rgba(255,255,255,0.3)">✕</span>
+    </div>
+
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric-card blue">
+        <div class="metric-icon ic-blue">👥</div>
+        <div class="metric-val">1,847</div>
+        <div class="metric-label">Total Registered Users</div>
+        <div class="metric-delta"><span class="delta-up">↑ +23 today</span><span class="delta-text">· +184 this month</span></div>
+      </div>
+      <div class="metric-card green">
+        <div class="metric-icon ic-green">💰</div>
+        <div class="metric-val">£38,420</div>
+        <div class="metric-label">Monthly Recurring Revenue</div>
+        <div class="metric-delta"><span class="delta-up">↑ +12.3%</span><span class="delta-text">vs last month</span></div>
+      </div>
+      <div class="metric-card amber">
+        <div class="metric-icon ic-amber">📊</div>
+        <div class="metric-val">682</div>
+        <div class="metric-label">Active Paid Subscribers</div>
+        <div class="metric-delta"><span class="delta-up">↑ +42 this month</span><span class="delta-text">· 36.9% of users</span></div>
+      </div>
+      <div class="metric-card purple">
+        <div class="metric-icon ic-purple">🔄</div>
+        <div class="metric-val">18.4%</div>
+        <div class="metric-label">Free-to-Paid Conversion</div>
+        <div class="metric-delta"><span class="delta-up">↑ +2.1pp</span><span class="delta-text">vs last month</span></div>
+      </div>
+    </div>
+
+    <!-- REVENUE CHART + ACTIVITY -->
+    <div class="grid-60-40">
+      <div class="card">
+        <div class="card-head">
+          <div><div class="card-title">Revenue — Last 12 Months</div><div class="card-sub">MRR all streams · CI, Life, IP, Ads</div></div>
+        </div>
+        <div class="card-body"><canvas id="revChart" height="185"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🟢 Live Activity Feed</div>
+          <div class="card-sub" style="display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse 2s infinite"></span> Real-time</div>
+        </div>
+        <div class="card-body" style="padding:0 1.5rem">
+          <div class="activity">
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(59,130,246,0.15);color:var(--azure)">JM</div>
+              <div class="act-text"><div class="act-msg"><strong>James Morrison</strong> upgraded Free → Pro</div><div class="act-time">2 mins ago · £29.00/mo · Direct</div></div>
+              <span class="act-type at-upgrade">UPGRADE</span>
+            </div>
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(16,185,129,0.15);color:var(--green)">SR</div>
+              <div class="act-text"><div class="act-msg"><strong>Sophie Reynolds</strong> free sign-up complete</div><div class="act-time">7 mins ago · 3/5 checks used</div></div>
+              <span class="act-type at-signup">SIGNUP</span>
+            </div>
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(245,158,11,0.15);color:var(--amber)">TN</div>
+              <div class="act-text"><div class="act-msg"><strong>Thomas Nicholls</strong> payment £249 annual</div><div class="act-time">12 mins ago · Visa ending 4422</div></div>
+              <span class="act-type at-payment">PAYMENT</span>
+            </div>
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(139,92,246,0.15);color:var(--purple)">KL</div>
+              <div class="act-text"><div class="act-msg"><strong>Kinley Life Ltd</strong> started 7-day firm trial</div><div class="act-time">18 mins ago · 5 users</div></div>
+              <span class="act-type at-trial">TRIAL</span>
+            </div>
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(239,68,68,0.15);color:var(--red)">MB</div>
+              <div class="act-text"><div class="act-msg"><strong>Mark Barker</strong> cancelled subscription</div><div class="act-time">34 mins ago · Reason: cost</div></div>
+              <span class="act-type at-cancel">CANCEL</span>
+            </div>
+            <div class="act-item">
+              <div class="act-avatar" style="background:rgba(16,185,129,0.15);color:var(--green)">PW</div>
+              <div class="act-text"><div class="act-msg"><strong>Peter Walsh</strong> free sign-up · referred L&C</div><div class="act-time">51 mins ago</div></div>
+              <span class="act-type at-signup">SIGNUP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN + FUNNEL + GEO -->
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-head"><div class="card-title">Plan Distribution</div><div class="card-sub">1,847 total users</div></div>
+        <div class="card-body">
+          <canvas id="planChart" height="160"></canvas>
+          <div style="margin-top:1.2rem">
+            <div class="plan-list">
+              <div class="plan-row"><div class="plan-name" style="color:var(--muted)">Free</div><div class="plan-bar-track"><div class="plan-bar-fill" style="width:62%;background:var(--muted);opacity:.3"></div></div><div class="plan-count" style="color:var(--muted)">1,165</div><div class="plan-rev">—</div></div>
+              <div class="plan-row"><div class="plan-name" style="color:var(--azure)">Pro Monthly</div><div class="plan-bar-track"><div class="plan-bar-fill" style="width:30%;background:var(--azure)"></div></div><div class="plan-count">487</div><div class="plan-rev" style="color:var(--green)">£14,123</div></div>
+              <div class="plan-row"><div class="plan-name" style="color:var(--green)">Pro Annual</div><div class="plan-bar-track"><div class="plan-bar-fill" style="width:9%;background:var(--green)"></div></div><div class="plan-count">147</div><div class="plan-rev" style="color:var(--green)">£18,603</div></div>
+              <div class="plan-row"><div class="plan-name" style="color:var(--purple)">Firm</div><div class="plan-bar-track"><div class="plan-bar-fill" style="width:3%;background:var(--purple)"></div></div><div class="plan-count">48</div><div class="plan-rev" style="color:var(--green)">£5,694</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">Conversion Funnel</div><div class="card-sub">Feb 2026</div></div>
+        <div class="card-body">
+          <div class="funnel">
+            <div class="funnel-step"><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:100%;background:linear-gradient(90deg,#3b82f6,#6366f1)">Visited Site</div></div><div class="funnel-nums">14,820</div></div>
+            <div class="funnel-step"><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:58%;background:linear-gradient(90deg,#2563eb,#4f46e5)">Started Sign-up</div></div><div class="funnel-nums">8,596 · 58%</div></div>
+            <div class="funnel-step"><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:32%;background:linear-gradient(90deg,#1d4ed8,#4338ca)">Free Account</div></div><div class="funnel-nums">4,742 · 32%</div></div>
+            <div class="funnel-step"><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:12%;background:linear-gradient(90deg,#1e40af,#3730a3)">Used 3+ Checks</div></div><div class="funnel-nums">1,780 · 12%</div></div>
+            <div class="funnel-step"><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:5.5%;background:linear-gradient(90deg,#1e3a8a,#312e81)">Paid Sub</div></div><div class="funnel-nums">815 · 5.5%</div></div>
+          </div>
+          <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--muted)">Visitor → Paid</span><span style="font-weight:700;color:var(--azure)">5.5% overall ↑ +0.8pp</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">User Geography</div><div class="card-sub">Paid subscribers</div></div>
+        <div class="card-body">
+          <div class="geo-list">
+            <div class="geo-row"><div class="geo-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="geo-name">England</div><div class="geo-bar-track"><div class="geo-bar-fill" style="width:72%"></div></div><div class="geo-pct">71.8%</div></div>
+            <div class="geo-row"><div class="geo-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div><div class="geo-name">Scotland</div><div class="geo-bar-track"><div class="geo-bar-fill" style="width:13%;background:var(--green)"></div></div><div class="geo-pct">12.4%</div></div>
+            <div class="geo-row"><div class="geo-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</div><div class="geo-name">Wales</div><div class="geo-bar-track"><div class="geo-bar-fill" style="width:8%;background:var(--purple)"></div></div><div class="geo-pct">7.3%</div></div>
+            <div class="geo-row"><div class="geo-flag">🇬🇧</div><div class="geo-name">N. Ireland</div><div class="geo-bar-track"><div class="geo-bar-fill" style="width:5%;background:var(--amber)"></div></div><div class="geo-pct">4.9%</div></div>
+            <div class="geo-row"><div class="geo-flag">🇮🇪</div><div class="geo-name">Ireland (ROI)</div><div class="geo-bar-track"><div class="geo-bar-fill" style="width:3%;background:var(--red)"></div></div><div class="geo-pct">2.7%</div></div>
+          </div>
+          <div style="margin-top:1rem;padding:.8rem;background:var(--azure-l);border-radius:6px;font-size:.78rem;color:var(--dim)">💡 London = 28.3% of paid subs · South East 16.1%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVENUE BREAKDOWN + SIDE PANEL -->
+    <div class="grid-60-40">
+      <div class="card">
+        <div class="card-head"><div class="card-title">Revenue Detail — February 2026</div><div class="card-sub">All income streams</div></div>
+        <div class="rev-breakdown">
+          <div class="rev-item"><div class="rev-item-val" style="color:var(--azure)">£18,603</div><div class="rev-item-label">Pro Annual subscriptions</div><div class="rev-item-delta delta-up">↑ +18% vs Jan</div></div>
+          <div class="rev-item"><div class="rev-item-val" style="color:var(--green)">£14,123</div><div class="rev-item-label">Pro Monthly subscriptions</div><div class="rev-item-delta delta-up">↑ +9% vs Jan</div></div>
+          <div class="rev-item"><div class="rev-item-val" style="color:var(--purple)">£5,694</div><div class="rev-item-label">Firm/Network contracts</div><div class="rev-item-delta delta-up">↑ +2 new firms</div></div>
+          <div class="rev-item"><div class="rev-item-val" style="color:var(--amber)">£620</div><div class="rev-item-label">AdSense (free-tier pages)</div><div class="rev-item-delta delta-up">↑ £1.34 RPM avg</div></div>
+        </div>
+        <div style="padding:1.2rem 1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+          <div><div style="font-size:.75rem;color:var(--muted)">Total MRR</div><div style="font-weight:900;font-size:1.6rem;letter-spacing:-1px">£39,040</div></div>
+          <div style="text-align:right"><div style="font-size:.75rem;color:var(--muted)">Projected ARR</div><div style="font-weight:900;font-size:1.6rem;letter-spacing:-1px;color:var(--green)">£468,480</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem">
+        <div class="card">
+          <div class="card-head"><div class="card-title">📣 AdSense Performance</div><div class="card-sub">Free tier only · Pros see no ads</div></div>
+          <div class="card-body" style="padding:1rem 1.5rem">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin-bottom:.8rem">
+              <div style="padding:.8rem;background:var(--card2);border-radius:8px"><div style="font-weight:800;font-size:1.1rem;color:var(--amber)">£620</div><div style="font-size:.7rem;color:var(--muted)">Feb revenue</div></div>
+              <div style="padding:.8rem;background:var(--card2);border-radius:8px"><div style="font-weight:800;font-size:1.1rem">£1.34</div><div style="font-size:.7rem;color:var(--muted)">avg RPM</div></div>
+              <div style="padding:.8rem;background:var(--card2);border-radius:8px"><div style="font-weight:800;font-size:1.1rem">462k</div><div style="font-size:.7rem;color:var(--muted)">impressions</div></div>
+            </div>
+            <div style="font-size:.78rem;color:var(--muted);padding:8px;background:var(--amber-l);border-radius:6px">💡 Ads on: conditions database, historical timeline, provider cards pages</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Quick Actions</div></div>
+          <div class="card-body" style="padding:.8rem">
+            <div class="quick-actions">
+              <a class="qbtn" href="#">📧 Email churn-risk users (14)</a>
+              <a class="qbtn" href="#">💳 Retry failed payments (3)</a>
+              <a class="qbtn" href="#">📋 Export user CSV</a>
+              <a class="qbtn" href="#">🔔 Push condition alert</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERS TABLE -->
+    <div class="card" style="margin-bottom:1.8rem">
+      <div class="card-head">
+        <div><div class="card-title">Recent Users</div><div class="card-sub">Latest registrations</div></div>
+        <div style="display:flex;gap:8px">
+          <button class="tag-btn">Export CSV</button>
+          <button class="tag-btn" style="background:var(--azure);color:white;border-color:var(--azure)">+ Invite</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>User</th><th>Plan</th><th>Signed Up</th><th>Checks</th><th>Last Active</th><th>Status</th><th>MRR</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="name">James Morrison<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">j.morrison@protectme.co.uk</span></td><td><span class="plan-pill plan-pro">Pro Monthly</span></td><td>23 Feb 2026</td><td>5 → upgraded</td><td>Today 09:38</td><td><span class="status-dot"><span class="dot active"></span> Active</span></td><td style="color:var(--green);font-weight:700">£29.00</td><td>Direct</td></tr>
+            <tr><td class="name">Sophie Reynolds<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">sreynolds@laserprotect.co.uk</span></td><td><span class="plan-pill plan-free">Free</span></td><td>23 Feb 2026</td><td>3/5</td><td>Today 09:31</td><td><span class="status-dot"><span class="dot free"></span> Free</span></td><td style="color:var(--muted)">—</td><td>Google Ads</td></tr>
+            <tr><td class="name">Thomas Nicholls<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">tnicholls@lifetimeassure.co.uk</span></td><td><span class="plan-pill plan-pro">Pro Annual</span></td><td>15 Jan 2026</td><td>∞</td><td>Today 08:12</td><td><span class="status-dot"><span class="dot active"></span> Active</span></td><td style="color:var(--green);font-weight:700">£20.75</td><td>Referral</td></tr>
+            <tr><td class="name">Kinley Life Ltd<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">admin@kinleylife.co.uk · 5 users</span></td><td><span class="plan-pill plan-firm">Firm Trial</span></td><td>23 Feb 2026</td><td>Trial</td><td>Today 09:18</td><td><span class="status-dot"><span class="dot trial"></span> Trial</span></td><td style="color:var(--amber)">£0 (trial)</td><td>LinkedIn</td></tr>
+            <tr><td class="name">Jordan Thomas<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">j.thomas@mabprotect.co.uk</span></td><td><span class="plan-pill plan-pro">Pro Monthly</span></td><td>1 Feb 2026</td><td>∞</td><td>Yesterday</td><td><span class="status-dot"><span class="dot active"></span> Active</span></td><td style="color:var(--green);font-weight:700">£29.00</td><td>MAB network</td></tr>
+            <tr><td class="name">Mark Barker<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">m.barker@barkerfs.co.uk</span></td><td><span class="plan-pill plan-free">Cancelled</span></td><td>12 Nov 2025</td><td>—</td><td>Today 09:04</td><td><span class="status-dot"><span class="dot churned"></span> Churned</span></td><td style="color:var(--red)">£0</td><td>Google</td></tr>
+            <tr><td class="name">Simone Riley<br><span style="font-weight:400;font-size:.75rem;color:var(--muted)">sriley@eliteforcegroup.co.uk</span></td><td><span class="plan-pill plan-firm">Firm Pro</span></td><td>5 Sep 2025</td><td>∞</td><td>Yesterday</td><td><span class="status-dot"><span class="dot active"></span> Active</span></td><td style="color:var(--green);font-weight:700">£145.00</td><td>Conference</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CHURN + COMPETITOR TABLE -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head"><div><div class="card-title">⚠️ Churn Risk Queue</div><div class="card-sub">14 flagged for intervention</div></div><button class="tag-btn" style="background:var(--red-l);border-color:var(--red);color:var(--red)">Email All</button></div>
+        <div class="card-body" style="padding:0 1.5rem">
+          <div class="risk-list">
+            <div class="risk-item"><div class="risk-score risk-high">92</div><div><div class="risk-name">Andrew Blackwell</div><div class="risk-reason">No login 21 days · payment fails in 3 days</div></div><div class="risk-action">→ Email</div></div>
+            <div class="risk-item"><div class="risk-score risk-high">88</div><div><div class="risk-name">Fiona Marshall</div><div class="risk-reason">0 comparisons run in 30 days · renewal Feb 28</div></div><div class="risk-action">→ Email</div></div>
+            <div class="risk-item"><div class="risk-score risk-high">85</div><div><div class="risk-name">Kevin Oakes</div><div class="risk-reason">Opened cancellation page twice this week</div></div><div class="risk-action">→ Offer</div></div>
+            <div class="risk-item"><div class="risk-score risk-med">71</div><div><div class="risk-name">Helen Cartwright</div><div class="risk-reason">Downgraded annual → monthly · price complaint</div></div><div class="risk-action">→ Email</div></div>
+            <div class="risk-item"><div class="risk-score risk-med">68</div><div><div class="risk-name">Prospect Financial Ltd</div><div class="risk-reason">Firm trial ends in 2 days · no upgrade signal</div></div><div class="risk-action">→ Call</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><div class="card-title">🆚 vs CIExpert — Competitive Position</div><div class="card-sub">Why we win on price and features</div></div></div>
+        <div style="overflow-x:auto">
+          <table class="comp-table">
+            <thead><tr><th>Feature</th><th>CriticalIQ</th><th>CIExpert</th><th>🏆</th></tr></thead>
+            <tbody>
+              <tr><td>Free tier</td><td class="comp-iq">✅ 5 full checks free</td><td class="comp-ci">1-day trial only</td><td class="comp-win">Us</td></tr>
+              <tr><td>Monthly price</td><td class="comp-iq">£29/mo</td><td class="comp-ci">~£45–55/mo</td><td class="comp-win">Us (-38%)</td></tr>
+              <tr><td>Annual price</td><td class="comp-iq">£249/yr</td><td class="comp-ci">~£430–500/yr</td><td class="comp-win">Us (-42%)</td></tr>
+              <tr><td>Conditions tracked</td><td class="comp-iq">182</td><td class="comp-ci">136+</td><td class="comp-win">Us +34%</td></tr>
+              <tr><td>Daily updates feed</td><td class="comp-iq">✅ Real-time</td><td class="comp-ci">Manual</td><td class="comp-win">Us</td></tr>
+              <tr><td>Life cover quotes</td><td class="comp-iq">✅ Included</td><td class="comp-ci">CI only</td><td class="comp-win">Us</td></tr>
+              <tr><td>Income protection</td><td class="comp-iq">✅ Included</td><td class="comp-ci">Separate tool</td><td class="comp-win">Us</td></tr>
+              <tr><td>Historical policies</td><td class="comp-iq">400+</td><td class="comp-ci">400+</td><td style="color:var(--muted)">Tie</td></tr>
+              <tr><td>Iress integration</td><td class="comp-iq" style="color:var(--amber)">🔜 Roadmap</td><td class="comp-ci">✅ Live</td><td style="color:var(--dim)">CIExpert</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:1rem 1.5rem;background:var(--green-l);border-top:1px solid rgba(16,185,129,.15);font-size:.82rem;color:var(--dim)"><strong style="color:var(--green)">Positioning:</strong> "Everything CIExpert does + income protection + life cover, at nearly half the price."</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const revCtx = document.getElementById('revChart').getContext('2d');
+new Chart(revCtx,{type:'bar',data:{labels:['Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb'],datasets:[{label:'Subscriptions',data:[8200,11400,14800,16200,18900,21500,24800,27600,29800,31200,34100,38420],backgroundColor:'rgba(59,130,246,0.7)',borderRadius:4},{label:'Ad Revenue',data:[80,120,180,240,290,350,410,460,500,540,580,620],backgroundColor:'rgba(245,158,11,0.7)',borderRadius:4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#64748b',font:{family:'Outfit',size:11},padding:16}},tooltip:{backgroundColor:'#0d1220',borderColor:'rgba(255,255,255,0.1)',borderWidth:1,callbacks:{label:c=>` £${c.parsed.y.toLocaleString()}`}}},scales:{x:{stacked:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#64748b',font:{family:'Outfit'}}},y:{stacked:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#64748b',font:{family:'Outfit'},callback:v=>'£'+(v/1000).toFixed(0)+'k'}}}}});
+
+const planCtx = document.getElementById('planChart').getContext('2d');
+new Chart(planCtx,{type:'doughnut',data:{labels:['Free','Pro Monthly','Pro Annual','Firm'],datasets:[{data:[1165,487,147,48],backgroundColor:['rgba(100,116,139,0.4)','rgba(59,130,246,0.7)','rgba(16,185,129,0.7)','rgba(139,92,246,0.7)'],borderColor:['#0d1220'],borderWidth:3,hoverOffset:4}]},options:{cutout:'68%',plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1220',borderColor:'rgba(255,255,255,0.1)',borderWidth:1}}}});
+</script>
+</body>
+</html>

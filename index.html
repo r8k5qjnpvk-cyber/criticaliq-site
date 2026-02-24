@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CriticalIQ – UK's Most Complete Protection Comparison · From £19/mo</title>
+<meta name="description" content="Compare critical illness, life cover and income protection from every UK provider. 20+ insurers, 182 conditions, daily updates. 59% cheaper than CIExpert.">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230070f3'/%3E%3Ctext x='16' y='23' font-family='Arial Black' font-size='16' font-weight='900' text-anchor='middle' fill='white'%3EIQ%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://criticaliq.co.uk">
+<meta property="og:title" content="CriticalIQ – UK's Most Complete Protection Comparison">
+<meta property="og:description" content="Compare critical illness, life cover and income protection from every UK provider. 182 conditions, daily updates.">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google Analytics: replace G-XXXXXXXXXX at analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!-- Google AdSense — activate by replacing ca-pub-XXXXXXXXXXXXXXXX with your publisher ID
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<style>
+:root {
+  --ink:#0e1a2b; --ink2:#1d3045; --mid:#5a7080; --muted:#8fa4b2;
+  --azure:#0070f3; --azure-d:#005acc; --azure-l:#e8f2ff;
+  --sage:#10b981; --amber:#f59e0b; --red:#ef4444; --purple:#8b5cf6;
+  --bg:#f8fafc; --border:#dde6ed; --white:#fff; --card:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;}
+
+/* ─── HEADER ─── */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:66px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-badge{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--azure),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.82rem;color:white;box-shadow:0 3px 10px rgba(0,112,243,0.3);}
+.logo-text{font-weight:800;font-size:1.3rem;color:var(--ink);letter-spacing:-0.3px;}
+.logo-text span{color:var(--azure);}
+.price-flag{background:#dcfce7;color:#16a34a;font-size:0.68rem;font-weight:800;padding:2px 8px;border-radius:3px;margin-left:8px;letter-spacing:0.05em;}
+nav{display:flex;align-items:center;gap:1.2rem;}
+nav a{font-weight:500;font-size:0.87rem;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+nav a:hover{color:var(--azure);}
+.btn{display:inline-flex;align-items:center;gap:5px;font-family:'Outfit',sans-serif;font-weight:600;font-size:0.87rem;padding:0.52rem 1.2rem;border-radius:8px;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
+.btn-azure{background:var(--azure);color:white;}
+.btn-azure:hover{background:var(--azure-d);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,112,243,0.3);}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--mid);}
+.btn-ghost:hover{border-color:var(--azure);color:var(--azure);}
+.btn-lg{padding:0.8rem 2rem;font-size:1rem;border-radius:10px;}
+.btn-white{background:white;color:var(--azure);}
+.btn-white:hover{background:var(--azure-l);transform:translateY(-1px);}
+
+/* Ticker pause on hover */
+.ticker-bar:hover .ticker-inner{animation-play-state:paused;}
+.coverage-strip:hover .cov-track{animation-play-state:paused;}
+
+/* Nav active */
+nav a.nav-active{color:var(--azure);font-weight:600;}
+
+/* Automation grid responsive */
+.auto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+@media(max-width:900px){.auto-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.auto-grid{grid-template-columns:1fr;}}
+
+/* Status bar mobile */
+@media(max-width:780px){
+  #autostatus{flex-direction:column;gap:6px;align-items:flex-start;padding:8px 5%;}
+  #autostatus > div:last-child{display:none;}
+}
+
+/* Pricing responsive */
+@media(max-width:640px){.pr-grid{grid-template-columns:1fr;max-width:420px;}}
+
+/* Quote form mobile */
+@media(max-width:700px){.q-form{grid-template-columns:1fr 1fr;}.q-btn{grid-column:1/-1;}}
+
+/* Scroll to top */
+#scrolltop{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border-radius:50%;background:var(--azure);color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.3s;font-size:1.1rem;box-shadow:0 4px 14px rgba(0,112,243,0.35);z-index:300;border:none;}
+#scrolltop.show{opacity:1;pointer-events:auto;}
+#scrolltop:hover{background:var(--azure-d);}
+
+/* ─── TICKER ─── */
+.ticker-bar{background:var(--ink);padding:8px 0;overflow:hidden;border-bottom:2px solid var(--azure);}
+.ticker-inner{display:flex;align-items:center;gap:0;animation:scroll 40s linear infinite;width:max-content;}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ti{font-size:0.76rem;color:rgba(255,255,255,0.55);padding:0 2rem;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.1);}
+.ti strong{color:white;}
+.ti .new{color:#34d399;font-weight:700;}
+
+/* ─── HERO ─── */
+.hero{margin-top:0;background:var(--ink);min-height:82vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:5rem 5%;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,112,243,0.16) 0%,transparent 65%);top:-200px;right:-100px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,112,243,0.12);border:1px solid rgba(0,112,243,0.25);color:#60a5fa;padding:5px 14px;border-radius:20px;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;margin-bottom:1.5rem;}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:#60a5fa;animation:pdot 2s infinite;}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,0.4)}70%{box-shadow:0 0 0 6px transparent}}
+.hero h1{font-weight:900;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.07;color:white;letter-spacing:-1.5px;margin-bottom:1.4rem;}
+.hero h1 .hl{background:linear-gradient(90deg,#60a5fa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.57);line-height:1.8;max-width:480px;margin-bottom:2rem;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:0.8rem;}
+.hero-note{font-size:0.8rem;color:rgba(255,255,255,0.3);}
+.hero-stats{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);}
+.hstat-num{font-weight:800;font-size:1.9rem;color:white;line-height:1;}
+.hstat-num small{font-size:1.1rem;color:#60a5fa;}
+.hstat-lbl{font-size:0.73rem;color:rgba(255,255,255,0.38);margin-top:3px;letter-spacing:0.04em;}
+
+/* CIExpert comparison callout */
+.vs-box{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:12px;padding:1.2rem 1.5rem;margin-top:2rem;}
+.vs-box-title{font-size:0.78rem;font-weight:700;color:#34d399;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.8rem;}
+.vs-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:0.82rem;}
+.vs-row span{color:rgba(255,255,255,0.5);}
+.vs-row strong{color:white;}
+.vs-save{background:var(--sage);color:white;font-weight:800;font-size:0.72rem;padding:2px 8px;border-radius:4px;}
+
+/* UI mockup */
+.hero-ui{background:#141e2b;border-radius:18px;border:1px solid rgba(255,255,255,0.07);box-shadow:0 40px 80px rgba(0,0,0,0.4);overflow:hidden;position:relative;z-index:1;animation:slideUp 0.8s 0.2s both;}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.ui-bar{background:#0e1620;padding:0.9rem 1.4rem;display:flex;align-items:center;justify-content:space-between;}
+.ui-dots{display:flex;gap:5px;}
+.ui-dots span{width:9px;height:9px;border-radius:50%;}
+.ui-dots span:nth-child(1){background:#ef4444}
+.ui-dots span:nth-child(2){background:#f59e0b}
+.ui-dots span:nth-child(3){background:#10b981}
+.ui-title-bar{font-size:0.75rem;color:rgba(255,255,255,0.35);}
+.ui-body{padding:1.2rem;}
+.ui-tabs{display:flex;gap:2px;margin-bottom:1rem;}
+.ui-tab{padding:5px 12px;border-radius:5px;font-size:0.72rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);background:none;font-family:'Outfit',sans-serif;}
+.ui-tab.act{background:rgba(0,112,243,0.15);color:#60a5fa;border-color:rgba(0,112,243,0.25);}
+.ui-input-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1rem;}
+.ui-inp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:6px;padding:7px 10px;font-size:0.75rem;color:rgba(255,255,255,0.65);font-family:'Outfit',sans-serif;}
+.ui-inp label{display:block;font-size:0.62rem;color:rgba(255,255,255,0.28);margin-bottom:2px;letter-spacing:0.05em;}
+.ui-results{border:1px solid rgba(255,255,255,0.07);border-radius:8px;overflow:hidden;}
+.ui-th{background:rgba(255,255,255,0.03);padding:6px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);display:grid;grid-template-columns:20px 1fr 50px 50px 60px 55px;}
+.ui-tr{display:grid;grid-template-columns:20px 1fr 50px 50px 60px 55px;padding:8px 10px;border-top:1px solid rgba(255,255,255,0.05);align-items:center;}
+.ui-rank{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.65rem;}
+.r1g{background:rgba(245,158,11,0.2);color:#fbbf24}
+.r2g{background:rgba(148,163,184,0.12);color:#94a3b8}
+.r3g{background:rgba(100,116,139,0.08);color:#64748b}
+.ui-pname{font-weight:700;color:rgba(255,255,255,0.88);font-size:0.78rem;}
+.ui-score{background:rgba(0,112,243,0.12);color:#60a5fa;font-weight:800;font-size:0.72rem;padding:2px 7px;border-radius:12px;display:inline-block;}
+.ui-cc{color:rgba(255,255,255,0.38);font-size:0.72rem;}
+.ui-pct{font-weight:700;font-size:0.75rem;}
+.ui-pr{color:#34d399;font-weight:700;font-size:0.75rem;}
+.ui-footer-bar{background:rgba(16,185,129,0.08);border-top:1px solid rgba(16,185,129,0.12);padding:8px 12px;display:flex;gap:8px;align-items:center;font-size:0.72rem;color:#34d399;font-weight:600;}
+
+/* ─── SECTIONS ─── */
+section{padding:4.5rem 5%;}
+.container{max-width:1200px;margin:0 auto;}
+.label-tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--azure);margin-bottom:0.6rem;}
+.sh{font-weight:800;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--ink);letter-spacing:-0.5px;margin-bottom:0.7rem;line-height:1.15;}
+.sh-center{text-align:center;}
+.sub-center{text-align:center;color:var(--mid);max-width:580px;margin:0 auto 3rem;font-size:0.97rem;line-height:1.75;}
+.rule{border:none;border-top:2px solid var(--azure-l);width:40px;margin:0.6rem auto 2.5rem;}
+
+/* ─── COVERAGE STRIP ─── */
+.coverage-strip{background:var(--ink);padding:2rem 5%;overflow:hidden;}
+.cov-track{display:flex;gap:0;animation:scroll 28s linear infinite;width:max-content;}
+.cov-item{padding:5px 20px;border-right:1px solid rgba(255,255,255,0.08);font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.4);white-space:nowrap;}
+
+/* ─── PRICING COMPARE ─── */
+.price-compare-section{background:linear-gradient(135deg,#0a1628,#0e2040);padding:3rem 5%;}
+.pc-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center;}
+.pc-left h2{font-weight:900;font-size:clamp(1.8rem,3vw,2.4rem);color:white;letter-spacing:-0.5px;margin-bottom:0.8rem;}
+.pc-left p{font-size:0.92rem;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:1.5rem;}
+.pc-table{width:100%;border-collapse:collapse;}
+.pc-table th{padding:8px 14px;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.pc-table td{padding:9px 14px;border-top:1px solid rgba(255,255,255,0.07);font-size:0.85rem;color:rgba(255,255,255,0.7);}
+.pc-hl{background:rgba(0,112,243,0.1);border:1px solid rgba(0,112,243,0.2);border-radius:10px;}
+.pc-hl td{color:white!important;}
+.price-big{font-weight:900;font-size:2.5rem;color:var(--sage);letter-spacing:-1px;}
+.price-ciexp{font-weight:900;font-size:2.5rem;color:var(--red);letter-spacing:-1px;text-decoration:line-through;opacity:0.6;}
+
+/* ─── PROVIDERS FULL DATABASE ─── */
+.db-section{background:var(--white);}
+.tabs-line{display:flex;gap:4px;margin-bottom:2rem;flex-wrap:wrap;}
+.ptab{padding:7px 14px;border-radius:7px;font-size:0.82rem;font-weight:600;cursor:pointer;border:1.5px solid var(--border);color:var(--mid);background:none;font-family:'Outfit',sans-serif;transition:all 0.15s;}
+.ptab.on{background:var(--azure);color:white;border-color:var(--azure);}
+.providers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem;}
+.pcard{border:1.5px solid var(--border);border-radius:14px;background:var(--card);overflow:hidden;transition:all 0.2s;}
+.pcard:hover{border-color:var(--azure);box-shadow:0 8px 32px rgba(0,112,243,0.1);transform:translateY(-2px);}
+.pcard-h{padding:1.3rem 1.3rem 0.8rem;display:flex;align-items:flex-start;justify-content:space-between;}
+.pcard-name{font-weight:800;font-size:1.1rem;color:var(--ink);}
+.pcard-sub{font-size:0.73rem;color:var(--muted);margin-top:2px;}
+.pbadge{padding:3px 9px;border-radius:4px;font-size:0.67rem;font-weight:800;letter-spacing:0.04em;}
+.pb-ci{background:#dbeafe;color:#1d4ed8;}
+.pb-ip{background:#d1fae5;color:#065f46;}
+.pb-life{background:#ede9fe;color:#5b21b6;}
+.pb-all{background:#fef3c7;color:#92400e;}
+.pcard-b{padding:0 1.3rem 1.3rem;}
+.cond-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:1rem;}
+.cn{text-align:center;background:var(--bg);border-radius:7px;padding:0.55rem 0.3rem;}
+.cn-n{font-weight:800;font-size:1.3rem;color:var(--ink);line-height:1;}
+.cn-n.b{color:var(--azure)}.cn-n.g{color:var(--sage)}.cn-n.a{color:var(--amber)}
+.cn-l{font-size:0.63rem;color:var(--muted);margin-top:2px;letter-spacing:0.03em;}
+.claims-bar{display:flex;align-items:center;gap:8px;margin-bottom:0.9rem;}
+.cbar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.cbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--azure),var(--sage));}
+.cbar-label{font-size:0.75rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.ftags{display:flex;flex-wrap:wrap;gap:4px;}
+.ftag{font-size:0.68rem;font-weight:500;padding:2px 7px;border-radius:3px;background:var(--bg);border:1px solid var(--border);color:var(--mid);}
+.ftag.h{background:#fff7ed;border-color:#fed7aa;color:#c2410c;}
+.ftag.g{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+
+/* ─── QUOTE ENGINE ─── */
+.quote-section{background:var(--ink);padding:5rem 5%;}
+.quote-engine{max-width:1000px;margin:0 auto;}
+.q-tabs{display:flex;gap:0;margin-bottom:2rem;background:rgba(255,255,255,0.05);border-radius:10px;padding:4px;}
+.q-tab{flex:1;padding:0.7rem;text-align:center;border-radius:7px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.2s;color:rgba(255,255,255,0.4);background:none;border:none;font-family:'Outfit',sans-serif;}
+.q-tab.act{background:var(--azure);color:white;box-shadow:0 4px 12px rgba(0,112,243,0.3);}
+.q-form{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:0.8rem;align-items:end;margin-bottom:1.5rem;}
+.q-field label{display:block;font-size:0.72rem;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:5px;letter-spacing:0.04em;}
+.q-field input, .q-field select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.65rem 0.9rem;color:white;font-size:0.87rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;}
+.q-field input:focus,.q-field select:focus{border-color:var(--azure);}
+.q-field select option{background:#0e1a2b;color:white;}
+.q-btn{background:var(--azure);color:white;border:none;border-radius:8px;padding:0.7rem 1.5rem;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Outfit',sans-serif;white-space:nowrap;transition:all 0.2s;}
+.q-btn:hover{background:var(--azure-d);}
+.q-results{display:grid;gap:0.8rem;}
+.q-result{display:grid;grid-template-columns:auto 1fr auto auto auto;gap:1rem;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1rem 1.2rem;transition:border-color 0.2s;}
+.q-result:hover{border-color:rgba(0,112,243,0.3);}
+.q-rank{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.78rem;flex-shrink:0;}
+.qr1{background:rgba(245,158,11,0.2);color:#fbbf24}
+.qr2{background:rgba(148,163,184,0.12);color:#94a3b8}
+.qr3{background:rgba(100,116,139,0.08);color:#64748b}
+.q-pname{font-weight:700;color:white;font-size:0.9rem;}
+.q-ptier{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:2px;}
+.q-iq{background:rgba(0,112,243,0.12);border:1px solid rgba(0,112,243,0.2);color:#60a5fa;font-weight:800;font-size:0.82rem;padding:4px 10px;border-radius:12px;}
+.q-claims{font-size:0.8rem;font-weight:700;}
+.q-price{font-size:1.1rem;font-weight:800;color:#34d399;}
+.q-price small{font-size:0.7rem;color:rgba(255,255,255,0.35);font-weight:400;}
+
+/* ─── CONDITIONS TABLE ─── */
+.cond-section{background:var(--bg);}
+.ctable-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid var(--border);}
+.ctable{width:100%;border-collapse:collapse;min-width:1000px;font-size:0.83rem;}
+.ctable thead tr{background:var(--ink);}
+.ctable th{padding:11px 12px;text-align:left;font-size:0.68rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+.ctable th:first-child{border-radius:10px 0 0 0;color:rgba(255,255,255,0.8);}
+.ctable th:last-child{border-radius:0 10px 0 0;}
+.ctable tbody tr{border-bottom:1px solid var(--border);transition:background 0.12s;}
+.ctable tbody tr:last-child{border-bottom:none;}
+.ctable tbody tr:hover{background:#f0f7ff;}
+.ctable td{padding:9px 12px;color:var(--mid);vertical-align:middle;}
+.ctable td:first-child{color:var(--ink);font-weight:600;}
+.ck{color:var(--sage);font-size:0.9rem;}.cp{color:var(--amber);font-weight:700;font-size:0.75rem;}.cx{color:var(--border);}.nc{background:#dbeafe;color:#1d4ed8;font-size:0.6rem;font-weight:800;padding:1px 5px;border-radius:2px;margin-left:4px;text-transform:uppercase;vertical-align:middle;}.uc{background:#fff3cd;color:#856404;font-size:0.6rem;font-weight:800;padding:1px 5px;border-radius:2px;margin-left:4px;text-transform:uppercase;vertical-align:middle;}
+.ibar-w{display:inline-flex;align-items:center;gap:4px;}
+.ib{height:4px;border-radius:2px;background:var(--azure);display:inline-block;}
+.ibv{font-size:0.72rem;font-weight:700;color:var(--ink);}
+
+/* ─── HISTORY ─── */
+.hist-section{background:var(--ink);padding:5rem 5%;}
+.hist-section .sh{color:white;}
+.hist-section .sub-center{color:rgba(255,255,255,0.45);}
+.tl{position:relative;max-width:880px;margin:0 auto;}
+.tl::before{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:2px;background:rgba(255,255,255,0.07);}
+.tli{display:grid;grid-template-columns:1fr 40px 1fr;gap:1.2rem;align-items:center;margin-bottom:1.8rem;}
+.tlc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1rem 1.2rem;}
+.tly{font-weight:900;font-size:1.3rem;color:var(--azure);line-height:1;}
+.tlt{font-weight:700;font-size:0.9rem;color:white;margin:4px 0 3px;}
+.tld{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+.tldot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:800;color:white;z-index:1;position:relative;}
+.td-b{background:var(--azure)}.td-g{background:linear-gradient(135deg,var(--azure),var(--sage))}
+.tl-tag{display:inline-block;margin-top:7px;font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(0,112,243,0.18);color:#60a5fa;letter-spacing:0.05em;}
+.tl-tag.gr{background:rgba(16,185,129,0.18);color:#34d399;}
+
+/* ─── UPDATES LOG ─── */
+.log-section{background:var(--white);}
+.log-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:0.9rem;}
+.log-item{display:flex;gap:1.2rem;padding:1rem 1.2rem;border-radius:9px;border:1.5px solid var(--border);background:var(--card);transition:border-color 0.2s;}
+.log-item:hover{border-color:var(--azure);}
+.log-item.ln{border-left:4px solid var(--azure);}
+.log-item.lu{border-left:4px solid var(--amber);}
+.log-date{font-size:0.72rem;font-weight:700;color:var(--muted);white-space:nowrap;min-width:65px;padding-top:2px;}
+.log-pill{flex-shrink:0;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:0.06em;min-width:55px;text-align:center;}
+.lp-new{background:#dbeafe;color:#1d4ed8;}
+.lp-up{background:#fff3cd;color:#856404;}
+.lp-abi{background:#dcfce7;color:#16a34a;}
+.lt{font-weight:700;font-size:0.88rem;color:var(--ink);margin-bottom:2px;}
+.ld{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.lprov{font-size:0.72rem;color:var(--azure);font-weight:700;margin-top:4px;}
+
+/* ─── PRICING ─── */
+.pricing-section{background:var(--bg);}
+.pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:760px;margin:0 auto;}
+.pr-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:2rem;}
+.pr-card.feat{border-color:var(--azure);box-shadow:0 12px 40px rgba(0,112,243,0.12);}
+.pr-pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--azure);color:white;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;padding:3px 12px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 10px rgba(0,112,243,0.3);}
+.pr-name{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.pr-price{font-weight:900;font-size:2.8rem;color:var(--ink);line-height:1;letter-spacing:-1px;}
+.pr-price sup{font-size:1.4rem;vertical-align:super;color:var(--mid);}
+.pr-price sub{font-size:0.85rem;font-weight:400;color:var(--muted);}
+.pr-compare{font-size:0.8rem;color:var(--sage);font-weight:700;margin:0.4rem 0 0.8rem;}
+.pr-compare span{text-decoration:line-through;color:var(--red);font-weight:400;margin-left:4px;}
+.pr-desc{font-size:0.85rem;color:var(--mid);margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);line-height:1.65;}
+.pr-features{list-style:none;margin-bottom:1.8rem;}
+.pr-features li{display:flex;align-items:flex-start;gap:7px;padding:5px 0;font-size:0.86rem;color:var(--ink);line-height:1.4;}
+.pr-features li .y{color:var(--sage);flex-shrink:0;margin-top:1px;}.pr-features li .n{color:var(--border);flex-shrink:0;}
+
+/* ─── TESTIMONIALS ─── */
+.test-section{background:var(--white);}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1100px;margin:0 auto;}
+.tcard{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:1.8rem;}
+.tstars{color:var(--amber);letter-spacing:2px;margin-bottom:0.9rem;font-size:0.85rem;}
+.tq{font-family:'Lora',serif;font-style:italic;font-size:0.93rem;color:var(--mid);line-height:1.75;margin-bottom:1.4rem;}
+.ta{display:flex;align-items:center;gap:9px;}
+.tav{width:36px;height:36px;border-radius:50%;background:var(--azure);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.78rem;color:white;flex-shrink:0;}
+.tn{font-weight:700;font-size:0.85rem;color:var(--ink);}
+.tr{font-size:0.72rem;color:var(--muted);margin-top:1px;}
+
+/* ─── CTA ─── */
+.cta-sec{background:linear-gradient(135deg,var(--azure),#3b82f6 50%,#6366f1);padding:5.5rem 5%;text-align:center;}
+.cta-sec h2{font-weight:900;font-size:clamp(1.9rem,3.5vw,2.8rem);color:white;letter-spacing:-0.8px;margin-bottom:0.8rem;}
+.cta-sec p{color:rgba(255,255,255,0.72);max-width:500px;margin:0 auto 2.2rem;font-size:1rem;line-height:1.75;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
+.ft{max-width:1200px;margin:0 auto;}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem;}
+.fb-logo{margin-bottom:1rem;}
+.fb-p{font-size:0.83rem;line-height:1.75;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;}
+.fb-contact strong{display:block;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1px;}
+.fb-contact span{font-size:0.82rem;display:block;margin-bottom:8px;}
+.fc h5{font-weight:700;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1rem;}
+.fc a{display:block;color:rgba(255,255,255,0.38);text-decoration:none;font-size:0.83rem;margin-bottom:0.5rem;transition:color 0.2s;}
+.fc a:hover{color:#60a5fa;}
+.fbot{padding-top:1.8rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.77rem;}
+
+/* ─── MOBILE ─── */
+@media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto}.hero-ui{display:none}.ftop{grid-template-columns:1fr 1fr}.test-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.ftop{grid-template-columns:1fr}.test-grid{grid-template-columns:1fr}.hero-stats{gap:1.5rem;flex-wrap:wrap}.pc-inner{grid-template-columns:1fr}}
+/* Timeline mobile */
+@media(max-width:680px){
+  .tl::before{left:20px;}
+  .tli{grid-template-columns:0 40px 1fr;gap:0.8rem;}
+  .tli > div:first-child{display:none;}
+  .tlc{text-align:left!important;}
+  .tl-tag{display:inline-block;}
+}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:66px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:1.2rem 5%;flex-direction:column;gap:0.8rem;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-weight:500;font-size:0.95rem;color:var(--ink);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav .btn{width:100%;justify-content:center;margin-top:0.4rem;}
+@media(max-width:780px){nav .btn,nav a:not(.logo){display:none!important;}.hamburger{display:flex!important;}}
+</style>
+</head>
+<body>
+
+<!-- SCROLL TO TOP -->
+<button id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#"><div class="logo-badge">IQ</div><span class="logo-text">Critical<span>IQ</span></span><span class="price-flag">From £19/mo</span></a>
+  <nav>
+    <a href="#providers">CI Policies</a>
+    <a href="#quote">Get Quotes</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost" style="padding:0.42rem 1rem;font-size:0.83rem;">Log In</a>
+    <a href="https://square.link/u/HcncRU5p" class="btn btn-azure" style="padding:0.42rem 1rem;font-size:0.83rem;">Free Trial</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#providers">CI Policies</a>
+  <a href="#quote">Get Quotes</a>
+  <a href="#conditions">Conditions</a>
+  <a href="#pricing">Pricing</a>
+  <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost">Log In</a>
+  <a href="https://square.link/u/HcncRU5p" class="btn btn-azure">Start Free Trial</a>
+</div>
+
+<!-- AUTO-UPDATE STATUS BAR -->
+<div id="autostatus" style="background:#0a1628;border-bottom:1px solid rgba(16,185,129,0.15);padding:6px 5%;display:flex;align-items:center;justify-content:space-between;margin-top:66px;">
+  <div style="display:flex;align-items:center;gap:12px;font-size:0.74rem;">
+    <span style="display:flex;align-items:center;gap:5px;color:#34d399;font-weight:600;"><span style="width:7px;height:7px;border-radius:50%;background:#34d399;display:inline-block;animation:pulse 1.5s infinite;"></span>Database live</span>
+    <span style="color:rgba(255,255,255,0.25);">|</span>
+    <span style="color:rgba(255,255,255,0.38);">Last synced: <strong style="color:rgba(255,255,255,0.6)" id="lastSync">Mon 23 Feb 2026, 06:00</strong></span>
+    <span style="color:rgba(255,255,255,0.25);">|</span>
+    <span style="color:rgba(255,255,255,0.38);">Next check: <strong style="color:rgba(255,255,255,0.6)" id="nextSync">in 18 hrs</strong></span>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);color:#34d399;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:4px;">26 PROVIDERS MONITORED</span>
+    <span style="background:rgba(0,112,243,0.1);border:1px solid rgba(0,112,243,0.2);color:#60a5fa;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:4px;">182 CONDITIONS TRACKED</span>
+  </div>
+</div>
+
+<!-- UPDATE TICKER -->
+<div class="ticker-bar">
+  <div style="overflow:hidden;padding:0 5%;">
+    <div class="ticker-inner">
+      <div class="ti"><strong>CriticalIQ vs CIExpert:</strong> Save £312/yr · 59% cheaper · More providers · Daily alerts</div>
+      <div class="ti"><strong>Aviva</strong> Aortic Surgery definition expanded — <span class="new">Updated Feb 2026</span></div>
+      <div class="ti"><strong>Guardian 1821</strong> Cardiomyopathy now full-pay — <span class="new">NEW Jan 2026</span></div>
+      <div class="ti"><strong>L&G</strong> Low-grade Prostate Cancer partial payment — <span class="new">NEW Dec 2025</span></div>
+      <div class="ti"><strong>Vitality SIC+</strong> now 182 conditions (was 174)</div>
+      <div class="ti"><strong>Zurich Enhanced</strong> adds Polycystic Kidney Disease — <span class="new">NEW</span></div>
+      <div class="ti"><strong>HSBC</strong> CI Plus: 50% additional payment for specified conditions</div>
+      <div class="ti"><strong>Canada Life</strong> UK individual protection policies transferring to Countrywide Assured</div>
+      <!-- dupe for seamless loop -->
+      <div class="ti"><strong>CriticalIQ vs CIExpert:</strong> Save £312/yr · 59% cheaper · More providers · Daily alerts</div>
+      <div class="ti"><strong>Aviva</strong> Aortic Surgery definition expanded — <span class="new">Updated Feb 2026</span></div>
+      <div class="ti"><strong>Guardian 1821</strong> Cardiomyopathy now full-pay — <span class="new">NEW Jan 2026</span></div>
+      <div class="ti"><strong>L&G</strong> Low-grade Prostate Cancer partial payment — <span class="new">NEW Dec 2025</span></div>
+      <div class="ti"><strong>Vitality SIC+</strong> now 182 conditions (was 174)</div>
+      <div class="ti"><strong>Zurich Enhanced</strong> adds Polycystic Kidney Disease — <span class="new">NEW</span></div>
+      <div class="ti"><strong>HSBC</strong> CI Plus: 50% additional payment for specified conditions</div>
+      <div class="ti"><strong>Canada Life</strong> UK individual protection policies transferring to Countrywide Assured</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow"><span class="pulse-dot"></span>20+ providers · 182 conditions · Daily updates · Updated Feb 2026</div>
+    <h1>The <span class="hl">smarter, cheaper</span> alternative to CIExpert</h1>
+    <p>Every UK critical illness, life and income protection policy in one place. Real-time condition tracking, historical benchmarking, and compliance-ready PDFs — at 59% less than the competition.</p>
+    <div class="hero-cta">
+      <a href="https://square.link/u/HcncRU5p" class="btn btn-azure btn-lg">Start 7-Day Free Trial →</a>
+      <a href="#providers" class="btn btn-ghost btn-lg" style="color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.18);">Explore Database ↓</a>
+    </div>
+    <p class="hero-note">No credit card · No commitment · Full PDF reports included</p>
+    <div class="vs-box">
+      <div class="vs-box-title">vs CIExpert — real savings, per adviser</div>
+      <div class="vs-row"><span>CIExpert (estimated current rate)</span><strong>~£45–55/month</strong></div>
+      <div class="vs-row"><span>CriticalIQ Professional</span><strong style="color:#34d399;">£19/month</strong> <span class="vs-save">59% CHEAPER</span></div>
+      <div class="vs-row"><span>Annual saving per adviser</span><strong style="color:#34d399;">~£312/year</strong></div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">20<small>+</small></div><div class="hstat-lbl">CI Providers</div></div>
+      <div><div class="hstat-num">182<small>+</small></div><div class="hstat-lbl">Conditions tracked</div></div>
+      <div><div class="hstat-num">400<small>+</small></div><div class="hstat-lbl">Historical policies</div></div>
+      <div><div class="hstat-num">Daily</div><div class="hstat-lbl">Auto-updates</div></div>
+    </div>
+  </div>
+  <div class="hero-ui">
+    <div class="ui-bar"><div class="ui-dots"><span></span><span></span><span></span></div><div class="ui-title-bar">CriticalIQ · CI Comparison Engine</div><div style="font-size:0.65rem;background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.2);padding:2px 8px;border-radius:10px;font-weight:700;">3/5 FREE</div></div>
+    <div class="ui-body">
+      <div class="ui-tabs">
+        <button class="ui-tab act">CI Cover</button>
+        <button class="ui-tab">Life Cover</button>
+        <button class="ui-tab">Income Protection</button>
+      </div>
+      <div class="ui-input-row">
+        <div class="ui-inp"><label>CLIENT PROFILE</label>Male · 44 · Non-Smoker</div>
+        <div class="ui-inp"><label>COVER / TERM</label>£250,000 · 25 years</div>
+      </div>
+      <div class="ui-results">
+        <div class="ui-th"><span>#</span><span>Provider</span><span>IQ</span><span>Conds</span><span>Claims</span><span>Premium</span></div>
+        <div class="ui-tr"><div class="ui-rank r1g">1</div><div class="ui-pname">Vitality SIC+</div><div class="ui-score">97</div><div class="ui-cc">182</div><div class="ui-pct" style="color:#34d399">91.9%</div><div class="ui-pr">£54.20</div></div>
+        <div class="ui-tr"><div class="ui-rank r1g">2</div><div class="ui-pname">Aviva CIC+</div><div class="ui-score">94</div><div class="ui-cc">73</div><div class="ui-pct" style="color:#34d399">93.1%</div><div class="ui-pr">£49.80</div></div>
+        <div class="ui-tr"><div class="ui-rank r2g">3</div><div class="ui-pname">Guardian 1821</div><div class="ui-score">92</div><div class="ui-cc">55</div><div class="ui-pct" style="color:#34d399">92.4%</div><div class="ui-pr">£47.30</div></div>
+        <div class="ui-tr"><div class="ui-rank r2g">4</div><div class="ui-pname">Royal London</div><div class="ui-score">89</div><div class="ui-cc">73</div><div class="ui-pct" style="color:var(--amber)">89.2%</div><div class="ui-pr">£44.10</div></div>
+        <div class="ui-tr"><div class="ui-rank r3g">5</div><div class="ui-pname">Legal &amp; General</div><div class="ui-score">86</div><div class="ui-cc">69</div><div class="ui-pct" style="color:var(--amber)">91.8%</div><div class="ui-pr">£41.60</div></div>
+      </div>
+      <div class="ui-footer-bar">✅ PDF report ready &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.25);font-weight:400;">4 conditions improved vs existing cover</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVIDER COVERAGE STRIP -->
+<div class="coverage-strip">
+  <div style="overflow:hidden;">
+    <div class="cov-track">
+      <span class="cov-item">Aviva CIC / CIC+</span><span class="cov-item">Vitality SIC / SIC+</span><span class="cov-item">Royal London</span><span class="cov-item">Legal &amp; General</span><span class="cov-item">Guardian 1821</span><span class="cov-item">Scottish Widows</span><span class="cov-item">Zurich Core/Enhanced</span><span class="cov-item">LV= / LV= Budget</span><span class="cov-item">Beagle Street</span><span class="cov-item">NFU Mutual</span><span class="cov-item">HSBC CI / CI+</span><span class="cov-item">Barclays (AIG/Aviva u/w)</span><span class="cov-item">Nationwide (Royal London u/w)</span><span class="cov-item">Post Office (Royal London u/w)</span><span class="cov-item">British Friendly</span><span class="cov-item">Cirencester Friendly</span><span class="cov-item">The Exeter</span><span class="cov-item">Holloway Friendly</span><span class="cov-item">Shepherds Friendly</span><span class="cov-item">Canada Life → Countrywide</span>
+      <!-- dupe for seamless loop -->
+      <span class="cov-item">Aviva CIC / CIC+</span><span class="cov-item">Vitality SIC / SIC+</span><span class="cov-item">Royal London</span><span class="cov-item">Legal &amp; General</span><span class="cov-item">Guardian 1821</span><span class="cov-item">Scottish Widows</span><span class="cov-item">Zurich Core/Enhanced</span><span class="cov-item">LV= / LV= Budget</span><span class="cov-item">Beagle Street</span><span class="cov-item">NFU Mutual</span><span class="cov-item">HSBC CI / CI+</span><span class="cov-item">Barclays (AIG/Aviva u/w)</span><span class="cov-item">Nationwide (Royal London u/w)</span><span class="cov-item">Post Office (Royal London u/w)</span><span class="cov-item">British Friendly</span><span class="cov-item">Cirencester Friendly</span><span class="cov-item">The Exeter</span><span class="cov-item">Holloway Friendly</span><span class="cov-item">Shepherds Friendly</span><span class="cov-item">Canada Life → Countrywide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRICE COMPARISON SECTION -->
+<div class="price-compare-section">
+  <div class="pc-inner">
+    <div class="pc-left">
+      <h2>Why pay more?</h2>
+      <p>CIExpert has been the market leader since 2012, but their pricing hasn't kept up with the market. CriticalIQ was built from scratch to offer more — at a fraction of the cost.</p>
+      <div style="display:flex;gap:2rem;align-items:flex-end;margin-bottom:2rem;">
+        <div><div style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-bottom:4px;letter-spacing:0.08em;text-transform:uppercase;">CIExpert (est.)</div><div class="price-ciexp">£50<span style="font-size:1.2rem;font-weight:400;">/mo</span></div></div>
+        <div style="font-size:1.5rem;color:rgba(255,255,255,0.2);margin-bottom:0.5rem;">→</div>
+        <div><div style="font-size:0.72rem;color:rgba(16,185,129,0.8);margin-bottom:4px;letter-spacing:0.08em;text-transform:uppercase;">CriticalIQ</div><div class="price-big">£19<span style="font-size:1.2rem;font-weight:400;color:rgba(255,255,255,0.5);">/mo</span></div></div>
+      </div>
+      <a href="#pricing" class="btn btn-azure btn-lg">See all plans →</a>
+    </div>
+    <div>
+      <table class="pc-table">
+        <thead><tr><th>Feature</th><th style="color:#60a5fa;">CriticalIQ</th><th>CIExpert</th></tr></thead>
+        <tbody>
+          <tr class="pc-hl"><td><strong>Monthly price</strong></td><td style="color:#34d399;font-weight:800;">£19</td><td style="color:#f87171;text-decoration:line-through;">~£50</td></tr>
+          <tr><td>Providers tracked</td><td style="color:#34d399;font-weight:700;">20+</td><td style="color:rgba(255,255,255,0.5);">11–13</td></tr>
+          <tr><td>Conditions tracked</td><td style="color:#34d399;font-weight:700;">182+</td><td style="color:rgba(255,255,255,0.5);">136+</td></tr>
+          <tr><td>Life cover quotes</td><td style="color:#34d399;font-weight:700;">✓ Built-in</td><td style="color:rgba(255,255,255,0.5);">Via Iress</td></tr>
+          <tr><td>Income protection</td><td style="color:#34d399;font-weight:700;">✓ Built-in</td><td style="color:rgba(255,255,255,0.5);">Separate zone</td></tr>
+          <tr><td>Free trial</td><td style="color:#34d399;font-weight:700;">5 full comps</td><td style="color:rgba(255,255,255,0.5);">1 day only</td></tr>
+          <tr><td>Daily auto-alerts</td><td style="color:#34d399;font-weight:700;">✓ Automated</td><td style="color:rgba(255,255,255,0.5);">Manual news</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FULL PROVIDER DATABASE -->
+<section class="db-section" id="providers">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span class="label-tag">Complete Market Coverage · Updated Daily</span>
+      <h2 class="sh sh-center">Every UK protection provider, in full detail</h2>
+      <p class="sub-center">20+ providers covering CI, Life Cover and Income Protection. Real data from policy documents and ABI minimum standards.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="tabs-line">
+      <button class="ptab on">All (20)</button>
+      <button class="ptab">Critical Illness (14)</button>
+      <button class="ptab">Income Protection (12)</button>
+      <button class="ptab">Life Cover (15)</button>
+      <button class="ptab">Friendly Societies (5)</button>
+    </div>
+
+    <div class="providers-grid">
+      <!-- AVIVA -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Aviva</div><div class="pcard-sub">Est. 1696 · Acquired AIG Life UK Apr 2024</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">34</div><div class="cn-l">CIC Std</div></div><div class="cn"><div class="cn-n g">73</div><div class="cn-l">CIC+ (adv)</div></div><div class="cn"><div class="cn-n a">93.1%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:93.1%"></div></div><span class="cbar-label">93.1% (2024)</span></div><div class="ftags"><span class="ftag g">Free children's CI</span><span class="ftag">Wellbeing Support</span><span class="ftag">Care Concierge</span><span class="ftag h">Aortic def. updated ↑</span><span class="ftag">IP: 65% of first £60k</span><span class="ftag g">IP market leader 2024</span></div></div></div>
+      <!-- VITALITY -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Vitality</div><div class="pcard-sub">Est. 1997 (Discovery) · Serious Illness Cover</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">153</div><div class="cn-l">SIC</div></div><div class="cn"><div class="cn-n g">182</div><div class="cn-l">SIC Plus</div></div><div class="cn"><div class="cn-n a">91.9%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:91.9%"></div></div><span class="cbar-label">91.9% (2024)</span></div><div class="ftags"><span class="ftag h">Severity-based payouts</span><span class="ftag g">Multiple claims allowed</span><span class="ftag">3 payment levels</span><span class="ftag g">IP: save 40% healthy living</span><span class="ftag">Vitality Optimiser</span></div></div></div>
+      <!-- ROYAL LONDON -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Royal London</div><div class="pcard-sub">Est. 1861 · UK's largest mutual · 2.3m members</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">46</div><div class="cn-l">Full pay</div></div><div class="cn"><div class="cn-n g">27</div><div class="cn-l">Additional</div></div><div class="cn"><div class="cn-n a">89.2%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:89.2%;background:linear-gradient(90deg,var(--azure),var(--amber))"></div></div><span class="cbar-label">89.2% (2024)</span></div><div class="ftags"><span class="ftag">Helping Hand service</span><span class="ftag g">Enhanced children's CI</span><span class="ftag">Dual Cover (joint)</span><span class="ftag g">IP: Trustpilot 4.6★</span><span class="ftag">Max £3m benefit</span></div></div></div>
+      <!-- LEGAL & GENERAL -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Legal &amp; General</div><div class="pcard-sub">Est. 1836 · 10m+ customers · FTSE 100</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">37</div><div class="cn-l">CIC Core</div></div><div class="cn"><div class="cn-n g">69</div><div class="cn-l">CIC Extra</div></div><div class="cn"><div class="cn-n a">91.8%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:91.8%"></div></div><span class="cbar-label">91.8% (2024)</span></div><div class="ftags"><span class="ftag g">Free children's CI</span><span class="ftag">RedArc nurse support</span><span class="ftag h">NEW: Low-grade prostate Ca.</span><span class="ftag">IP 2nd best-selling 2024</span><span class="ftag">Hospital benefit</span></div></div></div>
+      <!-- GUARDIAN 1821 -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Guardian 1821</div><div class="pcard-sub">Est. 1821 · Revived 2018 · via Scottish Friendly</div></div><span class="pbadge pb-ci">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">47</div><div class="cn-l">Full pay</div></div><div class="cn"><div class="cn-n g">8</div><div class="cn-l">Additional</div></div><div class="cn"><div class="cn-n a">92.4%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:92.4%;background:linear-gradient(90deg,var(--azure),#6366f1)"></div></div><span class="cbar-label">92.4% (2024)</span></div><div class="ftags"><span class="ftag h">No severity req. for heart attacks</span><span class="ftag g">Up to £50k partial</span><span class="ftag h">NEW: Cardiomyopathy full pay</span><span class="ftag">IP: Guardian Protect</span></div></div></div>
+      <!-- SCOTTISH WIDOWS -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Scottish Widows</div><div class="pcard-sub">Est. 1815 · Lloyds Banking Group · 5-star Defaqto</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">40</div><div class="cn-l">Full pay</div></div><div class="cn"><div class="cn-n g">17</div><div class="cn-l">Additional</div></div><div class="cn"><div class="cn-n a">90.4%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:90.4%"></div></div><span class="cbar-label">90.4% (2024)</span></div><div class="ftags"><span class="ftag h">Any CIS — blanket clause</span><span class="ftag g">Auto life insurance</span><span class="ftag g">Auto children's CI (free)</span><span class="ftag">SW Care: RedArc + vGP</span></div></div></div>
+      <!-- ZURICH -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Zurich</div><div class="pcard-sub">Est. 1872 (Switzerland) · AA- S&P rating</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">29</div><div class="cn-l">Core</div></div><div class="cn"><div class="cn-n g">49</div><div class="cn-l">Enhanced</div></div><div class="cn"><div class="cn-n a">90.1%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:90.1%"></div></div><span class="cbar-label">90.1% (2024)</span></div><div class="ftags"><span class="ftag g">Children own policy from 16</span><span class="ftag h">NEW: Polycystic Kidney</span><span class="ftag">Multi-fracture add-on</span><span class="ftag">Cover increase at life events</span></div></div></div>
+      <!-- LV= -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">LV= (Liverpool Victoria)</div><div class="pcard-sub">Est. 1843 · Mutual · Best IP Provider 14yr running</div></div><span class="pbadge pb-all">CI · Life · IP</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">40</div><div class="cn-l">Full pay</div></div><div class="cn"><div class="cn-n g">+50%</div><div class="cn-l">Enhanced (9 conds)</div></div><div class="cn"><div class="cn-n a">90.8%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:90.8%"></div></div><span class="cbar-label">90.8% (2024)</span></div><div class="ftags"><span class="ftag h">+50% payout up to £200k</span><span class="ftag g">IP: #1 provider 2026</span><span class="ftag">IP: pay to £250k/yr</span><span class="ftag">Fracture cover add-on</span></div></div></div>
+      <!-- HSBC -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">HSBC Life</div><div class="pcard-sub">Est. 1865 · 42m global customers · 95.5% CI claims paid</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">~40</div><div class="cn-l">CI Std</div></div><div class="cn"><div class="cn-n g">CI+</div><div class="cn-l">50% extra</div></div><div class="cn"><div class="cn-n a">95.5%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:95.5%"></div></div><span class="cbar-label">95.5% (2025)</span></div><div class="ftags"><span class="ftag g">Highest CI claims rate</span><span class="ftag">CI+: 50% additional pay</span><span class="ftag">Max £500k benefit</span><span class="ftag">No partial payments (CI)</span></div></div></div>
+      <!-- BEAGLE STREET -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Beagle Street</div><div class="pcard-sub">BGL Group · Scottish Friendly backed · Direct</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">~30</div><div class="cn-l">Core</div></div><div class="cn"><div class="cn-n g">20%</div><div class="cn-l">Additional</div></div><div class="cn"><div class="cn-n a">88.5%</div><div class="cn-l">Claims paid</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:88.5%;background:linear-gradient(90deg,var(--azure),var(--muted))"></div></div><span class="cbar-label">88.5% (2024)</span></div><div class="ftags"><span class="ftag">30-day survival clause</span><span class="ftag">Must combine with life</span><span class="ftag">Max £20k additional</span><span class="ftag">Age 80 max</span></div></div></div>
+      <!-- NFU MUTUAL -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">NFU Mutual</div><div class="pcard-sub">Est. 1910 · 900k customers · Aviva underwritten</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">24</div><div class="cn-l">Standard</div></div><div class="cn"><div class="cn-n g">48</div><div class="cn-l">Enhanced</div></div><div class="cn"><div class="cn-n a">—</div><div class="cn-l">Aviva u/w</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:88%"></div></div><span class="cbar-label">~88% (Aviva data)</span></div><div class="ftags"><span class="ftag">Which? Brand of Year 2024</span><span class="ftag">Aviva underwritten</span><span class="ftag">Children's CI extra cost</span></div></div></div>
+      <!-- BRITISH FRIENDLY -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">British Friendly</div><div class="pcard-sub">Est. 1902 · Mutual · 30k members · IP specialist</div></div><span class="pbadge pb-ip">IP · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">IP</div><div class="cn-l">Specialist</div></div><div class="cn"><div class="cn-n g">High-risk</div><div class="cn-l">Occupations</div></div><div class="cn"><div class="cn-n a">Good</div><div class="cn-l">Claims</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:87%"></div></div><span class="cbar-label">~87% (mutual data)</span></div><div class="ftags"><span class="ftag g">IP: High-risk occupations</span><span class="ftag">BA staff benefit provider</span><span class="ftag">Own occupation def.</span><span class="ftag">No CI product</span></div></div></div>
+      <!-- CIRENCESTER FRIENDLY -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Cirencester Friendly</div><div class="pcard-sub">Est. 1890 · Mutual · No extra for smokers/risky hobbies</div></div><span class="pbadge pb-ip">IP Specialist</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">IP</div><div class="cn-l">My Earnings</div></div><div class="cn"><div class="cn-n g">Flexible</div><div class="cn-l">Def periods</div></div><div class="cn"><div class="cn-n a">Strong</div><div class="cn-l">Claims</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:88%"></div></div><span class="cbar-label">Best Prot. Provider 2025</span></div><div class="ftags"><span class="ftag h">No extra for smokers</span><span class="ftag g">No extra for hobbies/risk</span><span class="ftag">Member benefits inc. vGP</span><span class="ftag">Children's CI support</span></div></div></div>
+      <!-- THE EXETER -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">The Exeter</div><div class="pcard-sub">Est. 1927 · Friendly Society · 90k members</div></div><span class="pbadge pb-ip">IP · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">IP</div><div class="cn-l">Specialist</div></div><div class="cn"><div class="cn-n g">4.6★</div><div class="cn-l">Trustpilot</div></div><div class="cn"><div class="cn-n a">Good</div><div class="cn-l">Claims</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:91%"></div></div><span class="cbar-label">5-star rated provider</span></div><div class="ftags"><span class="ftag g">HealthWise: vGP + MOT</span><span class="ftag">NHS Sick Pay mirroring</span><span class="ftag g">Self-employed specialist</span><span class="ftag">2nd medical opinion</span></div></div></div>
+      <!-- HOLLOWAY FRIENDLY -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Holloway Friendly</div><div class="pcard-sub">Est. 1880 · Invented income protection in 1875</div></div><span class="pbadge pb-ip">IP Original</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">IP</div><div class="cn-l">Holloway</div></div><div class="cn"><div class="cn-n g">Unique</div><div class="cn-l">Contract type</div></div><div class="cn"><div class="cn-n a">135yr</div><div class="cn-l">Heritage</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:86%"></div></div><span class="cbar-label">~86% claims paid</span></div><div class="ftags"><span class="ftag h">Original IP inventors</span><span class="ftag">Holloway contract type</span><span class="ftag">Manual workers</span></div></div></div>
+      <!-- SHEPHERDS FRIENDLY -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Shepherds Friendly</div><div class="pcard-sub">Est. 1826 · Mutual · IP and savings</div></div><span class="pbadge pb-ip">IP · Savings</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">IP</div><div class="cn-l">Core</div></div><div class="cn"><div class="cn-n g">200yr</div><div class="cn-l">Heritage</div></div><div class="cn"><div class="cn-n a">Mutual</div><div class="cn-l">Owned</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:85%"></div></div><span class="cbar-label">~85% claims paid</span></div><div class="ftags"><span class="ftag">200-year-old mutual</span><span class="ftag">Short-term IP available</span><span class="ftag">No CI product</span></div></div></div>
+      <!-- NATIONWIDE -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Nationwide Building Society</div><div class="pcard-sub">L&amp;G underwritten · High street brand</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">L&G</div><div class="cn-l">u/w L&amp;G</div></div><div class="cn"><div class="cn-n g">Good</div><div class="cn-l">Definitions</div></div><div class="cn"><div class="cn-n a">RL%</div><div class="cn-l">Claims rate</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:89%"></div></div><span class="cbar-label">L&amp;G underwritten</span></div><div class="ftags"><span class="ftag">L&amp;G backing</span><span class="ftag">Trusted high-street brand</span><span class="ftag">Direct channel</span></div></div></div>
+      <!-- POST OFFICE -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Post Office</div><div class="pcard-sub">Royal London underwritten · NPA · 11.8k UK branches</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">25%</div><div class="cn-l">CI additional</div></div><div class="cn"><div class="cn-n g">£125k</div><div class="cn-l">Max CI benefit</div></div><div class="cn"><div class="cn-n a">RL%</div><div class="cn-l">Claims rate</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:89%"></div></div><span class="cbar-label">Royal London underwritten</span></div><div class="ftags"><span class="ftag">Royal London backing</span><span class="ftag">Best Online Life Ins. 2019</span><span class="ftag">Terminal illness included</span></div></div></div>
+      <!-- BARCLAYS -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Barclays</div><div class="pcard-sub">AIG/Aviva underwritten · 325yr heritage</div></div><span class="pbadge pb-ci">CI · Life</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">AIG</div><div class="cn-l">u/w Aviva</div></div><div class="cn"><div class="cn-n g">Std</div><div class="cn-l">CI Cover</div></div><div class="cn"><div class="cn-n a">~91%</div><div class="cn-l">Claims (AIG)</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:91%"></div></div><span class="cbar-label">AIG/Aviva underwritten</span></div><div class="ftags"><span class="ftag">AIG (now Aviva) backing</span><span class="ftag">Mortgage protection focus</span><span class="ftag">Direct channel</span></div></div></div>
+      <!-- CANADA LIFE / COUNTRYWIDE -->
+      <div class="pcard"><div class="pcard-h"><div><div class="pcard-name">Canada Life → Countrywide</div><div class="pcard-sub">UK IP policies transferring to Countrywide Assured Plc</div></div><span class="pbadge pb-ip">CI · IP transitioning</span></div><div class="pcard-b"><div class="cond-row"><div class="cn"><div class="cn-n b">Trans</div><div class="cn-l">Migrating</div></div><div class="cn"><div class="cn-n g">Std</div><div class="cn-l">Cover</div></div><div class="cn"><div class="cn-n a">Good</div><div class="cn-l">Claims</div></div></div><div class="claims-bar"><div class="cbar-track"><div class="cbar-fill" style="width:87%"></div></div><span class="cbar-label">~87% claims paid</span></div><div class="ftags"><span class="ftag h">Policies transferring 2025-26</span><span class="ftag">Monitor for client impact</span><span class="ftag">Historical policies tracked</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE ENGINE -->
+<section class="quote-section" id="quote">
+  <div class="quote-engine">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span class="label-tag" style="color:#60a5fa;">Live Quote Engine</span>
+      <h2 class="sh sh-center" style="color:white;">Get quotes across all product types</h2>
+      <hr class="rule" style="border-color:rgba(0,112,243,0.2);">
+      <p class="sub-center" style="color:rgba(255,255,255,0.45);">CI cover, life insurance and income protection from every major UK provider — compared in seconds.</p>
+    </div>
+
+    <div class="q-tabs">
+      <button class="q-tab act">Critical Illness Cover</button>
+      <button class="q-tab">Life Insurance</button>
+      <button class="q-tab">Income Protection</button>
+    </div>
+
+    <div class="q-form">
+      <div class="q-field"><label>Age</label><input type="number" value="40" min="18" max="70" placeholder="Age"></div>
+      <div class="q-field"><label>Gender</label><select><option>Male</option><option>Female</option></select></div>
+      <div class="q-field"><label>Smoker</label><select><option>Non-Smoker</option><option>Smoker</option><option>Ex-Smoker</option></select></div>
+      <div class="q-field"><label>Sum Assured / Term</label><input type="text" value="£200,000 / 25yr" placeholder="£200,000 / 25yr"></div>
+      <button class="q-btn">Compare →</button>
+    </div>
+
+    <!-- CI Results -->
+    <div class="q-results">
+      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-bottom:0.6rem;padding:0 0.5rem;">
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Showing <strong style="color:white;">12 providers</strong> for Male · 40 · Non-Smoker · £200k · 25yr CI</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);">Sorted by IQ Score ↓ | Pro: sort by premium, claims rate</div>
+      </div>
+      <div class="q-result"><div class="q-rank qr1">1</div><div><div class="q-pname">Vitality SIC Plus</div><div class="q-ptier">Serious Illness Cover Plus · 182 conditions · Severity-based</div></div><div class="q-iq">IQ 97</div><div class="q-claims" style="color:#34d399">91.9%</div><div><div class="q-price">£43.80 <small>/mo</small></div></div></div>
+      <div class="q-result"><div class="q-rank qr1" style="background:rgba(148,163,184,0.12);color:#94a3b8">2</div><div><div class="q-pname">Aviva Critical Illness+</div><div class="q-ptier">73 conditions · Adviser-only · Enhanced definitions</div></div><div class="q-iq">IQ 94</div><div class="q-claims" style="color:#34d399">93.1%</div><div><div class="q-price">£39.60 <small>/mo</small></div></div></div>
+      <div class="q-result"><div class="q-rank qr2">3</div><div><div class="q-pname">Guardian 1821</div><div class="q-ptier">47 full-pay + 8 additional · No heart attack severity req.</div></div><div class="q-iq">IQ 92</div><div class="q-claims" style="color:#34d399">92.4%</div><div><div class="q-price">£37.40 <small>/mo</small></div></div></div>
+      <div class="q-result"><div class="q-rank qr2" style="background:rgba(100,116,139,0.08);color:#64748b">4</div><div><div class="q-pname">Royal London</div><div class="q-ptier">46 full + 27 additional · Helping Hand · Children's CI inc.</div></div><div class="q-iq">IQ 89</div><div class="q-claims" style="color:#f59e0b">89.2%</div><div><div class="q-price">£35.20 <small>/mo</small></div></div></div>
+      <div class="q-result"><div class="q-rank qr2" style="background:rgba(100,116,139,0.08);color:#64748b">5</div><div><div class="q-pname">Legal &amp; General CIC Extra</div><div class="q-ptier">69 conditions · RedArc · New: Low-grade prostate Ca.</div></div><div class="q-iq">IQ 86</div><div class="q-claims" style="color:#34d399">91.8%</div><div><div class="q-price">£33.10 <small>/mo</small></div></div></div>
+      <div style="text-align:center;margin-top:0.8rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;">+7 more providers shown with Pro subscription · Includes Zurich, Scottish Widows, LV=, HSBC, Beagle Street, NFU Mutual, Barclays</div>
+        <a href="#" class="btn btn-azure">Unlock all 12 results — Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS TABLE -->
+<section class="cond-section" id="conditions">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span class="label-tag">Conditions Intelligence</span>
+      <h2 class="sh sh-center">182 conditions · 20 providers · Real-time</h2>
+      <p class="sub-center">Every condition tracked across every provider. See exact definitions, incidence rates, and which policies have changed — updated the day changes happen.</p>
+    </div>
+    <div class="ctable-wrap">
+      <table class="ctable">
+        <thead><tr>
+          <th style="min-width:210px">Condition</th><th>Cat.</th><th>Aviva</th><th>Vitality</th><th>Guardian</th><th>Royal L</th><th>L&amp;G</th><th>Scot W.</th><th>Zurich</th><th>LV=</th><th>HSBC</th><th>Incidence (M40,25yr)</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Cancer (specified severity)<span class="uc">ABI REV</span></td><td>Cancer</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:72px"></div><span class="ibv">41.2%</span></div></td></tr>
+          <tr><td>Heart Attack</td><td>Cardiac</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span> <small style="color:var(--sage);font-size:0.65rem">No sev.</small></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:48px"></div><span class="ibv">27.4%</span></div></td></tr>
+          <tr><td>Stroke</td><td>Neuro</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:32px"></div><span class="ibv">18.2%</span></div></td></tr>
+          <tr><td>Coronary Artery Bypass Surgery</td><td>Cardiac</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:24px"></div><span class="ibv">13.6%</span></div></td></tr>
+          <tr><td>Carcinoma in situ (various)</td><td>Cancer</td><td><span class="cp">25%</span></td><td><span class="ck">✓</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="ck">✓</span> <small style="color:var(--sage);font-size:0.65rem">Blanket</small></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cx">—</span></td><td><div class="ibar-w"><div class="ib" style="width:36px"></div><span class="ibv">20.4%</span></div></td></tr>
+          <tr><td>Low-grade Prostate Cancer<span class="nc">NEW</span></td><td>Cancer</td><td><span class="cp">25%</span></td><td><span class="ck">✓</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span> <small style="color:var(--azure);font-size:0.65rem">NEW</small></td><td><span class="cp">25%</span></td><td><span class="cx">—</span></td><td><span class="cp">25%</span></td><td><span class="cx">—</span></td><td><div class="ibar-w"><div class="ib" style="width:28px"></div><span class="ibv">15.8%</span></div></td></tr>
+          <tr><td>Aortic Surgery<span class="uc">DEF UPDATED</span></td><td>Cardiac</td><td><span class="ck">✓</span> <small style="color:var(--azure);font-size:0.65rem">↑ improved</small></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:13px"></div><span class="ibv">7.2%</span></div></td></tr>
+          <tr><td>Cardiomyopathy<span class="nc">NEW Jan'26</span></td><td>Cardiac</td><td><span class="cp">25%</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span> <small style="color:var(--sage);font-size:0.65rem">Full NEW</small></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cp">25%</span></td><td><span class="cx">—</span></td><td><div class="ibar-w"><div class="ib" style="width:9px"></div><span class="ibv">5.2%</span></div></td></tr>
+          <tr><td>Multiple Sclerosis</td><td>Neuro</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:11px"></div><span class="ibv">6.1%</span></div></td></tr>
+          <tr><td>Total Permanent Disability</td><td>Disability</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:19px"></div><span class="ibv">10.8%</span></div></td></tr>
+          <tr><td>Alzheimer's / Dementia (≤65)</td><td>Neuro</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:8px"></div><span class="ibv">4.5%</span></div></td></tr>
+          <tr><td>Parkinson's Disease</td><td>Neuro</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:6px"></div><span class="ibv">3.4%</span></div></td></tr>
+          <tr><td>Any Neurological Condition<span class="nc">AIG legacy</span></td><td>Neuro</td><td><span class="cx">—</span></td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><div class="ibar-w"><div class="ib" style="width:16px;background:var(--amber)"></div><span class="ibv">9.1%</span></div></td></tr>
+          <tr><td>Kidney Failure</td><td>Organ</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:7px"></div><span class="ibv">4.1%</span></div></td></tr>
+          <tr><td>Major Organ Transplant</td><td>Organ</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:4px"></div><span class="ibv">2.3%</span></div></td></tr>
+          <tr><td>Polycystic Kidney Disease<span class="nc">NEW</span></td><td>Organ</td><td><span class="cx">—</span></td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cp">25%</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="ck">✓</span> <small style="color:var(--sage);font-size:0.65rem">NEW</small></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><div class="ibar-w"><div class="ib" style="width:5px"></div><span class="ibv">2.9%</span></div></td></tr>
+          <tr><td>Blindness (both eyes)</td><td>Disability</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:4px"></div><span class="ibv">2.2%</span></div></td></tr>
+          <tr><td>Deafness (both ears)</td><td>Disability</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:5px"></div><span class="ibv">2.8%</span></div></td></tr>
+          <tr><td>Loss of Speech (permanent)</td><td>Disability</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:3px"></div><span class="ibv">1.6%</span></div></td></tr>
+          <tr><td>HIV (occupational/assault)</td><td>Other</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><div class="ibar-w"><div class="ib" style="width:2px"></div><span class="ibv">0.9%</span></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Showing 20 of 182 tracked conditions. <a href="https://square.link/u/HcncRU5p" style="color:var(--azure);font-weight:600;">Full database with Pro →</a> &nbsp; Incidence: male aged 40, 25-year term. ✓ full · 25% partial · — not covered</p>
+  </div>
+</section>
+
+<!-- HISTORY TIMELINE -->
+<section class="hist-section" id="history">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <span class="label-tag" style="color:#60a5fa;">Historical Archive</span>
+      <h2 class="sh sh-center">The 40-year story of CI cover</h2>
+      <hr class="rule" style="border-color:rgba(0,112,243,0.2);">
+      <p class="sub-center">From 4 conditions in 1983 to 182 today. Understanding the evolution is essential for benchmarking old policies against new ones.</p>
+    </div>
+    <div class="tl">
+      <div class="tli"><div class="tlc" style="text-align:right;"><div class="tly">1983</div><div class="tlt">Dread Disease Cover Invented</div><div class="tld">Dr Marius Barnard (South Africa) creates the first product covering 4 conditions: Heart Attack, Stroke, Cancer, Coronary Artery Bypass. Called "Dread Disease" for the conditions people most feared.</div><span class="tl-tag">Origin · 4 conditions</span></div><div class="tldot td-g" style="grid-column:2;">4</div><div style="grid-column:3;"></div></div>
+      <div class="tli"><div style="grid-column:1;"></div><div class="tldot td-b" style="grid-column:2;">UK</div><div class="tlc" style="grid-column:3;"><div class="tly">1985</div><div class="tlt">Arrives in the UK</div><div class="tld">First CI policies issued to UK consumers. Original 4 conditions only. Sold exclusively through IFAs. Renamed "Critical Illness Cover" for more palatable marketing.</div><span class="tl-tag gr">UK Launch</span></div></div>
+      <div class="tli"><div class="tlc" style="text-align:right;"><div class="tly">Late 80s–90s</div><div class="tlt">The Conditions Race Begins</div><div class="tld">Insurers compete by adding conditions — MS, kidney failure, organ transplant, TPD. No standardisation. Definitions vary wildly. Advisers struggle to compare products meaningfully.</div><span class="tl-tag">Expansion · 40+ conditions</span></div><div class="tldot td-b" style="grid-column:2;">40+</div><div style="grid-column:3;"></div></div>
+      <div class="tli"><div style="grid-column:1;"></div><div class="tldot td-g" style="grid-column:2;">ABI</div><div class="tlc" style="grid-column:3;"><div class="tly">1999</div><div class="tlt">ABI Statement of Best Practice v1</div><div class="tld">First industry-wide standards. Cancer, Heart Attack and Stroke mandated as minimum. Consistent definitions allow meaningful comparison for the first time.</div><span class="tl-tag gr">ABI Standard v1</span></div></div>
+      <div class="tli"><div class="tlc" style="text-align:right;"><div class="tly">2003</div><div class="tlt">Peak Sales Year — 992,000 policies</div><div class="tld">Highest-ever CI sales. Declining after due to rising premiums and mis-selling concerns. Standalone CI falls from 112k (2001) to 19k (2015). Adviser reputation for CI advice improves through the 2010s.</div><span class="tl-tag">Market peak</span></div><div class="tldot td-b" style="grid-column:2;">992k</div><div style="grid-column:3;"></div></div>
+      <div class="tli"><div style="grid-column:1;"></div><div class="tldot td-b" style="grid-column:2;">23</div><div class="tlc" style="grid-column:3;"><div class="tly">2006–07</div><div class="tlt">ABI Publishes 23 Mandatory Model Definitions</div><div class="tld">Mandatory for ABI members from April 2007. Conditions split into two groups. World's clearest benchmark for adviser comparison. CIExpert launches in 2012 using this framework.</div><span class="tl-tag gr">ABI Standard v2</span></div></div>
+      <div class="tli"><div class="tlc" style="text-align:right;"><div class="tly">2011</div><div class="tlt">TPD Standardised for First Time</div><div class="tld">World's first standard Total Permanent Disability definitions. Previously 55% of TPD claims were declined. Standardisation dramatically improves outcomes. Major milestone.</div><span class="tl-tag">ABI Standard v3</span></div><div class="tldot td-b" style="grid-column:2;">TPD</div><div style="grid-column:3;"></div></div>
+      <div class="tli"><div style="grid-column:1;"></div><div class="tldot td-g" style="grid-column:2;">SIC</div><div class="tlc" style="grid-column:3;"><div class="tly">2014–15</div><div class="tlt">Vitality Launches Severity-Based Cover</div><div class="tld">Serious Illness Cover — UK's first severity-based product. Partial payouts tied to medical severity not just diagnosis. Friends Life (now Aviva) adds mortgage payment option same year.</div><span class="tl-tag gr">Innovation</span></div></div>
+      <div class="tli"><div class="tlc" style="text-align:right;"><div class="tly">2018–19</div><div class="tlt">ABI Major Revision — New TPD Definitions</div><div class="tld">Most comprehensive update since 1999. New TPD definitions, updated cancer and partial payment rules. Mandatory from February 2019. Guardian 1821 re-enters market with unique "no severity for heart attacks" approach.</div><span class="tl-tag gr">ABI Standard v4</span></div><div class="tldot td-g" style="grid-column:2;">v4</div><div style="grid-column:3;"></div></div>
+      <div class="tli"><div style="grid-column:1;"></div><div class="tldot td-b" style="grid-column:2;">182</div><div class="tlc" style="grid-column:3;"><div class="tly">Sep 2022 → Today</div><div class="tlt">Heart Attack Redefined · 182 Conditions</div><div class="tld">ABI 2022 Standards (effective Sep 2023): heart attack definition tightened. Aviva acquires AIG Life (Apr 2024). Vitality SIC+ reaches 182 conditions. CriticalIQ tracks every change daily across 20+ providers.</div><span class="tl-tag gr">ABI Standard v5 · Today</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY UPDATE LOG -->
+<section class="log-section" id="updates">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span class="label-tag">Policy Intelligence Feed</span>
+      <h2 class="sh sh-center">Daily condition change log</h2>
+      <p class="sub-center">Every definition update, new condition or policy change — logged the day it happens. Never miss something that could affect your client's cover.</p>
+    </div>
+    <div class="log-list">
+      <div class="log-item ln"><div class="log-date">20 Feb</div><div class="log-pill lp-up">Updated</div><div><div class="lt">Aviva — Aortic Surgery definition expanded</div><div class="ld">Now includes endovascular aortic repair (EVAR) procedures, not just open surgery. Significantly broadens claimable aortic events in line with modern surgical practice.</div><div class="lprov">Aviva CIC / CIC+ · From 20 Feb 2026</div></div></div>
+      <div class="log-item ln"><div class="log-date">14 Jan</div><div class="log-pill lp-new">New</div><div><div class="lt">Guardian 1821 — Cardiomyopathy added as full-pay condition</div><div class="ld">Moves from 25% partial to full benefit. Now one of only two providers offering full payout for cardiomyopathy without severity qualifier.</div><div class="lprov">Guardian Protect · All new policies from Jan 2026</div></div></div>
+      <div class="log-item lu"><div class="log-date">10 Jan</div><div class="log-pill lp-up">Updated</div><div><div class="lt">Royal London — DCIS Cancer definition tightened</div><div class="ld">Now requires Grade III (high grade) DCIS for partial claim. Lower-grade DCIS excluded. New policies only — existing holders unaffected.</div><div class="lprov">Royal London Protect · New policies only</div></div></div>
+      <div class="log-item ln"><div class="log-date">5 Dec</div><div class="log-pill lp-new">New</div><div><div class="lt">Legal &amp; General — Low-grade Prostate Cancer added</div><div class="ld">25% partial payment (up to £25k) for Gleason ≤6, stage T1/T2 prostate cancer. Significant — 15% of all male CI claims involve prostate cancer.</div><div class="lprov">L&G CIC+ · Policies from 5 Dec 2025</div></div></div>
+      <div class="log-item ln"><div class="log-date">3 Dec</div><div class="log-pill lp-new">New</div><div><div class="lt">Zurich Enhanced — Polycystic Kidney Disease added</div><div class="ld">ADPKD resulting in renal impairment now covered. Affects ~1-in-400 individuals who carry the gene.</div><div class="lprov">Zurich Enhanced only · Not Zurich Core</div></div></div>
+      <div class="log-item lu"><div class="log-date">Sep '23</div><div class="log-pill lp-abi">ABI</div><div><div class="lt">ABI 2022 Standards — All providers implement by deadline</div><div class="ld">All ABI member insurers confirmed implementing 2022 Guide by 16 Sep 2023 deadline. Heart attack definition updated. 16 conditions revised industry-wide.</div><div class="lprov">Industry-wide · Affects all new policies from Sep 2023</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;"><a href="#" class="btn btn-ghost btn-lg">View Full Change History →</a></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="label-tag">Pricing · 59% Cheaper Than CIExpert</span>
+      <h2 class="sh sh-center">Start free. Stay ahead.</h2>
+      <hr class="rule">
+      <p class="sub-center">5 full comparisons completely free. Upgrade when you need unlimited access, historical archives, and daily alerts.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr-card">
+        <div class="pr-name">Starter — Free</div>
+        <div class="pr-price"><sup>£</sup>0</div>
+        <div class="pr-compare">CIExpert offers 1-day trial only <span>~£50/mo</span></div>
+        <div class="pr-desc">5 full CI comparisons with PDF reports. No card, no commitment. See the real value before spending a penny.</div>
+        <ul class="pr-features">
+          <li><span class="y">✓</span>5 full CI comparisons</li>
+          <li><span class="y">✓</span>IQ scoring across all providers</li>
+          <li><span class="y">✓</span>PDF compliance report included</li>
+          <li><span class="y">✓</span>11 current providers</li>
+          <li><span class="n">✗</span><span style="color:#94a3b8">Unlimited comparisons</span></li>
+          <li><span class="n">✗</span><span style="color:#94a3b8">Historical policy archive</span></li>
+          <li><span class="n">✗</span><span style="color:#94a3b8">Life &amp; income protection quotes</span></li>
+          <li><span class="n">✗</span><span style="color:#94a3b8">Daily condition alerts</span></li>
+        </ul>
+        <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Start Free — No Card Needed</a>
+      </div>
+      <div class="pr-card feat" style="position:relative;">
+        <div class="pr-pop">MOST POPULAR · 59% CHEAPER THAN CIEXPERT</div>
+        <div class="pr-name">Professional</div>
+        <div class="pr-price"><sup>£</sup>19<sub>/mo</sub></div>
+        <div class="pr-compare">Save ~£31/month vs CIExpert <span>~£50/mo</span></div>
+        <div class="pr-desc">Everything an active adviser needs — unlimited comparisons, all product types, full historical archive and daily automated alerts.</div>
+        <ul class="pr-features">
+          <li><span class="y">✓</span><strong>Unlimited</strong> CI comparisons</li>
+          <li><span class="y">✓</span>All 20+ providers tracked</li>
+          <li><span class="y">✓</span>182+ conditions database</li>
+          <li><span class="y">✓</span>Life cover quotes built-in</li>
+          <li><span class="y">✓</span>Income protection quotes built-in</li>
+          <li><span class="y">✓</span>400+ historical policies archive</li>
+          <li><span class="y">✓</span>Daily condition change alerts</li>
+          <li><span class="y">✓</span>Branded PDF compliance reports</li>
+          <li><span class="y">✓</span>Children's CI comparison tool</li>
+        </ul>
+        <a href="https://square.link/u/HcncRU5p" class="btn btn-azure" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Start 7-Day Free Trial →</a>
+        <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;">Or pay annually — <a href="https://square.link/u/rBQ9f6eR" style="color:var(--azure);font-weight:700;">£189/yr — save £39 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THE DATA STAYS CURRENT -->
+<section style="background:#0a1628;padding:5rem 5%;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="label-tag" style="color:#60a5fa;">Always Up to Date</span>
+      <h2 class="sh sh-center" style="color:white;">You'll never miss a definition change again.</h2>
+      <hr class="rule" style="border-color:rgba(0,112,243,0.2);">
+      <p class="sub-center" style="color:rgba(255,255,255,0.42);">Policy definitions change constantly. A condition that paid out under your client's 2019 policy may now be excluded, restricted, or significantly improved. CriticalIQ makes sure you always know.</p>
+    </div>
+    <div class="auto-grid" style="max-width:1040px;margin:0 auto 3rem;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">🔔</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">Daily Change Alerts</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">Every policy document across all 20+ providers is monitored daily. The moment a definition changes — new condition added, wording tightened, partial payment introduced — you receive a clear, specific alert by email. No trawling insurer websites.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">📋</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">Full Change History</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">Every change is logged and dated. You can look back at exactly what any provider's definition said on any given date — invaluable when reviewing a client's existing policy or handling a claim dispute.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">📄</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">Compliance-Ready PDFs</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">Every comparison generates a branded, dated PDF report — suitable for your client file and compliant with FCA suitability documentation requirements. Includes provider rankings, condition coverage, claims rates and your rationale.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">🏦</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">Historical Benchmarking</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">Compare a client's existing policy — taken out in 2010, 2015 or 2019 — against today's best cover. Show them exactly what conditions have been added or improved since they last reviewed. A powerful conversation tool.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">⚡</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">ABI Standard Tracking</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">When the ABI updates its minimum standards — as it did in 2019 and 2022 — CriticalIQ flags every provider's implementation status and timeline. Know immediately which policies meet the new benchmark and which don't.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;">👶</div>
+        <div style="font-weight:700;color:white;margin-bottom:0.5rem;">Children's CI Comparisons</div>
+        <div style="font-size:0.83rem;color:rgba(255,255,255,0.4);line-height:1.75;">Children's CI definitions differ significantly across providers — and are often where the most meaningful improvements have been made. CriticalIQ tracks children's cover separately so you can identify the strongest policies for family clients.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;"><span class="label-tag">What Advisers Say</span><h2 class="sh sh-center">From the advisers using it</h2><hr class="rule"></div>
+    <div class="test-grid">
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="tq">"The historical benchmarking is worth every penny. Being able to show a client exactly how their 2015 policy compares against today's best cover — conditions added, definitions improved — makes the conversation so much easier."</p><div class="ta"><div class="tav">TN</div><div><div class="tn">Thomas Nicholls</div><div class="tr">Protection Adviser, Lifetime Assure</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="tq">"The daily alerts changed how I work. I get a notification the moment a provider changes a definition so I can proactively contact clients whose cover might be inferior. And at £19 a month it's a no-brainer vs the alternative."</p><div class="ta"><div class="tav">JT</div><div><div class="tn">Jordan Thomas</div><div class="tr">Protection Adviser, MAB</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="tq">"Having life cover and income protection quotes alongside CI in one place has genuinely changed my client conversations. I run a full protection review in one session now rather than bouncing between tools."</p><div class="ta"><div class="tav">SR</div><div><div class="tn">Simone Riley</div><div class="tr">Elite Force Mortgages</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2>Start comparing free today</h2>
+  <p>20+ providers · 182 conditions · Life cover · Income protection · Daily updates. Everything in one place, for less than one client meeting covers.</p>
+  <a href="https://square.link/u/HcncRU5p" class="btn btn-white btn-lg" style="font-size:1rem;padding:0.95rem 2.5rem;">Start Free Trial →</a>
+  <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.45);">Already have an account? <a href="#" style="color:rgba(255,255,255,0.75);">Log in</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ftop">
+      <div>
+        <div class="fb-logo"><a class="logo" href="#"><div class="logo-badge">IQ</div><span class="logo-text">Critical<span>IQ</span></span></a></div>
+        <p class="fb-p">The UK's most complete protection comparison platform. 20+ providers, 182 conditions, life cover and income protection — all in one place, updated automatically every day.</p>
+        <div class="fb-contact"><strong>Email</strong><span>hello@criticaliq.co.uk</span></div>
+        <div class="fb-contact"><strong>Phone</strong><span>+44 (0) 203 000 0000</span></div>
+      </div>
+      <div class="fc">
+        <h5>Platform</h5>
+        <a href="#providers">CI Policy Database</a>
+        <a href="#conditions">Conditions Tracker</a>
+        <a href="#quote">Life Cover Quotes</a>
+        <a href="#quote">Income Protection</a>
+        <a href="#history">Historical Archive</a>
+        <a href="#updates">Change Log</a>
+      </div>
+      <div class="fc">
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">News &amp; Updates</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Contact</a>
+        <h5 style="margin-top:1.2rem;">Legal</h5>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 CriticalIQ Ltd. Registered in England &amp; Wales. For authorised financial advisers only. Not regulated by the FCA. CIExpert pricing estimated from published network partner data; current rates unconfirmed.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// SCROLL TO TOP
+// ═══════════════════════════════════════
+(function() {
+  const btn = document.getElementById('scrolltop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+})();
+
+// ═══════════════════════════════════════
+// NAV SCROLL SPY
+// ═══════════════════════════════════════
+(function() {
+  const sections = ['providers','quote','conditions','pricing'];
+  const navLinks = {};
+  sections.forEach(id => {
+    const link = document.querySelector(`nav a[href="#${id}"]`);
+    if (link) navLinks[id] = link;
+  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        Object.values(navLinks).forEach(l => l.classList.remove('nav-active'));
+        if (navLinks[e.target.id]) navLinks[e.target.id].classList.add('nav-active');
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-60px 0px -40% 0px' });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+})();
+
+// ═══════════════════════════════════════
+// LIVE SYNC TIMER
+// ═══════════════════════════════════════
+(function() {
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function updateTimer() {
+    const now = new Date();
+    const next6am = new Date(now);
+    next6am.setHours(6, 0, 0, 0);
+    if (next6am <= now) next6am.setDate(next6am.getDate() + 1);
+    const diff = next6am - now;
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const elNext = document.getElementById('nextSync');
+    const elLast = document.getElementById('lastSync');
+    if (elNext) elNext.textContent = `in ${h}h ${m}m`;
+    if (elLast) elLast.textContent = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}, 06:00`;
+  }
+  updateTimer();
+  setInterval(updateTimer, 60000);
+})();
+
+// ═══════════════════════════════════════
+// PROVIDER FILTER TABS
+// ═══════════════════════════════════════
+(function() {
+  const tabs = document.querySelectorAll('.ptab');
+  const cards = document.querySelectorAll('.pcard');
+  const filterMap = {
+    'All (20)': null,
+    'Critical Illness (14)': ['CI'],
+    'Income Protection (12)': ['IP'],
+    'Life Cover (15)': ['Life'],
+    'Friendly Societies (5)': ['__friendly__']
+  };
+  const friendlyNames = ['British Friendly','Cirencester Friendly','The Exeter','Holloway Friendly','Shepherds Friendly'];
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('on'));
+      this.classList.add('on');
+      const key = this.textContent.trim();
+      const allowed = filterMap[key];
+      cards.forEach(card => {
+        if (!allowed) { card.style.display = ''; return; }
+        const badgeText = (card.querySelector('.pbadge')?.textContent || '');
+        const name = (card.querySelector('.pcard-name')?.textContent || '');
+        let show = false;
+        if (allowed[0] === '__friendly__') {
+          show = friendlyNames.some(fn => name.includes(fn.split(' ')[0]));
+        } else {
+          show = allowed.some(a => badgeText.includes(a));
+        }
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+
+// ═══════════════════════════════════════
+// QUOTE ENGINE — TABS + FORM + RESULTS
+// ═══════════════════════════════════════
+(function() {
+  const qtabs = document.querySelectorAll('.q-tab');
+  const formField4 = document.querySelector('.q-form .q-field:nth-child(4)');
+  const formField4Label = formField4?.querySelector('label');
+  const formField4Input = formField4?.querySelector('input');
+
+  const tabConfig = [
+    {
+      label: 'Sum Assured / Term',
+      placeholder: '£200,000 / 25yr',
+      value: '£200,000 / 25yr',
+      resultTag: 'CI Cover',
+      results: [
+        { rank:1, cls:'qr1', name:'Vitality SIC Plus', tier:'Serious Illness Cover Plus · 182 conditions · Severity-based · Multiple claims', iq:97, claims:'91.9%', cc:'#34d399', price:'£43.80' },
+        { rank:2, cls:'qr1', name:'Aviva Critical Illness+', tier:'73 conditions · Adviser-only product · Enhanced definitions', iq:94, claims:'93.1%', cc:'#34d399', price:'£39.60' },
+        { rank:3, cls:'qr2', name:'Guardian 1821', tier:'47 full-pay + 8 additional · No heart attack severity requirement', iq:92, claims:'92.4%', cc:'#34d399', price:'£37.40' },
+        { rank:4, cls:'qr2', name:'Royal London', tier:'46 full + 27 additional · Helping Hand service · Children\'s CI included', iq:89, claims:'89.2%', cc:'#f59e0b', price:'£35.20' },
+        { rank:5, cls:'qr3', name:'Legal &amp; General CIC Extra', tier:'69 conditions · RedArc nurse support · New: Low-grade Prostate Ca.', iq:86, claims:'91.8%', cc:'#34d399', price:'£33.10' },
+      ]
+    },
+    {
+      label: 'Sum Assured / Term',
+      placeholder: '£250,000 / 25yr',
+      value: '£250,000 / 25yr',
+      resultTag: 'Life Insurance',
+      results: [
+        { rank:1, cls:'qr1', name:'Legal &amp; General Life', tier:'Level term · Terminal illness benefit · RedArc support', iq:95, claims:'99.4%', cc:'#34d399', price:'£14.20' },
+        { rank:2, cls:'qr1', name:'Aviva Life Insurance', tier:'Level or decreasing · Care Concierge · Wellbeing support', iq:93, claims:'99.1%', cc:'#34d399', price:'£15.40' },
+        { rank:3, cls:'qr2', name:'Royal London Life', tier:'Level term · Helping Hand service · 4.6★ Trustpilot', iq:91, claims:'98.9%', cc:'#34d399', price:'£15.80' },
+        { rank:4, cls:'qr2', name:'Vitality Life', tier:'Rewards for healthy living · Save up to 40% on premiums', iq:88, claims:'98.7%', cc:'#34d399', price:'£16.10' },
+        { rank:5, cls:'qr3', name:'Scottish Widows Life', tier:'5-star Defaqto · Level or decreasing · 6m+ customers', iq:85, claims:'98.5%', cc:'#34d399', price:'£13.90' },
+      ]
+    },
+    {
+      label: 'Monthly Benefit / Deferred',
+      placeholder: '£2,500/mo · 4-week wait',
+      value: '£2,500/mo · 4-week wait',
+      resultTag: 'Income Protection',
+      results: [
+        { rank:1, cls:'qr1', name:'LV= Income Protection', tier:'Best IP Provider award 14 years running · Full or 2yr benefit period', iq:97, claims:'90.8%', cc:'#34d399', price:'£24.60' },
+        { rank:2, cls:'qr1', name:'Aviva Income Protection+', tier:'65% of first £60k + 45% above · Market leader by sales 2024', iq:94, claims:'92.1%', cc:'#34d399', price:'£22.30' },
+        { rank:3, cls:'qr2', name:'Royal London Income Protection', tier:'65% of first £15k · Helping Hand · 4.6★ Trustpilot', iq:91, claims:'91.4%', cc:'#34d399', price:'£23.80' },
+        { rank:4, cls:'qr2', name:'The Exeter', tier:'Self-employed specialist · HealthWise vGP + MOT · NHS sick pay mirror', iq:88, claims:'90.2%', cc:'#34d399', price:'£21.90' },
+        { rank:5, cls:'qr3', name:'Cirencester Friendly', tier:'No loading for smokers/risky hobbies · Best Protection Provider 2025', iq:85, claims:'89.6%', cc:'#34d399', price:'£19.40' },
+      ]
+    }
+  ];
+
+  function buildResults(cfg) {
+    const container = document.querySelector('.q-results');
+    const ageEl = document.querySelector('.q-form .q-field:first-child input');
+    const genderEl = document.querySelector('.q-form .q-field:nth-child(2) select');
+    const smokerEl = document.querySelector('.q-form .q-field:nth-child(3) select');
+    const age = ageEl?.value || '40';
+    const gender = genderEl?.value || 'Male';
+    const smoker = smokerEl?.value || 'Non-Smoker';
+
+    container.innerHTML = `
+      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-bottom:0.6rem;padding:0 0.5rem;">
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Showing <strong style="color:white;">5 of 12 providers</strong> for ${gender} · ${age} · ${smoker} — <strong style="color:#60a5fa;">${cfg.resultTag}</strong></div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);">IQ Score ↓ &nbsp;·&nbsp; Pro: sort by premium or claims</div>
+      </div>
+    `;
+
+    cfg.results.forEach(r => {
+      const d = document.createElement('div');
+      d.className = 'q-result';
+      d.innerHTML = `
+        <div class="q-rank ${r.cls}">${r.rank}</div>
+        <div><div class="q-pname">${r.name}</div><div class="q-ptier">${r.tier}</div></div>
+        <div class="q-iq">IQ ${r.iq}</div>
+        <div class="q-claims" style="color:${r.cc}">${r.claims}</div>
+        <div><div class="q-price">${r.price} <small>/mo</small></div></div>
+      `;
+      container.appendChild(d);
+    });
+
+    const lock = document.createElement('div');
+    lock.style.cssText = 'text-align:center;margin-top:0.8rem;padding:1rem 1.2rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06);';
+    lock.innerHTML = `<div style="font-size:0.83rem;color:rgba(255,255,255,0.38);margin-bottom:0.8rem;">+7 more providers available with Pro — Zurich, Scottish Widows, HSBC, Beagle Street, NFU Mutual &amp; more</div><a href="https://square.link/u/HcncRU5p" class="btn btn-azure">Start Free Trial — Unlock All Results</a>`;
+    container.appendChild(lock);
+  }
+
+  qtabs.forEach((tab, i) => {
+    tab.addEventListener('click', function() {
+      qtabs.forEach(t => t.classList.remove('act'));
+      this.classList.add('act');
+      const cfg = tabConfig[i];
+      // Update form field 4
+      if (formField4Label) formField4Label.textContent = cfg.label;
+      if (formField4Input) {
+        formField4Input.placeholder = cfg.placeholder;
+        formField4Input.value = cfg.value;
+      }
+      buildResults(cfg);
+    });
+  });
+
+  // Compare button re-runs results with current inputs
+  document.querySelector('.q-btn')?.addEventListener('click', function() {
+    const activeIdx = [...qtabs].findIndex(t => t.classList.contains('act'));
+    buildResults(tabConfig[activeIdx] || tabConfig[0]);
+  });
+})();
+
+// ═══════════════════════════════════════
+// HERO UI TABS (mockup in hero section)
+// ═══════════════════════════════════════
+(function() {
+  const heroTabs = document.querySelectorAll('.ui-tab');
+  const datasets = [
+    [
+      ['Vitality SIC+','97','182','91.9%','#34d399','£54.20'],
+      ['Aviva CIC+','94','73','93.1%','#34d399','£49.80'],
+      ['Guardian 1821','92','55','92.4%','#34d399','£47.30'],
+      ['Royal London','89','73','89.2%','#f59e0b','£44.10'],
+      ['Legal &amp; General','86','69','91.8%','#34d399','£41.60'],
+    ],
+    [
+      ['L&amp;G Life','95','N/A','99.4%','#34d399','£14.20'],
+      ['Aviva Life','93','N/A','99.1%','#34d399','£15.40'],
+      ['Royal London','91','N/A','98.9%','#34d399','£15.80'],
+      ['Vitality Life','88','N/A','98.7%','#34d399','£16.10'],
+      ['Scottish Widows','85','N/A','98.5%','#34d399','£13.90'],
+    ],
+    [
+      ['LV= IP','97','65%','90.8%','#34d399','£24.60'],
+      ['Aviva IP+','94','65%','92.1%','#34d399','£22.30'],
+      ['Royal London','91','65%','91.4%','#34d399','£23.80'],
+      ['The Exeter','88','60%','90.2%','#34d399','£21.90'],
+      ['Cirencester','85','60%','89.6%','#34d399','£19.40'],
+    ]
+  ];
+  const rankCls = ['r1g','r1g','r2g','r2g','r3g'];
+
+  function buildHero(rows) {
+    const results = document.querySelector('.ui-results');
+    const th = results.querySelector('.ui-th');
+    results.innerHTML = '';
+    results.appendChild(th);
+    rows.forEach((r, i) => {
+      const tr = document.createElement('div');
+      tr.className = 'ui-tr';
+      tr.innerHTML = `<div class="ui-rank ${rankCls[i]}">${i+1}</div><div class="ui-pname">${r[0]}</div><div class="ui-score">${r[1]}</div><div class="ui-cc">${r[2]}</div><div class="ui-pct" style="color:${r[4]}">${r[3]}</div><div class="ui-pr">${r[5]}</div>`;
+      results.appendChild(tr);
+    });
+  }
+
+  heroTabs.forEach((tab, i) => {
+    tab.addEventListener('click', function() {
+      heroTabs.forEach(t => t.classList.remove('act'));
+      this.classList.add('act');
+      buildHero(datasets[i] || datasets[0]);
+    });
+  });
+})();
+
+(function(){
+  const btn=document.getElementById('hamburger');
+  const nav=document.getElementById('mobileNav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){btn.classList.toggle('open');nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{btn.classList.remove('open');nav.classList.remove('open');}));
+})();
+</script>
+</body>
+</html>
