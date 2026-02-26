@@ -360,21 +360,19 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
   <a class="logo" href="#"><div class="logo-badge">IQ</div><span class="logo-text">Critical<span>IQ</span></span><span class="price-flag">From £19/mo</span></a>
   <nav>
     <a href="#providers">CI Policies</a>
-    <a href="#quote">Get Quotes</a>
     <a href="#conditions">Conditions</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost" style="padding:0.42rem 1rem;font-size:0.83rem;">Log In</a>
-    <a href="https://square.link/u/HcncRU5p" class="btn btn-azure" style="padding:0.42rem 1rem;font-size:0.83rem;">Free Trial</a>
+    <a href="#" onclick="event.preventDefault();var b=document.getElementById(\'ciq-access-btn\');if(b)b.click();"  class="btn btn-ghost" style="padding:0.42rem 1rem;font-size:0.83rem;">Enter Code</a>
+    <a href="/compare.html"  class="btn btn-azure" style="padding:0.42rem 1rem;font-size:0.83rem;">Compare Tool</a>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 <div class="mobile-nav" id="mobileNav">
   <a href="#providers">CI Policies</a>
-  <a href="#quote">Get Quotes</a>
   <a href="#conditions">Conditions</a>
   <a href="#pricing">Pricing</a>
-  <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost">Log In</a>
-  <a href="https://square.link/u/HcncRU5p" class="btn btn-azure">Start Free Trial</a>
+  <a href="#" onclick="event.preventDefault();var b=document.getElementById(\'ciq-access-btn\');if(b)b.click();"  class="btn btn-ghost">Enter Code</a>
+  <a href="/compare.html"  class="btn btn-azure">Compare Tool</a>
 </div>
 
 <!-- AUTO-UPDATE STATUS BAR -->
@@ -424,7 +422,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
     <h1>The <span class="hl">smarter, cheaper</span> alternative to CIExpert</h1>
     <p>Every UK critical illness, life and income protection policy in one place. Real-time condition tracking, historical benchmarking, and compliance-ready PDFs — at 59% less than the competition.</p>
     <div class="hero-cta">
-      <a href="https://square.link/u/HcncRU5p" class="btn btn-azure btn-lg">Start Free — 3 Months Free →</a>
+      <a href="/compare.html"  class="btn btn-azure btn-lg">Try Compare Tool — Free →</a>
       <a href="#providers" class="btn btn-ghost btn-lg" style="color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.18);">Explore Database ↓</a>
     </div>
     <p class="hero-note">No credit card · No commitment · Full PDF reports included</p>
@@ -571,47 +569,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
 </section>
 
 <!-- QUOTE ENGINE -->
-<section class="quote-section" id="quote">
-  <div class="quote-engine">
-    <div style="text-align:center;margin-bottom:2.5rem;">
-      <span class="label-tag" style="color:#60a5fa;">Live Quote Engine</span>
-      <h2 class="sh sh-center" style="color:white;">Get quotes across all product types</h2>
-      <hr class="rule" style="border-color:rgba(0,112,243,0.2);">
-      <p class="sub-center" style="color:rgba(255,255,255,0.45);">CI cover, life insurance and income protection from every major UK provider — compared in seconds.</p>
-    </div>
-
-    <div class="q-tabs">
-      <button class="q-tab act">Critical Illness Cover</button>
-      <button class="q-tab">Life Insurance</button>
-      <button class="q-tab">Income Protection</button>
-    </div>
-
-    <div class="q-form">
-      <div class="q-field"><label>Age</label><input type="number" value="40" min="18" max="70" placeholder="Age"></div>
-      <div class="q-field"><label>Gender</label><select><option>Male</option><option>Female</option></select></div>
-      <div class="q-field"><label>Smoker</label><select><option>Non-Smoker</option><option>Smoker</option><option>Ex-Smoker</option></select></div>
-      <div class="q-field"><label>Sum Assured / Term</label><input type="text" value="£200,000 / 25yr" placeholder="£200,000 / 25yr"></div>
-      <button class="q-btn">Compare →</button>
-    </div>
-
-    <!-- CI Results -->
-    <div class="q-results">
-      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-bottom:0.6rem;padding:0 0.5rem;">
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Showing <strong style="color:white;">12 providers</strong> for Male · 40 · Non-Smoker · £200k · 25yr CI</div>
-        <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);">Sorted by IQ Score ↓ | Pro: sort by premium, claims rate</div>
-      </div>
-      <div class="q-result"><div class="q-rank qr1">1</div><div><div class="q-pname">Vitality SIC Plus</div><div class="q-ptier">Serious Illness Cover Plus · 182 conditions · Severity-based</div></div><div class="q-iq">IQ 97</div><div class="q-claims" style="color:#34d399">91.9%</div><div><div class="q-price">£43.80 <small>/mo</small></div></div></div>
-      <div class="q-result"><div class="q-rank qr1" style="background:rgba(148,163,184,0.12);color:#94a3b8">2</div><div><div class="q-pname">Aviva Critical Illness+</div><div class="q-ptier">73 conditions · Adviser-only · Enhanced definitions</div></div><div class="q-iq">IQ 94</div><div class="q-claims" style="color:#34d399">91.5%</div><div><div class="q-price">£39.60 <small>/mo</small></div></div></div>
-      <div class="q-result"><div class="q-rank qr2">3</div><div><div class="q-pname">Guardian 1821</div><div class="q-ptier">47 full-pay + 8 additional · No heart attack severity req.</div></div><div class="q-iq">IQ 92</div><div class="q-claims" style="color:#34d399">92.4%</div><div><div class="q-price">£37.40 <small>/mo</small></div></div></div>
-      <div class="q-result"><div class="q-rank qr2" style="background:rgba(100,116,139,0.08);color:#64748b">4</div><div><div class="q-pname">Royal London</div><div class="q-ptier">46 full + 27 additional · Helping Hand · Children's CI inc.</div></div><div class="q-iq">IQ 89</div><div class="q-claims" style="color:#f59e0b">89.2%</div><div><div class="q-price">£35.20 <small>/mo</small></div></div></div>
-      <div class="q-result"><div class="q-rank qr2" style="background:rgba(100,116,139,0.08);color:#64748b">5</div><div><div class="q-pname">Legal &amp; General CIC Extra</div><div class="q-ptier">69 conditions · RedArc · New: Low-grade prostate Ca.</div></div><div class="q-iq">IQ 86</div><div class="q-claims" style="color:#34d399">91.8%</div><div><div class="q-price">£33.10 <small>/mo</small></div></div></div>
-      <div style="text-align:center;margin-top:0.8rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
-        <div style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;">+7 more providers shown with Pro subscription · Includes Zurich, Scottish Widows, LV=, HSBC, Beagle Street, NFU Mutual, Barclays</div>
-        <a href="#" class="btn btn-azure">Unlock all 12 results — Free Trial</a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Quote section removed -->
 
 <!-- CONDITIONS TABLE -->
 <section class="cond-section" id="conditions">
@@ -650,7 +608,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
         </tbody>
       </table>
     </div>
-    <p style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Showing 20 of 182 tracked conditions. <a href="https://square.link/u/HcncRU5p" style="color:var(--azure);font-weight:600;">Full database with Pro →</a> &nbsp; Incidence: male aged 40, 25-year term. ✓ full · 25% partial · — not covered</p>
+    <p style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Showing 20 of 182 tracked conditions. <a href="/compare.html" style="color:var(--azure);font-weight:600;">Full database with Pro →</a> &nbsp; Incidence: male aged 40, 25-year term. ✓ full · 25% partial · — not covered</p>
   </div>
 </section>
 
@@ -723,7 +681,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
           <li><span class="n">✗</span><span style="color:#94a3b8">Life &amp; income protection quotes</span></li>
           <li><span class="n">✗</span><span style="color:#94a3b8">Daily condition alerts</span></li>
         </ul>
-        <a href="https://square.link/u/HcncRU5p" class="btn btn-ghost" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Start Free — No Card Needed</a>
+        <a href="/compare.html"  class="btn btn-ghost" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Try Compare Tool — Free</a>
       </div>
       <div class="pr-card feat" style="position:relative;">
         <div class="pr-pop">MOST POPULAR · 59% CHEAPER THAN CIEXPERT</div>
@@ -742,7 +700,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
           <li><span class="y">✓</span>Branded PDF compliance reports</li>
           <li><span class="y">✓</span>Children's CI comparison tool</li>
         </ul>
-        <a href="https://square.link/u/HcncRU5p" class="btn btn-azure" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Start 7-Day Free Trial →</a>
+        <a href="/compare.html"  class="btn btn-azure" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.75rem;">Start Comparing →</a>
         <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;">Or pay annually — <a href="https://square.link/u/rBQ9f6eR" style="color:var(--azure);font-weight:700;">£189/yr — save £39 →</a> →</a></p>
       </div>
     </div>
@@ -799,8 +757,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
 <section class="cta-sec">
   <h2>Start comparing free today</h2>
   <p>26+ providers · 182 conditions · Life cover · Income protection · Daily updates. Everything in one place, for less than one client meeting covers.</p>
-  <a href="https://square.link/u/HcncRU5p" class="btn btn-white btn-lg" style="font-size:1rem;padding:0.95rem 2.5rem;">Start Free Trial →</a>
-  <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.45);">Already have an account? <a href="#" style="color:rgba(255,255,255,0.75);">Log in</a></p>
+  <a href="/compare.html"  class="btn btn-white btn-lg" style="font-size:1rem;padding:0.95rem 2.5rem;">Start Comparing →</a>
+  <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.45);">Already have access? <a href="#" onclick="event.preventDefault();var b=document.getElementById(\'ciq-access-btn\');if(b)b.click();"  style="color:rgba(255,255,255,0.75);">Enter Code</a></p>
 </section>
 
 <!-- FOOTER -->
@@ -817,8 +775,6 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
         <h5>Platform</h5>
         <a href="#providers">CI Policy Database</a>
         <a href="#conditions">Conditions Tracker</a>
-        <a href="#quote">Life Cover Quotes</a>
-        <a href="#quote">Income Protection</a>
         <a href="#history">Historical Archive</a>
         <a href="#updates">Change Log</a>
       </div>
@@ -835,7 +791,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 CriticalIQ. For authorised financial advisers only. Not regulated by the FCA. CIExpert pricing estimated from published network partner data; current rates unconfirmed. Premium estimates are illustrative only and not actual quotes.</span>
+      <span>© 2026 CriticalIQ. For authorised financial advisers only. Not regulated by the FCA. CIExpert pricing estimated from published network partner data; current rates unconfirmed. </span>
     </div>
   </div>
 </footer>
@@ -855,7 +811,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
 // NAV SCROLL SPY
 // ═══════════════════════════════════════
 (function() {
-  const sections = ['providers','quote','conditions','pricing'];
+  const sections = ['providers','conditions','pricing'];
   const navLinks = {};
   sections.forEach(id => {
     const link = document.querySelector(`nav a[href="#${id}"]`);
@@ -932,114 +888,6 @@ footer{background:var(--ink);color:rgba(255,255,255,0.4);padding:4rem 5% 2rem;}
         card.style.display = show ? '' : 'none';
       });
     });
-  });
-})();
-
-// ═══════════════════════════════════════
-// QUOTE ENGINE — TABS + FORM + RESULTS
-// ═══════════════════════════════════════
-(function() {
-  const qtabs = document.querySelectorAll('.q-tab');
-  const formField4 = document.querySelector('.q-form .q-field:nth-child(4)');
-  const formField4Label = formField4?.querySelector('label');
-  const formField4Input = formField4?.querySelector('input');
-
-  const tabConfig = [
-    {
-      label: 'Sum Assured / Term',
-      placeholder: '£200,000 / 25yr',
-      value: '£200,000 / 25yr',
-      resultTag: 'CI Cover',
-      results: [
-        { rank:1, cls:'qr1', name:'Vitality SIC Plus', tier:'Serious Illness Cover Plus · 182 conditions · Severity-based · Multiple claims', iq:97, claims:'91.9%', cc:'#34d399', price:'£43.80' },
-        { rank:2, cls:'qr1', name:'Aviva Critical Illness+', tier:'73 conditions · Adviser-only product · Enhanced definitions', iq:94, claims:'91.5%', cc:'#34d399', price:'£39.60' },
-        { rank:3, cls:'qr2', name:'Guardian 1821', tier:'47 full-pay + 8 additional · No heart attack severity requirement', iq:92, claims:'92.4%', cc:'#34d399', price:'£37.40' },
-        { rank:4, cls:'qr2', name:'Royal London', tier:'46 full + 27 additional · Helping Hand service · Children\'s CI included', iq:89, claims:'89.2%', cc:'#f59e0b', price:'£35.20' },
-        { rank:5, cls:'qr3', name:'Legal &amp; General CIC Extra', tier:'69 conditions · RedArc nurse support · New: Low-grade Prostate Ca.', iq:86, claims:'91.8%', cc:'#34d399', price:'£33.10' },
-      ]
-    },
-    {
-      label: 'Sum Assured / Term',
-      placeholder: '£250,000 / 25yr',
-      value: '£250,000 / 25yr',
-      resultTag: 'Life Insurance',
-      results: [
-        { rank:1, cls:'qr1', name:'Legal &amp; General Life', tier:'Level term · Terminal illness benefit · RedArc support', iq:95, claims:'99.4%', cc:'#34d399', price:'£14.20' },
-        { rank:2, cls:'qr1', name:'Aviva Life Insurance', tier:'Level or decreasing · Care Concierge · Wellbeing support', iq:93, claims:'99.1%', cc:'#34d399', price:'£15.40' },
-        { rank:3, cls:'qr2', name:'Royal London Life', tier:'Level term · Helping Hand service · 4.6★ Trustpilot', iq:91, claims:'98.9%', cc:'#34d399', price:'£15.80' },
-        { rank:4, cls:'qr2', name:'Vitality Life', tier:'Rewards for healthy living · Save up to 40% on premiums', iq:88, claims:'98.7%', cc:'#34d399', price:'£16.10' },
-        { rank:5, cls:'qr3', name:'Scottish Widows Life', tier:'5-star Defaqto · Level or decreasing · 6m+ customers', iq:85, claims:'98.5%', cc:'#34d399', price:'£13.90' },
-      ]
-    },
-    {
-      label: 'Monthly Benefit / Deferred',
-      placeholder: '£2,500/mo · 4-week wait',
-      value: '£2,500/mo · 4-week wait',
-      resultTag: 'Income Protection',
-      results: [
-        { rank:1, cls:'qr1', name:'LV= Income Protection', tier:'Best IP Provider award 14 years running · Full or 2yr benefit period', iq:97, claims:'90.8%', cc:'#34d399', price:'£24.60' },
-        { rank:2, cls:'qr1', name:'Aviva Income Protection+', tier:'65% of first £60k + 45% above · Market leader by sales 2024', iq:94, claims:'92.1%', cc:'#34d399', price:'£22.30' },
-        { rank:3, cls:'qr2', name:'Royal London Income Protection', tier:'65% of first £15k · Helping Hand · 4.6★ Trustpilot', iq:91, claims:'91.4%', cc:'#34d399', price:'£23.80' },
-        { rank:4, cls:'qr2', name:'The Exeter', tier:'Self-employed specialist · HealthWise vGP + MOT · NHS sick pay mirror', iq:88, claims:'90.2%', cc:'#34d399', price:'£21.90' },
-        { rank:5, cls:'qr3', name:'Cirencester Friendly', tier:'No loading for smokers/risky hobbies · Best Protection Provider 2025', iq:85, claims:'89.6%', cc:'#34d399', price:'£19.40' },
-      ]
-    }
-  ];
-
-  function buildResults(cfg) {
-    const container = document.querySelector('.q-results');
-    const ageEl = document.querySelector('.q-form .q-field:first-child input');
-    const genderEl = document.querySelector('.q-form .q-field:nth-child(2) select');
-    const smokerEl = document.querySelector('.q-form .q-field:nth-child(3) select');
-    const age = ageEl?.value || '40';
-    const gender = genderEl?.value || 'Male';
-    const smoker = smokerEl?.value || 'Non-Smoker';
-
-    container.innerHTML = `
-      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-bottom:0.6rem;padding:0 0.5rem;">
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Showing <strong style="color:white;">5 of 12 providers</strong> for ${gender} · ${age} · ${smoker} — <strong style="color:#60a5fa;">${cfg.resultTag}</strong></div>
-        <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);">IQ Score ↓ &nbsp;·&nbsp; Pro: sort by premium or claims</div>
-      </div>
-    `;
-
-    cfg.results.forEach(r => {
-      const d = document.createElement('div');
-      d.className = 'q-result';
-      d.innerHTML = `
-        <div class="q-rank ${r.cls}">${r.rank}</div>
-        <div><div class="q-pname">${r.name}</div><div class="q-ptier">${r.tier}</div></div>
-        <div class="q-iq">IQ ${r.iq}</div>
-        <div class="q-claims" style="color:${r.cc}">${r.claims}</div>
-        <div><div class="q-price">${r.price} <small>/mo</small></div></div>
-      `;
-      container.appendChild(d);
-    });
-
-    const lock = document.createElement('div');
-    lock.style.cssText = 'text-align:center;margin-top:0.8rem;padding:1rem 1.2rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06);';
-    lock.innerHTML = `<div style="font-size:0.83rem;color:rgba(255,255,255,0.38);margin-bottom:0.8rem;">+7 more providers available with Pro — Zurich, Scottish Widows, HSBC, Beagle Street, NFU Mutual &amp; more</div><a href="https://square.link/u/HcncRU5p" class="btn btn-azure">Start Free Trial — Unlock All Results</a>`;
-    container.appendChild(lock);
-  }
-
-  qtabs.forEach((tab, i) => {
-    tab.addEventListener('click', function() {
-      qtabs.forEach(t => t.classList.remove('act'));
-      this.classList.add('act');
-      const cfg = tabConfig[i];
-      // Update form field 4
-      if (formField4Label) formField4Label.textContent = cfg.label;
-      if (formField4Input) {
-        formField4Input.placeholder = cfg.placeholder;
-        formField4Input.value = cfg.value;
-      }
-      buildResults(cfg);
-    });
-  });
-
-  // Compare button re-runs results with current inputs
-  document.querySelector('.q-btn')?.addEventListener('click', function() {
-    const activeIdx = [...qtabs].findIndex(t => t.classList.contains('act'));
-    buildResults(tabConfig[activeIdx] || tabConfig[0]);
   });
 })();
 
