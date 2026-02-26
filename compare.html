@@ -56,6 +56,7 @@ h1{font-size:1.8rem;font-weight:900;margin-bottom:0.2rem;}
 .btn-primary:hover{background:var(--azure-d);}
 .btn-outline{background:var(--white);border:1.5px solid var(--border);color:var(--mid);}
 .btn-outline:hover{border-color:var(--azure);color:var(--azure);}
+.btn-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.2rem;}
 
 /* Results table */
 .results-wrap{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;}
@@ -77,17 +78,53 @@ h1{font-size:1.8rem;font-weight:900;margin-bottom:0.2rem;}
 .claims-fill.high{background:var(--sage);}.claims-fill.med{background:var(--amber);}.claims-fill.low{background:var(--red);}
 .prov-name{font-weight:700;color:var(--ink);}
 .type-tag{font-size:0.68rem;padding:2px 6px;border-radius:4px;font-weight:600;}
-.features-tag{font-size:0.68rem;color:var(--mid);line-height:1.5;}
-.children-tag{font-size:0.65rem;padding:2px 6px;border-radius:4px;font-weight:600;background:var(--sage-l);color:var(--sage);}
+.bench-link{font-size:0.75rem;color:var(--azure);font-weight:600;text-decoration:none;cursor:pointer;background:none;border:none;font-family:inherit;}
+.bench-link:hover{text-decoration:underline;}
+.premium-cell
+/* Sortable headers */
 .rtable th.sortable{cursor:pointer;user-select:none;}
 .rtable th.sortable:hover{color:var(--azure);}
 .rtable th.sorted-asc::after{content:' ↑';color:var(--azure);}
 .rtable th.sorted-desc::after{content:' ↓';color:var(--azure);}
 
-/* Compare tab */
-.compare-section{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;}
-.compare-section h3{font-size:1rem;font-weight:800;margin-bottom:0.3rem;}
-.compare-section>p{font-size:0.82rem;color:var(--mid);margin-bottom:1.2rem;line-height:1.5;}
+/* Pro overlay */
+.pro-overlay{position:relative;}
+.pro-overlay::after{content:'Pro Feature — Enter your access code to unlock';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(248,250,252,.85);color:var(--purple);font-weight:700;font-size:0.88rem;border-radius:12px;cursor:pointer;z-index:5;}
+
+/* Actions bar */
+.actions-bar{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.5rem;}
+.actions-bar h3{font-size:0.88rem;font-weight:700;}
+.actions-bar .btn-group{display:flex;gap:0.5rem;flex-wrap:wrap;}
+
+/* Historical search */
+.history-search{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.3rem;margin-bottom:1.5rem;}
+.history-search h3{font-size:1rem;font-weight:800;margin-bottom:0.2rem;}
+.history-search>p{font-size:0.8rem;color:var(--mid);margin-bottom:1rem;}
+.search-row{display:flex;gap:0.7rem;margin-bottom:0.8rem;flex-wrap:wrap;}
+.search-row .form-group{flex:1;min-width:150px;}
+.hist-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:0.6rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all 0.2s;}
+.hist-card:hover{border-color:var(--azure);background:var(--azure-l);}
+.hist-card h4{font-size:0.88rem;font-weight:700;margin-bottom:0.15rem;}
+.hist-card .hist-meta{font-size:0.72rem;color:var(--mid);}
+.hist-card .hist-badge{background:var(--dark);color:white;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:20px;display:flex;align-items:center;gap:4px;white-space:nowrap;}
+.hist-card .cond-count{background:var(--azure);color:white;font-size:0.68rem;font-weight:800;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.hist-empty{text-align:center;padding:2rem;color:var(--mid);font-size:0.85rem;}
+
+/* Benchmark */
+.steps{display:flex;gap:0;margin-bottom:1.5rem;background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.step{flex:1;padding:0.8rem 1rem;font-size:0.78rem;font-weight:600;color:var(--muted);text-align:center;border-right:1px solid var(--border);transition:all .2s;}
+.step:last-child{border-right:none;}
+.step.active{background:var(--azure-l);color:var(--azure);}
+.step.done{background:var(--sage-l);color:var(--sage);}
+.bench-section{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.3rem;margin-bottom:1.5rem;}
+.bench-section h3{font-size:1rem;font-weight:800;margin-bottom:0.8rem;}
+.compare-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:1.5rem;}
+.mode-card{background:var(--white);border:2px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center;cursor:pointer;transition:all 0.2s;}
+.mode-card:hover{border-color:var(--azure);background:var(--azure-l);}
+.mode-card.selected{border-color:var(--azure);background:var(--azure-l);box-shadow:0 0 0 3px rgba(0,112,243,0.1);}
+.mode-card .mode-icon{font-size:1.5rem;margin-bottom:0.5rem;}
+.mode-card h4{font-size:0.88rem;font-weight:800;margin-bottom:0.2rem;}
+.mode-card p{font-size:0.72rem;color:var(--mid);line-height:1.4;}
 
 /* Verdict */
 .verdict{border-radius:12px;padding:1.3rem 1.5rem;margin-bottom:1.5rem;}
@@ -106,7 +143,7 @@ h1{font-size:1.8rem;font-weight:900;margin-bottom:0.2rem;}
 .stat-pill.lost{background:#fee2e2;color:#dc2626;}
 
 /* Definition comparison */
-.def-section{margin-bottom:1rem;}
+.def-section{margin-bottom:1.5rem;}
 .def-header{padding:0.6rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:800;margin-bottom:0.5rem;cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
 .def-header.gained{background:#dcfce7;color:#16a34a;}
 .def-header.improved{background:#dbeafe;color:#2563eb;}
@@ -115,7 +152,7 @@ h1{font-size:1.8rem;font-weight:900;margin-bottom:0.2rem;}
 .def-header.lost{background:#fee2e2;color:#dc2626;}
 .def-rows{overflow:hidden;max-height:0;transition:max-height .3s ease;}
 .def-rows.open{max-height:9999px;}
-.def-row{display:grid;grid-template-columns:160px 1fr 1fr auto;gap:0.5rem;padding:0.6rem 1rem;border-bottom:1px solid #f0f4f8;font-size:0.78rem;align-items:start;}
+.def-row{display:grid;grid-template-columns:180px 1fr 1fr auto;gap:0.5rem;padding:0.6rem 1rem;border-bottom:1px solid #f0f4f8;font-size:0.78rem;align-items:start;}
 .def-row:last-child{border-bottom:none;}
 .def-condition{font-weight:700;color:var(--ink);}
 .def-old{color:var(--mid);font-size:0.75rem;line-height:1.5;}
@@ -126,6 +163,16 @@ h1{font-size:1.8rem;font-weight:900;margin-bottom:0.2rem;}
 .def-status.tightened{background:#fef3c7;color:#d97706;}
 .def-status.partial{background:var(--purple-l);color:var(--purple);}
 
+/* Email modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal{background:var(--white);border-radius:12px;padding:1.8rem;max-width:400px;width:90%;box-shadow:0 25px 50px rgba(0,0,0,.25);}
+.modal h3{font-size:1rem;font-weight:800;margin-bottom:0.3rem;}
+.modal p{font-size:0.82rem;color:var(--mid);margin-bottom:1rem;}
+.modal input{width:100%;padding:0.55rem 0.7rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:0.85rem;margin-bottom:0.6rem;outline:none;}
+.modal input:focus{border-color:var(--azure);}
+.modal-btns{display:flex;gap:0.5rem;justify-content:flex-end;margin-top:0.5rem;}
+
 /* Footer */
 footer{text-align:center;padding:2rem 5%;font-size:0.75rem;color:var(--muted);border-top:1px solid var(--border);margin-top:2rem;}
 footer a{color:var(--mid);text-decoration:none;}
@@ -134,13 +181,29 @@ footer a:hover{color:var(--azure);}
 /* Responsive */
 @media(max-width:700px){
   .form-grid{grid-template-columns:1fr 1fr;}
+  .compare-modes{grid-template-columns:1fr;}
   .def-row{grid-template-columns:1fr;gap:0.3rem;}
-  .rtable{font-size:0.75rem;}
-  .rtable th,.rtable td{padding:0.45rem 0.5rem;}
+  .def-old,.def-new{padding-left:0;}
+  .steps{flex-direction:column;}
 }
+
+/* ═══ MOBILE RESPONSIVE ═══ */
 @media(max-width:480px){
-  .form-grid{grid-template-columns:1fr;}
-  h1{font-size:1.4rem;}
+  header{padding:0 3%;height:56px;}
+  nav{gap:0;}
+  nav>a:not(.logo):not(.btn):not(.btn-azure){display:none;}
+  nav .btn,nav .btn-azure{font-size:0.75rem;padding:6px 12px;}
+  header button{font-size:0.7rem;padding:4px 8px;}
+  .logo .price-badge{display:none;}
+  body{padding-top:56px;}
+  .search-bar,.filter-bar{padding:0 3%;}
+  .search-bar input{font-size:0.85rem;}
+  .provider-card{margin:0 -1%;}
+  .results-header{padding:0 3%;font-size:0.85rem;}
+  #benchmarkTool{padding:1rem 3%;}
+  #benchmarkTool h3{font-size:1rem;}
+  .hist-card{padding:0.8rem;}
+  .hist-card h4{font-size:0.85rem;}
 }
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -156,25 +219,32 @@ footer a:hover{color:var(--azure);}
     <a href="/#providers">Providers</a>
     <a href="/changelog.html">Change Log</a>
     <span class="pro-badge">PRO</span>
-  <button id="ciq-access-btn" style="background:#6366f1;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-left:12px;white-space:nowrap;">Enter Access Code</button></div>
+  <button id="ciq-access-btn" style="background: rgb(99, 102, 241); color: rgb(255, 255, 255); border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; margin-left: 12px; white-space: nowrap;">Enter Access Code</button></div>
 </div>
 
 <!-- MAIN -->
 <div class="container">
 <h1>CI Comparison Tool</h1>
-<p class="subtitle">Rank current providers for your client, or compare a historic policy against today's market.</p>
+<p class="subtitle">Compare providers, benchmark historic policies definition-by-definition, and generate compliance-ready reports.</p>
 
 <!-- TABS -->
 <div class="tool-tabs">
-  <button class="tool-tab active" onclick="switchTab('rankings',this)">Provider Rankings</button>
-  <button class="tool-tab" onclick="switchTab('compare',this)">Compare Policies</button>
+  <button class="tool-tab active" onclick="switchTab('compare',this)">New Comparison</button>
+  <button class="tool-tab" onclick="switchTab('history',this)">Historical Policy Search</button>
+  <button class="tool-tab" onclick="switchTab('benchmark',this)">Compare Existing Policy</button>
 </div>
 
-<!-- ══════════════════════════════════════ -->
-<!-- TAB 1: PROVIDER RANKINGS              -->
-<!-- ══════════════════════════════════════ -->
-<div id="tab-rankings" class="tab-pane active">
+<!-- TAB 1: NEW COMPARISON -->
+<div id="tab-compare" class="tab-pane active">
   <div class="form-grid">
+    <div class="form-group"><label>Product Type</label>
+      <select id="productType" onchange="renderRankings()">
+        <option value="ci">Critical Illness Cover</option>
+        <option value="life">Life Insurance</option>
+        <option value="ip">Income Protection</option>
+        <option value="cilife">CI + Life Combined</option>
+      </select>
+    </div>
     <div class="form-group"><label>Client Age</label>
       <input type="number" id="age" value="44" min="18" max="70" onchange="renderRankings()">
     </div>
@@ -184,150 +254,1074 @@ footer a:hover{color:var(--azure);}
     <div class="form-group"><label>Smoker Status</label>
       <select id="smoker" onchange="renderRankings()"><option value="Non-Smoker">Non-Smoker</option><option value="Smoker">Smoker</option><option value="Ex-Smoker">Ex-Smoker (12mo+)</option></select>
     </div>
-    <div class="form-group"><label>Has Children?</label>
-      <select id="children" onchange="renderRankings()"><option value="no">No</option><option value="yes">Yes</option></select>
-    </div>
   </div>
-  <div style="display:flex;gap:0.6rem;margin-bottom:1.2rem;">
-    <button class="btn btn-primary" onclick="renderRankings()">Rank Providers →</button>
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="renderRankings()">Compare All Providers →</button>
     <button class="btn btn-outline" onclick="resetFilters()">Reset</button>
   </div>
-  <div id="rankingsContainer"></div>
+
+  <div id="rankingsContainer"><div class="results-wrap">
+    <div class="results-bar">
+      <h3 id="resultsTitle">Provider Rankings — Male · 44 · Non-Smoker CI</h3>
+      <div><span class="results-badge blue">16 providers</span>
+      <span class="results-badge green">182 conditions</span></div>
+    </div>
+    <table class="rtable" id="resultsTable">
+      <thead><tr>
+        <th width="30">#</th>
+        <th class="sortable" onclick="sortBy('name')">Provider</th>
+        <th class="sortable sorted-desc" onclick="sortBy('iq')">IQ</th>
+        <th class="sortable" onclick="sortBy('conditions')">Conditions</th>
+        <th class="sortable" onclick="sortBy('claims')">Claims</th>
+        <th>Type</th>
+        <th></th>
+      </tr></thead><tbody><tr class="rank-1">
+      <td class="rank-num">1</td>
+      <td class="prov-name">Vitality SIC Plus</td>
+      <td><span class="iq-pill iq-90">97</span></td>
+      <td>182</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:55px"></span></span>91.9%</td>
+      <td><span class="type-tag">Severity</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('vitality')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">2</td>
+      <td class="prov-name">Aviva CIC+</td>
+      <td><span class="iq-pill iq-90">94</span></td>
+      <td>73</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:55px"></span></span>91.5%</td>
+      <td><span class="type-tag">Enhanced</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('aviva')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">3</td>
+      <td class="prov-name">Guardian 1821</td>
+      <td><span class="iq-pill iq-90">92</span></td>
+      <td>55</td>
+      <td><span class="claims-bar"><span class="claims-fill high" style="width:55px"></span></span>92%</td>
+      <td><span class="type-tag">No severity</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('guardian')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">4</td>
+      <td class="prov-name">Royal London</td>
+      <td><span class="iq-pill iq-80">89</span></td>
+      <td>73</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>89.7%</td>
+      <td><span class="type-tag">Full+Add</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('rl')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">5</td>
+      <td class="prov-name">L&amp;G Extra</td>
+      <td><span class="iq-pill iq-80">86</span></td>
+      <td>69</td>
+      <td><span class="claims-bar"><span class="claims-fill high" style="width:56px"></span></span>93%</td>
+      <td><span class="type-tag">Extra</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('lg')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">6</td>
+      <td class="prov-name">Scottish Widows</td>
+      <td><span class="iq-pill iq-80">84</span></td>
+      <td>57</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:55px"></span></span>91.8%</td>
+      <td><span class="type-tag">Blanket</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('sw')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">7</td>
+      <td class="prov-name">Zurich Enhanced</td>
+      <td><span class="iq-pill iq-80">82</span></td>
+      <td>49</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>90.1%</td>
+      <td><span class="type-tag">Enhanced</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('zurich')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">8</td>
+      <td class="prov-name">LV= Enhanced</td>
+      <td><span class="iq-pill iq-80">80</span></td>
+      <td>49</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>90%</td>
+      <td><span class="type-tag">+50% enh</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('lv')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">9</td>
+      <td class="prov-name">HSBC CI+</td>
+      <td><span class="iq-pill iq-70">78</span></td>
+      <td>40</td>
+      <td><span class="claims-bar"><span class="claims-fill high" style="width:57px"></span></span>94.4%</td>
+      <td><span class="type-tag">CI Plus</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('hsbc')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">10</td>
+      <td class="prov-name">Aegon CI</td>
+      <td><span class="iq-pill iq-70">75</span></td>
+      <td>52</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>90.5%</td>
+      <td><span class="type-tag">Enhanced</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('aegon')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">11</td>
+      <td class="prov-name">NFU Mutual</td>
+      <td><span class="iq-pill iq-70">74</span></td>
+      <td>48</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:53px"></span></span>~88%</td>
+      <td><span class="type-tag">Aviva u/w</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('nfu')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">12</td>
+      <td class="prov-name">Barclays CI</td>
+      <td><span class="iq-pill iq-70">72</span></td>
+      <td>40</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:55px"></span></span>91%</td>
+      <td><span class="type-tag">Standard</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('barclays')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">13</td>
+      <td class="prov-name">Nationwide CI</td>
+      <td><span class="iq-pill iq-70">70</span></td>
+      <td>46</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>89.7%</td>
+      <td><span class="type-tag">Full+Add</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('nationwide')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">14</td>
+      <td class="prov-name">Beagle Street</td>
+      <td><span class="iq-pill iq-60">68</span></td>
+      <td>30</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:53px"></span></span>88.5%</td>
+      <td><span class="type-tag">Core</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('beagle')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">15</td>
+      <td class="prov-name">Post Office CI</td>
+      <td><span class="iq-pill iq-60">68</span></td>
+      <td>40</td>
+      <td><span class="claims-bar"><span class="claims-fill med" style="width:54px"></span></span>89.7%</td>
+      <td><span class="type-tag">Standard</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('postoffice')">Benchmark →</button></td>
+    </tr><tr class="">
+      <td class="rank-num">16</td>
+      <td class="prov-name">Canada Life / Countrywide</td>
+      <td><span class="iq-pill iq-60">65</span></td>
+      <td>35</td>
+      <td><span class="claims-bar"><span class="claims-fill low" style="width:52px"></span></span>87%</td>
+      <td><span class="type-tag">Standard</span></td>
+      <td><button class="bench-link" onclick="startBenchmark('canadacw')">Benchmark →</button></td>
+    </tr></tbody></table></div></div>
+
+  <div class="actions-bar" id="exportBar" style="display: flex;">
+    <h3>Export</h3>
+    <div class="btn-group">
+      <button class="btn btn-outline" onclick="dlPDF()">⬇ Download PDF</button>
+      <button class="btn btn-outline" onclick="showEmail()">✉ Email Report</button>
+      <button class="btn btn-outline" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════ -->
-<!-- TAB 2: COMPARE POLICIES               -->
-<!-- ══════════════════════════════════════ -->
-<div id="tab-compare" class="tab-pane">
-  <div class="compare-section" id="compareForm">
-    <h3>Compare a Historic Policy Against Today's Market</h3>
-    <p>Select your client's existing policy and the current provider to compare against. We'll generate a full PDF report showing every definition: gained, improved, weakened, or missing.</p>
+<!-- TAB 2: HISTORICAL POLICY SEARCH -->
+<div id="tab-history" class="tab-pane">
+  <div class="history-search">
+    <h3>Search 488+ Historical CI Policies</h3>
+    <p>Find any UK CI policy from 1983 to today. Click to benchmark against current market.</p>
+    <div class="search-row">
+      <div class="form-group"><label>Provider</label>
+        <select id="histProvider" onchange="renderHistory()">
+          <option value="">All Providers</option>
+        <option value="Aviva">Aviva</option><option value="Friends Life">Friends Life</option><option value="AIG Life UK">AIG Life UK</option><option value="Norwich Union">Norwich Union</option><option value="Vitality">Vitality</option><option value="Royal London">Royal London</option><option value="Bright Grey">Bright Grey</option><option value="Scottish Provident">Scottish Provident</option><option value="Legal &amp; General">Legal &amp; General</option><option value="Guardian 1821">Guardian 1821</option><option value="Scottish Widows">Scottish Widows</option><option value="Zurich">Zurich</option><option value="LV=">LV=</option><option value="HSBC">HSBC</option><option value="NFU Mutual">NFU Mutual</option><option value="Sun Life of Canada">Sun Life of Canada</option><option value="Canada Life">Canada Life</option><option value="Skandia">Skandia</option><option value="National Friendly">National Friendly</option><option value="Aegon">Aegon</option><option value="Wesleyan">Wesleyan</option><option value="Friends Provident">Friends Provident</option><option value="CGU">CGU</option><option value="Scottish Equitable">Scottish Equitable</option><option value="Scottish Mutual">Scottish Mutual</option><option value="Eagle Star">Eagle Star</option><option value="Allied Dunbar">Allied Dunbar</option><option value="Scottish Amicable">Scottish Amicable</option><option value="Clerical Medical">Clerical Medical</option><option value="AIG Life">AIG Life</option><option value="Barclays">Barclays</option></select>
+      </div>
+      <div class="form-group"><label>Year</label>
+        <select id="histYear" onchange="renderHistory()">
+          <option value="">All Years</option>
+        <option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2012">2012</option><option value="2010">2010</option><option value="2008">2008</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2000">2000</option><option value="1998">1998</option><option value="1995">1995</option><option value="1988">1988</option><option value="1985">1985</option></select>
+      </div>
+      <div class="form-group"><label>Type</label>
+        <select id="histType" onchange="renderHistory()">
+          <option value="">All Types</option>
+          <option value="CI Standard">CI Standard</option>
+          <option value="CI Enhanced">CI Enhanced</option>
+          <option value="CI + Life">CI + Life</option>
+          <option value="Severity-based">Severity-based</option>
+          <option value="Original CI">Original CI</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="renderHistory()">Search Archive →</button>
+  </div>
+  <div id="historyResults">
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC Plus',2026,182)">
+      <div>
+        <h4>Vitality SIC Plus</h4>
+        <div class="hist-meta">2026 · Severity-based · 182 conditions · Current</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">182</span>
+        <span class="hist-badge">2026</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Royal London','Royal London CI',2025,73)">
+      <div>
+        <h4>Royal London CI</h4>
+        <div class="hist-meta">2025 · CI Enhanced · 73 conditions · Current</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">73</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Legal &amp; General','L&amp;G CI Extra',2025,69)">
+      <div>
+        <h4>L&amp;G CI Extra</h4>
+        <div class="hist-meta">2025 · CI Enhanced · 69 conditions · Current</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">69</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Guardian 1821','Guardian 1821 CI',2025,55)">
+      <div>
+        <h4>Guardian 1821 CI</h4>
+        <div class="hist-meta">2025 · CI Standard · 55 conditions · Current</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">55</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Widows','Scottish Widows CI',2025,57)">
+      <div>
+        <h4>Scottish Widows CI</h4>
+        <div class="hist-meta">2025 · CI Standard · 57 conditions · Current blanket</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">57</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Zurich','Zurich Enhanced CI',2025,49)">
+      <div>
+        <h4>Zurich Enhanced CI</h4>
+        <div class="hist-meta">2025 · CI Enhanced · 49 conditions · Current</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">49</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('LV=','LV= Enhanced CI',2025,49)">
+      <div>
+        <h4>LV= Enhanced CI</h4>
+        <div class="hist-meta">2025 · CI Enhanced · 49 conditions · Current +50%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">49</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('HSBC','HSBC CI+',2025,40)">
+      <div>
+        <h4>HSBC CI+</h4>
+        <div class="hist-meta">2025 · CI Enhanced · 40 conditions · Aviva underwritten</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">40</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('NFU Mutual','NFU Mutual CI',2025,48)">
+      <div>
+        <h4>NFU Mutual CI</h4>
+        <div class="hist-meta">2025 · CI Standard · 48 conditions · Aviva u/w</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">48</span>
+        <span class="hist-badge">2025</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC Plus',2024,165)">
+      <div>
+        <h4>Vitality SIC Plus</h4>
+        <div class="hist-meta">2024 · Severity-based · 165 conditions · Pre-2026 update</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">165</span>
+        <span class="hist-badge">2024</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Aegon','Aegon CI Enhanced',2024,52)">
+      <div>
+        <h4>Aegon CI Enhanced</h4>
+        <div class="hist-meta">2024 · CI Enhanced · 52 conditions · Scottish Equitable heritage</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">52</span>
+        <span class="hist-badge">2024</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Aviva','Aviva CIC Standard',2023,38)">
+      <div>
+        <h4>Aviva CIC Standard</h4>
+        <div class="hist-meta">2023 · CI Standard · 38 conditions · ABI 2022</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2023</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Royal London','Royal London CI',2022,65)">
+      <div>
+        <h4>Royal London CI</h4>
+        <div class="hist-meta">2022 · CI Enhanced · 65 conditions · ABI 2019</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">65</span>
+        <span class="hist-badge">2022</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Wesleyan','Wesleyan CI',2022,38)">
+      <div>
+        <h4>Wesleyan CI</h4>
+        <div class="hist-meta">2022 · CI Standard · 38 conditions · Medical professional focus</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2022</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('AIG Life','AIG Life CI Enhanced',2022,48)">
+      <div>
+        <h4>AIG Life CI Enhanced</h4>
+        <div class="hist-meta">2022 · CI Enhanced · 48 conditions · Pre-Aviva acquisition</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">48</span>
+        <span class="hist-badge">2022</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('LV=','LV= CI Enhanced',2022,45)">
+      <div>
+        <h4>LV= CI Enhanced</h4>
+        <div class="hist-meta">2022 · CI Enhanced · 45 conditions · Pre +50% enhancement</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">45</span>
+        <span class="hist-badge">2022</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Aviva','Aviva CIC+ Enhanced',2020,58)">
+      <div>
+        <h4>Aviva CIC+ Enhanced</h4>
+        <div class="hist-meta">2020 · CI Enhanced · 58 conditions · ABI 2019</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">58</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('AIG Life UK','AIG Life Critical Illness',2020,38)">
+      <div>
+        <h4>AIG Life Critical Illness</h4>
+        <div class="hist-meta">2020 · CI Standard · 38 conditions · Now Aviva</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC',2020,120)">
+      <div>
+        <h4>Vitality SIC</h4>
+        <div class="hist-meta">2020 · CI Enhanced · 120 conditions · Pre-severity</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">120</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Legal &amp; General','L&amp;G CI Standard',2020,42)">
+      <div>
+        <h4>L&amp;G CI Standard</h4>
+        <div class="hist-meta">2020 · CI Standard · 42 conditions · Pre-Extra</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">42</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Guardian 1821','Guardian CI',2020,42)">
+      <div>
+        <h4>Guardian CI</h4>
+        <div class="hist-meta">2020 · CI Standard · 42 conditions · Scottish Friendly</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">42</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Widows','Scottish Widows CI',2020,40)">
+      <div>
+        <h4>Scottish Widows CI</h4>
+        <div class="hist-meta">2020 · CI Standard · 40 conditions · Pre-blanket</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">40</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Aegon','Aegon CI Standard',2020,40)">
+      <div>
+        <h4>Aegon CI Standard</h4>
+        <div class="hist-meta">2020 · CI Standard · 40 conditions · Pre-enhancement</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">40</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC',2020,140)">
+      <div>
+        <h4>Vitality SIC</h4>
+        <div class="hist-meta">2020 · Severity · 140 conditions · Pre-SIC Plus expansion</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">140</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Barclays','Barclays CI (AIG)',2020,38)">
+      <div>
+        <h4>Barclays CI (AIG)</h4>
+        <div class="hist-meta">2020 · CI Standard · 38 conditions · AIG underwritten era</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2020</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('AIG Life UK','AIG Life CI Enhanced',2019,45)">
+      <div>
+        <h4>AIG Life CI Enhanced</h4>
+        <div class="hist-meta">2019 · CI Enhanced · 45 conditions · Now Aviva</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">45</span>
+        <span class="hist-badge">2019</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('LV=','LV= CI',2019,36)">
+      <div>
+        <h4>LV= CI</h4>
+        <div class="hist-meta">2019 · CI Standard · 36 conditions · Pre-enhanced</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">36</span>
+        <span class="hist-badge">2019</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Guardian 1821','Guardian CI',2019,38)">
+      <div>
+        <h4>Guardian CI</h4>
+        <div class="hist-meta">2019 · CI Standard · 38 conditions · Market entry via Scottish Friendly</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2019</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Legal &amp; General','L&amp;G CIC Core',2019,42)">
+      <div>
+        <h4>L&amp;G CIC Core</h4>
+        <div class="hist-meta">2019 · CI Standard · 42 conditions · Pre-Extra tier launch</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">42</span>
+        <span class="hist-badge">2019</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Royal London','Royal London CI',2018,48)">
+      <div>
+        <h4>Royal London CI</h4>
+        <div class="hist-meta">2018 · CI Standard · 48 conditions · Pre-enhanced</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">48</span>
+        <span class="hist-badge">2018</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Zurich','Zurich CI',2018,38)">
+      <div>
+        <h4>Zurich CI</h4>
+        <div class="hist-meta">2018 · CI Standard · 38 conditions · Pre-enhanced</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">38</span>
+        <span class="hist-badge">2018</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('HSBC','HSBC CI',2018,30)">
+      <div>
+        <h4>HSBC CI</h4>
+        <div class="hist-meta">2018 · CI Standard · 30 conditions · Aviva u/w</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">30</span>
+        <span class="hist-badge">2018</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Aviva','Aviva CIC Standard',2017,34)">
+      <div>
+        <h4>Aviva CIC Standard</h4>
+        <div class="hist-meta">2017 · CI Standard · 34 conditions · ABI 2007</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">34</span>
+        <span class="hist-badge">2017</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC',2016,98)">
+      <div>
+        <h4>Vitality SIC</h4>
+        <div class="hist-meta">2016 · Severity · 98 conditions · Early severity-based product</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">98</span>
+        <span class="hist-badge">2016</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','PruProtect CI',2015,80)">
+      <div>
+        <h4>PruProtect CI</h4>
+        <div class="hist-meta">2015 · CI Enhanced · 80 conditions · Pre-rebrand</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">80</span>
+        <span class="hist-badge">2015</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Legal &amp; General','L&amp;G CI',2015,35)">
+      <div>
+        <h4>L&amp;G CI</h4>
+        <div class="hist-meta">2015 · CI Standard · 35 conditions · ABI 2007</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">35</span>
+        <span class="hist-badge">2015</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Widows','Scottish Widows CI',2015,32)">
+      <div>
+        <h4>Scottish Widows CI</h4>
+        <div class="hist-meta">2015 · CI Standard · 32 conditions · Lloyds era</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">32</span>
+        <span class="hist-badge">2015</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('National Friendly','National Friendly CI',2015,18)">
+      <div>
+        <h4>National Friendly CI</h4>
+        <div class="hist-meta">2015 · CI Standard · 18 conditions · Friendly society</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">18</span>
+        <span class="hist-badge">2015</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Friends Life','Friends Life CI Enhanced',2014,52)">
+      <div>
+        <h4>Friends Life CI Enhanced</h4>
+        <div class="hist-meta">2014 · CI Enhanced · 52 conditions · Pre-Aviva merger</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">52</span>
+        <span class="hist-badge">2014</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Vitality','Vitality SIC (Launch)',2014,72)">
+      <div>
+        <h4>Vitality SIC (Launch)</h4>
+        <div class="hist-meta">2014 · Severity · 72 conditions · UK first severity-based CI</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">72</span>
+        <span class="hist-badge">2014</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Friends Life','Friends Life CI Standard',2012,35)">
+      <div>
+        <h4>Friends Life CI Standard</h4>
+        <div class="hist-meta">2012 · CI Standard · 35 conditions · Pre-Aviva merger</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">35</span>
+        <span class="hist-badge">2012</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Provident','Scottish Provident CI',2012,28)">
+      <div>
+        <h4>Scottish Provident CI</h4>
+        <div class="hist-meta">2012 · CI Standard · 28 conditions · Now Royal London</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">28</span>
+        <span class="hist-badge">2012</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Bright Grey','Bright Grey Select CI',2010,45)">
+      <div>
+        <h4>Bright Grey Select CI</h4>
+        <div class="hist-meta">2010 · CI Enhanced · 45 conditions · Now Royal London</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">45</span>
+        <span class="hist-badge">2010</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Canada Life','Canada Life CI',2010,32)">
+      <div>
+        <h4>Canada Life CI</h4>
+        <div class="hist-meta">2010 · CI Standard · 32 conditions · Standalone</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">32</span>
+        <span class="hist-badge">2010</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Bright Grey','Bright Grey Core CI',2008,30)">
+      <div>
+        <h4>Bright Grey Core CI</h4>
+        <div class="hist-meta">2008 · CI Standard · 30 conditions · Now Royal London</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">30</span>
+        <span class="hist-badge">2008</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Skandia','Skandia CI',2008,40)">
+      <div>
+        <h4>Skandia CI</h4>
+        <div class="hist-meta">2008 · CI Enhanced · 40 conditions · Now Old Mutual</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">40</span>
+        <span class="hist-badge">2008</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Friends Provident','Friends Provident CI',2008,28)">
+      <div>
+        <h4>Friends Provident CI</h4>
+        <div class="hist-meta">2008 · CI Standard · 28 conditions · Pre-Friends Life merger</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">28</span>
+        <span class="hist-badge">2008</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Norwich Union','Norwich Union CI',2006,24)">
+      <div>
+        <h4>Norwich Union CI</h4>
+        <div class="hist-meta">2006 · CI Standard · 24 conditions · Now Aviva (merged 2009)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">24</span>
+        <span class="hist-badge">2006</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Norwich Union','Norwich Union CI',2005,22)">
+      <div>
+        <h4>Norwich Union CI</h4>
+        <div class="hist-meta">2005 · CI Standard · 22 conditions · Now Aviva</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">22</span>
+        <span class="hist-badge">2005</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Provident','Scottish Provident CI',2005,22)">
+      <div>
+        <h4>Scottish Provident CI</h4>
+        <div class="hist-meta">2005 · CI Standard · 22 conditions · Now Royal London</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">22</span>
+        <span class="hist-badge">2005</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Equitable','Scottish Equitable CI',2005,26)">
+      <div>
+        <h4>Scottish Equitable CI</h4>
+        <div class="hist-meta">2005 · CI Standard · 26 conditions · Now Aegon</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">26</span>
+        <span class="hist-badge">2005</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Clerical Medical','Clerical Medical CI',2005,24)">
+      <div>
+        <h4>Clerical Medical CI</h4>
+        <div class="hist-meta">2005 · CI Standard · 24 conditions · Now part of LBGI/Halifax</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">24</span>
+        <span class="hist-badge">2005</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Mutual','Scottish Mutual CI',2004,22)">
+      <div>
+        <h4>Scottish Mutual CI</h4>
+        <div class="hist-meta">2004 · CI Standard · 22 conditions · Now Abbey Life/Phoenix</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">22</span>
+        <span class="hist-badge">2004</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Norwich Union','Norwich Union CI Plus',2003,28)">
+      <div>
+        <h4>Norwich Union CI Plus</h4>
+        <div class="hist-meta">2003 · CI Enhanced · 28 conditions · Now Aviva</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">28</span>
+        <span class="hist-badge">2003</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Eagle Star','Eagle Star CI',2003,18)">
+      <div>
+        <h4>Eagle Star CI</h4>
+        <div class="hist-meta">2003 · CI Standard · 18 conditions · Merged into Zurich 2009</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">18</span>
+        <span class="hist-badge">2003</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('CGU','CGU CI',2002,20)">
+      <div>
+        <h4>CGU CI</h4>
+        <div class="hist-meta">2002 · CI Standard · 20 conditions · Merged into Norwich Union/Aviva</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">20</span>
+        <span class="hist-badge">2002</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Scottish Amicable','Scottish Amicable CI',2002,18)">
+      <div>
+        <h4>Scottish Amicable CI</h4>
+        <div class="hist-meta">2002 · CI Standard · 18 conditions · Now part of Prudential</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">18</span>
+        <span class="hist-badge">2002</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Allied Dunbar','Allied Dunbar CI',2000,16)">
+      <div>
+        <h4>Allied Dunbar CI</h4>
+        <div class="hist-meta">2000 · CI Standard · 16 conditions · Zurich heritage brand</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">16</span>
+        <span class="hist-badge">2000</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Sun Life of Canada','Sun Life of Canada CI',1998,12)">
+      <div>
+        <h4>Sun Life of Canada CI</h4>
+        <div class="hist-meta">1998 · CI Pioneer · 12 conditions · Original UK CI provider (1983)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">12</span>
+        <span class="hist-badge">1998</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Sun Life of Canada','Sun Life CI',1995,12)">
+      <div>
+        <h4>Sun Life CI</h4>
+        <div class="hist-meta">1995 · CI Standard · 12 conditions · Expanded cover</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">12</span>
+        <span class="hist-badge">1995</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Sun Life of Canada','Sun Life Dread Disease',1988,6)">
+      <div>
+        <h4>Sun Life Dread Disease</h4>
+        <div class="hist-meta">1988 · Original CI · 6 conditions · UK pioneer</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">6</span>
+        <span class="hist-badge">1988</span>
+      </div>
+    </div>
+  
+    <div class="hist-card" onclick="selectHistorical('Sun Life of Canada','Sun Life of Canada CI',1985,6)">
+      <div>
+        <h4>Sun Life of Canada CI</h4>
+        <div class="hist-meta">1985 · CI Pioneer · 6 conditions · First UK CI policy — 6 conditions</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">6</span>
+        <span class="hist-badge">1985</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: BENCHMARK VS MARKET -->
+<div id="tab-benchmark" class="tab-pane">
+
+  <!-- Step 1: Setup (always visible until results shown) -->
+  <div id="bS1" class="bench-section">
+    <h3>📋 Compare a Client's Existing Policy</h3>
+    <p style="font-size:0.82rem;color:var(--mid);margin-bottom:1.2rem;line-height:1.5;">Select your client's existing CI policy, then choose what to compare it against. We'll show every definition gained, improved, weakened, or lost.</p>
 
     <div class="form-grid" style="grid-template-columns:1fr 1fr;margin-bottom:1.2rem;">
       <div class="form-group">
         <label>Client's Existing Policy</label>
-        <select id="oldPolicy"></select>
+        <select id="benchOldPolicy" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;font-size:0.85rem;font-family:inherit;"></select>
       </div>
       <div class="form-group">
-        <label>Compare Against (Current Provider)</label>
-        <select id="newPolicy"></select>
+        <label>Compare Against</label>
+        <select id="benchNewTarget" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;font-size:0.85rem;font-family:inherit;">
+          <option value="market">📊 Full Market (all current providers)</option>
+        </select>
       </div>
     </div>
 
-    <button class="btn btn-primary" onclick="runComparison()" style="width:100%;padding:0.9rem;font-size:0.95rem;">Compare Definitions →</button>
+    <button class="btn btn-primary" onclick="runSimpleBenchmark()" style="width:100%;padding:0.9rem;font-size:0.95rem;">Compare Definitions →</button>
   </div>
 
-  <!-- Results (hidden until comparison run) -->
-  <div id="compareResults" style="display:none;">
-    <button class="btn btn-outline" onclick="backToForm()" style="margin-bottom:1rem;">← Choose Different Policies</button>
+  <!-- Results -->
+  <div id="bS3" style="display:none">
+    <button class="btn btn-outline" onclick="resetBenchmark()" style="margin-bottom:1rem;">← Choose Different Policies</button>
     <div id="verdictBox"></div>
     <div id="defComparison"></div>
-    <div style="display:flex;gap:0.6rem;margin-top:1.5rem;flex-wrap:wrap;">
-      <button class="btn btn-primary" onclick="downloadPDF()">⬇ Download PDF Report</button>
-      <button class="btn btn-outline" onclick="window.print()">🖨 Print</button>
-      <button class="btn btn-outline" onclick="backToForm()">← Compare Another</button>
+    <div class="actions-bar" style="margin-top:1.5rem;">
+      <div class="btn-group">
+        <button class="btn btn-outline" onclick="window.print()">🖨 Print Report</button>
+        <button class="btn btn-outline" onclick="resetBenchmark()">← Compare Another</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="emailModal">
+  <div class="modal">
+    <h3>Email PDF Report</h3>
+    <p>Send compliance-ready PDF with full definition comparison.</p>
+    <input type="email" id="emailTo" placeholder="your@email.co.uk">
+    <input type="text" id="emailRef" placeholder="Client reference (optional)">
+    <div class="modal-btns">
+      <button class="btn btn-outline" onclick="document.getElementById('emailModal').classList.remove('show')">Cancel</button>
+      <p style="font-size:0.8rem;color:#6b7280;margin:12px 0 4px;line-height:1.5;">
+        <strong>Privacy:</strong> Your email address is used only to deliver this report
+        and is not stored or retained by CriticalIQ. The client reference (if entered)
+        appears only in the PDF attachment. See our
+        <a href="/privacy.html" style="color:#0070f3;">Privacy Policy</a>.
+      </p>
+      <button class="btn btn-primary" onclick="sendReport()">Send →</button>
     </div>
   </div>
 </div>
 
 </div><!-- /container -->
 
-<footer>© 2026 CriticalIQ · England &amp; Wales · Advisers only · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · hello@criticaliq.co.uk</footer>
+<footer>© 2026 CriticalIQ · England &amp; Wales · Advisers only · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/cdn-cgi/l/email-protection#f79f929b9b98b794859e839e94969b9e86d99498d9829c"><span class="__cf_email__" data-cfemail="acc4c9c0c0c3eccfdec5d8c5cfcdc0c5dd82cfc382d9c7">[email&#160;protected]</span></a></footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ═══════════════════════════════════════════════════
-   CriticalIQ — Simplified Comparison Engine
-   Two tabs: Provider Rankings | Compare Policies
+   CriticalIQ Dynamic Comparison Engine
    ═══════════════════════════════════════════════════ */
 
 // ─── PROVIDER DATABASE ───
-const PROVIDERS = [
-  { id:'vitality', name:'Vitality SIC Plus', iq:97, conditions:182, claims:91.9, type:'Severity', childCI:false, features:['Severity-based payouts','Multiple claims','3 payment levels'] },
-  { id:'aviva', name:'Aviva CIC+', iq:94, conditions:73, claims:91.5, type:'Enhanced', childCI:true, features:['Free children\'s CI','Wellbeing Support','Care Concierge'] },
-  { id:'guardian', name:'Guardian 1821', iq:92, conditions:55, claims:92, type:'No severity', childCI:false, features:['No severity req. for hearts','Up to £50k partial'] },
-  { id:'rl', name:'Royal London', iq:89, conditions:73, claims:89.7, type:'Full+Add', childCI:true, features:['Free children\'s CI','RedArc nurse support'] },
-  { id:'lg', name:'L&G Extra', iq:86, conditions:69, claims:93, type:'Extra', childCI:true, features:['Free children\'s CI','RedArc support'] },
-  { id:'sw', name:'Scottish Widows', iq:84, conditions:57, claims:91.8, type:'Blanket', childCI:true, features:['Blanket clause','Auto children\'s CI'] },
-  { id:'zurich', name:'Zurich Enhanced', iq:82, conditions:49, claims:90.1, type:'Enhanced', childCI:true, features:['Enhanced definitions','Children\'s CI'] },
-  { id:'lv', name:'LV= Enhanced', iq:80, conditions:49, claims:90, type:'+50% enh', childCI:true, features:['+50% enhanced payments','Fracture cover'] },
-  { id:'hsbc', name:'HSBC CI+', iq:78, conditions:40, claims:94.4, type:'CI Plus', childCI:false, features:['High claims rate','Aviva underwritten'] },
-  { id:'aegon', name:'Aegon CI', iq:75, conditions:52, claims:90.5, type:'Enhanced', childCI:false, features:['Scottish Equitable heritage','Platform integration'] },
-  { id:'nfu', name:'NFU Mutual', iq:74, conditions:48, claims:88, type:'Aviva u/w', childCI:false, features:['Aviva underwritten','Rural specialism'] },
-  { id:'barclays', name:'Barclays CI', iq:72, conditions:40, claims:91, type:'Standard', childCI:false, features:['AIG/Aviva underwritten','Mortgage focus'] },
-  { id:'nationwide', name:'Nationwide CI', iq:70, conditions:46, claims:89.7, type:'Full+Add', childCI:false, features:['Royal London underwritten'] },
-  { id:'beagle', name:'Beagle Street', iq:68, conditions:30, claims:88.5, type:'Core', childCI:false, features:['Low cost','Digital-first'] },
-  { id:'postoffice', name:'Post Office CI', iq:68, conditions:40, claims:89.7, type:'Standard', childCI:false, features:['Royal London underwritten'] },
-  { id:'canadacw', name:'Canada Life', iq:65, conditions:35, claims:87, type:'Standard', childCI:false, features:['Transferring to Countrywide'] },
-];
+const PROVIDERS = {
+  ci: [
+    { id:'vitality', name:'Vitality SIC Plus', iq:97, conditions:182, claims:91.9, basePremium:54.20, type:'Severity', products:['ci'], features:['Severity-based payouts','Multiple claims allowed','3 payment levels','IP: save 40% healthy living','Vitality Optimiser'], claimsYear:2024, est:'1997 (Discovery)', sub:'Serious Illness Cover' },
+    { id:'aviva', name:'Aviva CIC+', iq:94, conditions:73, claims:91.5, basePremium:49.80, type:'Enhanced', products:['ci','life','ip'], features:['Free children\'s CI','Wellbeing Support','Care Concierge','Aortic def. updated','IP: 65% of first £60k','IP market leader 2024'], claimsYear:2024, est:'1696', sub:'Acquired AIG Life UK Apr 2024' },
+    { id:'guardian', name:'Guardian 1821', iq:92, conditions:55, claims:92, basePremium:47.30, type:'No severity', products:['ci','life','ip'], features:['No severity req. for hearts','Up to £50k partial','NEW: Cardiomyopathy full pay','IP: Guardian Protect'], claimsYear:2024, est:'1821', sub:'Revived 2018 via Scottish Friendly' },
+    { id:'rl', name:'Royal London', iq:89, conditions:73, claims:89.7, basePremium:44.10, type:'Full+Add', products:['ci','life','ip'], features:['Free children\'s CI','RedArc nurse support','NEW: Low-grade prostate Ca.','IP 2nd best-selling 2024','Hospital benefit'], claimsYear:2024, est:'1861', sub:'Mutual insurer' },
+    { id:'lg', name:'L&G Extra', iq:86, conditions:69, claims:93, basePremium:41.60, type:'Extra', products:['ci','life','ip'], features:['Free children\'s CI','RedArc nurse support','NEW: Low-grade Prostate Ca.','IP 2nd best-selling 2024','Hospital benefit'], claimsYear:2024, est:'1836' },
+    { id:'sw', name:'Scottish Widows', iq:84, conditions:57, claims:91.8, basePremium:39.90, type:'Blanket', products:['ci','life','ip'], features:['Any CIS — blanket clause','Auto life insurance','Auto children\'s CI (free)','SW Care: RedArc + vGP'], claimsYear:2024, est:'1815', sub:'Lloyds Banking Group · 5-star Defaqto' },
+    { id:'zurich', name:'Zurich Enhanced', iq:82, conditions:49, claims:90.1, basePremium:42.50, type:'Enhanced', products:['ci','life','ip'], features:['Enhanced CI definitions','Children\'s CI included','Business CI option'], claimsYear:2024, est:'1872' },
+    { id:'lv', name:'LV= Enhanced', iq:80, conditions:49, claims:90, basePremium:38.70, type:'+50% enh', products:['ci','life'], features:['+50% enhanced payments','Fracture cover','Children\'s CI included'], claimsYear:2024, est:'1843' },
+    { id:'hsbc', name:'HSBC CI+', iq:78, conditions:40, claims:94.4, basePremium:44.90, type:'CI Plus', products:['ci','life'], features:['High claims rate','Aviva underwritten','CI Plus tier'], claimsYear:2024, est:'1865' },
+    { id:'nfu', name:'NFU Mutual', iq:74, conditions:48, claims:88, basePremium:43.20, type:'Aviva u/w', products:['ci','life'], features:['Aviva underwritten','Rural/farming specialism'], claimsYear:2024, est:'1910' },
+    { id:'beagle', name:'Beagle Street', iq:68, conditions:30, claims:88.5, basePremium:35.40, type:'Core', products:['ci','life'], features:['Low cost','Digital-first','Core CI cover'], claimsYear:2024, est:'2012' },
+    { id:'barclays', name:'Barclays CI', iq:72, conditions:40, claims:91, type:'Standard', products:['ci','life'], features:['AIG/Aviva underwritten','Mortgage protection focus','Direct channel','325yr heritage'], claimsYear:2024, est:'1690', sub:'AIG/Aviva underwritten' },
+    { id:'nationwide', name:'Nationwide CI', iq:70, conditions:46, claims:89.7, type:'Full+Add', products:['ci','life'], features:['Royal London underwritten','Trusted high-street brand','Building society','Helping Hand via RL'], claimsYear:2024, est:'1846', sub:'Royal London underwritten' },
+    { id:'postoffice', name:'Post Office CI', iq:68, conditions:40, claims:89.7, type:'Standard', products:['ci','life'], features:['Royal London underwritten','11.8k UK branches','Terminal illness included','Best Online Life Ins. 2019'], claimsYear:2024, est:'1861', sub:'Royal London underwritten' },
+    { id:'aegon', name:'Aegon CI', iq:75, conditions:52, claims:90.5, type:'Enhanced', products:['ci','life'], features:['Scottish Equitable heritage','Reinsurance specialist','Platform integration','Cofunds access'], claimsYear:2024, est:'1831', sub:'Aegon UK · Scottish Equitable' },
+    { id:'canadacw', name:'Canada Life / Countrywide', iq:65, conditions:35, claims:87, type:'Standard', products:['ci'], features:['Policies transferring 2025-26','Monitor for client impact','Historical policies tracked','Countrywide Assured'], claimsYear:2024, est:'1847', sub:'Transferring to Countrywide' },
+  
+  ],
+  life: [
+    { id:'rl', name:'Royal London', iq:91, conditions:0, claims:99.4, basePremium:18.50, type:'Level', products:['life'], features:['#1 market share','Mutual profits'], claimsYear:2024 },
+    { id:'aviva', name:'Aviva', iq:90, conditions:0, claims:99.7, basePremium:17.80, type:'Level', products:['life'], features:['Highest claims rate','Flexible terms'], claimsYear:2024 },
+    { id:'lg', name:'Legal & General', iq:89, conditions:0, claims:99.5, basePremium:16.90, type:'Level', products:['life'], features:['UK\'s largest insurer','Digital tools'], claimsYear:2024 },
+    { id:'sw', name:'Scottish Widows', iq:87, conditions:0, claims:99.3, basePremium:17.20, type:'Level', products:['life'], features:['Lloyds Banking Group','Auto CI option'], claimsYear:2024 },
+    { id:'vitality', name:'Vitality', iq:86, conditions:0, claims:99.1, basePremium:19.50, type:'Reviewable', products:['life'], features:['Savings for healthy living','Reviewable option'], claimsYear:2024 },
+    { id:'guardian', name:'Guardian 1821', iq:85, conditions:0, claims:98.9, basePremium:18.10, type:'Level', products:['life'], features:['No severity req.','Scottish Friendly backed'], claimsYear:2024 },
+    { id:'zurich', name:'Zurich', iq:84, conditions:0, claims:99.0, basePremium:17.60, type:'Level', products:['life'], features:['Business protection','Trust options'], claimsYear:2024 },
+    { id:'lv', name:'LV=', iq:82, conditions:0, claims:98.8, basePremium:17.90, type:'Level', products:['life'], features:['Friendly society','Funeral planning'], claimsYear:2024 },
+    { id:'beagle', name:'Beagle Street', iq:78, conditions:0, claims:98.5, basePremium:14.20, type:'Level', products:['life'], features:['Cheapest online','No advice'], claimsYear:2024 },
+  ],
+  ip: [
+    { id:'aviva', name:'Aviva', iq:93, conditions:0, claims:91.2, basePremium:42.30, type:'Own occ', products:['ip'], features:['Market leader','Own occupation','65% of first £60k'], claimsYear:2024 },
+    { id:'vitality', name:'Vitality', iq:91, conditions:0, claims:89.5, basePremium:45.10, type:'Own occ', products:['ip'], features:['Healthy living discount','40% savings possible'], claimsYear:2024 },
+    { id:'rl', name:'Royal London', iq:89, conditions:0, claims:88.8, basePremium:39.80, type:'Own occ', products:['ip'], features:['2nd best-selling','Mutual'], claimsYear:2024 },
+    { id:'lg', name:'Legal & General', iq:87, conditions:0, claims:90.1, basePremium:38.50, type:'Own occ', products:['ip'], features:['Flexible benefit period','Back to work support'], claimsYear:2024 },
+    { id:'guardian', name:'Guardian 1821', iq:86, conditions:0, claims:87.5, basePremium:40.20, type:'Own occ', products:['ip'], features:['Guardian Protect','Scottish Friendly'], claimsYear:2024 },
+    { id:'sw', name:'Scottish Widows', iq:84, conditions:0, claims:88.2, basePremium:37.90, type:'Suited occ', products:['ip'], features:['Suited occupation','RedArc + vGP'], claimsYear:2024 },
+    { id:'zurich', name:'Zurich', iq:82, conditions:0, claims:86.5, basePremium:41.80, type:'Own occ', products:['ip'], features:['Business IP option','Flexible waiting period'], claimsYear:2024 },
+  ],
+};
 
-// ─── HISTORICAL POLICIES ───
+// ─── HISTORICAL POLICIES DATABASE ───
 const HISTORICAL = [
-  { provider:'Vitality', name:'Vitality SIC Plus', year:2026, type:'Severity-based', conditions:182, note:'Current' },
-  { provider:'Vitality', name:'Vitality SIC Plus', year:2024, type:'Severity-based', conditions:165, note:'Pre-2026 update' },
-  { provider:'Vitality', name:'Vitality SIC', year:2020, type:'CI Enhanced', conditions:120, note:'Pre-severity' },
-  { provider:'Vitality', name:'Vitality SIC', year:2020, type:'Severity', conditions:140, note:'Pre-SIC Plus' },
-  { provider:'Vitality', name:'Vitality SIC', year:2016, type:'Severity', conditions:98, note:'Early severity' },
-  { provider:'Vitality', name:'PruProtect CI', year:2015, type:'CI Enhanced', conditions:80, note:'Pre-rebrand' },
-  { provider:'Vitality', name:'Vitality SIC (Launch)', year:2014, type:'Severity', conditions:72, note:'UK first severity CI' },
-  { provider:'Aviva', name:'Aviva CIC Standard', year:2023, type:'CI Standard', conditions:38, note:'ABI 2022' },
-  { provider:'Aviva', name:'Aviva CIC+ Enhanced', year:2020, type:'CI Enhanced', conditions:58, note:'ABI 2019' },
-  { provider:'Aviva', name:'Aviva CIC Standard', year:2017, type:'CI Standard', conditions:34, note:'ABI 2007' },
-  { provider:'AIG Life UK', name:'AIG Life Critical Illness', year:2020, type:'CI Standard', conditions:38, note:'Now Aviva' },
-  { provider:'AIG Life UK', name:'AIG Life CI Enhanced', year:2019, type:'CI Enhanced', conditions:45, note:'Now Aviva' },
-  { provider:'AIG Life', name:'AIG Life CI Enhanced', year:2022, type:'CI Enhanced', conditions:48, note:'Pre-Aviva acquisition' },
-  { provider:'Friends Life', name:'Friends Life CI Enhanced', year:2014, type:'CI Enhanced', conditions:52, note:'Pre-Aviva merger' },
-  { provider:'Friends Life', name:'Friends Life CI Standard', year:2012, type:'CI Standard', conditions:35, note:'Pre-Aviva merger' },
-  { provider:'Norwich Union', name:'Norwich Union CI Plus', year:2003, type:'CI Enhanced', conditions:28, note:'Now Aviva' },
-  { provider:'Norwich Union', name:'Norwich Union CI', year:2006, type:'CI Standard', conditions:24, note:'Now Aviva' },
-  { provider:'Norwich Union', name:'Norwich Union CI', year:2005, type:'CI Standard', conditions:22, note:'Now Aviva' },
-  { provider:'Royal London', name:'Royal London CI', year:2025, type:'CI Enhanced', conditions:73, note:'Current' },
-  { provider:'Royal London', name:'Royal London CI', year:2022, type:'CI Enhanced', conditions:65, note:'ABI 2019' },
-  { provider:'Royal London', name:'Royal London CI', year:2018, type:'CI Standard', conditions:48, note:'Pre-enhanced' },
-  { provider:'Bright Grey', name:'Bright Grey Select CI', year:2010, type:'CI Enhanced', conditions:45, note:'Now Royal London' },
-  { provider:'Bright Grey', name:'Bright Grey Core CI', year:2008, type:'CI Standard', conditions:30, note:'Now Royal London' },
-  { provider:'Scottish Provident', name:'Scottish Provident CI', year:2012, type:'CI Standard', conditions:28, note:'Now Royal London' },
-  { provider:'Scottish Provident', name:'Scottish Provident CI', year:2005, type:'CI Standard', conditions:22, note:'Now Royal London' },
-  { provider:'Legal & General', name:'L&G CI Extra', year:2025, type:'CI Enhanced', conditions:69, note:'Current' },
-  { provider:'Legal & General', name:'L&G CI Standard', year:2020, type:'CI Standard', conditions:42, note:'Pre-Extra' },
-  { provider:'Legal & General', name:'L&G CIC Core', year:2019, type:'CI Standard', conditions:42, note:'Pre-Extra tier' },
-  { provider:'Legal & General', name:'L&G CI', year:2015, type:'CI Standard', conditions:35, note:'ABI 2007' },
-  { provider:'Guardian 1821', name:'Guardian 1821 CI', year:2025, type:'CI Standard', conditions:55, note:'Current' },
-  { provider:'Guardian 1821', name:'Guardian CI', year:2020, type:'CI Standard', conditions:42, note:'Scottish Friendly' },
-  { provider:'Guardian 1821', name:'Guardian CI', year:2019, type:'CI Standard', conditions:38, note:'Market entry' },
-  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2025, type:'CI Standard', conditions:57, note:'Current blanket' },
-  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2020, type:'CI Standard', conditions:40, note:'Pre-blanket' },
-  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2015, type:'CI Standard', conditions:32, note:'Lloyds era' },
-  { provider:'Zurich', name:'Zurich Enhanced CI', year:2025, type:'CI Enhanced', conditions:49, note:'Current' },
-  { provider:'Zurich', name:'Zurich CI', year:2018, type:'CI Standard', conditions:38, note:'Pre-enhanced' },
-  { provider:'LV=', name:'LV= Enhanced CI', year:2025, type:'CI Enhanced', conditions:49, note:'Current +50%' },
-  { provider:'LV=', name:'LV= CI Enhanced', year:2022, type:'CI Enhanced', conditions:45, note:'Pre +50%' },
-  { provider:'LV=', name:'LV= CI', year:2019, type:'CI Standard', conditions:36, note:'Pre-enhanced' },
-  { provider:'HSBC', name:'HSBC CI+', year:2025, type:'CI Enhanced', conditions:40, note:'Aviva underwritten' },
-  { provider:'HSBC', name:'HSBC CI', year:2018, type:'CI Standard', conditions:30, note:'Aviva u/w' },
-  { provider:'NFU Mutual', name:'NFU Mutual CI', year:2025, type:'CI Standard', conditions:48, note:'Aviva u/w' },
-  { provider:'Aegon', name:'Aegon CI Enhanced', year:2024, type:'CI Enhanced', conditions:52, note:'Scottish Equitable heritage' },
-  { provider:'Aegon', name:'Aegon CI Standard', year:2020, type:'CI Standard', conditions:40, note:'Pre-enhancement' },
-  { provider:'Barclays', name:'Barclays CI (AIG)', year:2020, type:'CI Standard', conditions:38, note:'AIG underwritten' },
-  { provider:'Wesleyan', name:'Wesleyan CI', year:2022, type:'CI Standard', conditions:38, note:'Medical professional focus' },
-  { provider:'Canada Life', name:'Canada Life CI', year:2010, type:'CI Standard', conditions:32, note:'Standalone' },
-  { provider:'Skandia', name:'Skandia CI', year:2008, type:'CI Enhanced', conditions:40, note:'Now Old Mutual' },
-  { provider:'National Friendly', name:'National Friendly CI', year:2015, type:'CI Standard', conditions:18, note:'Friendly society' },
-  { provider:'Friends Provident', name:'Friends Provident CI', year:2008, type:'CI Standard', conditions:28, note:'Pre-Friends Life' },
-  { provider:'CGU', name:'CGU CI', year:2002, type:'CI Standard', conditions:20, note:'Merged into Aviva' },
-  { provider:'Scottish Equitable', name:'Scottish Equitable CI', year:2005, type:'CI Standard', conditions:26, note:'Now Aegon' },
-  { provider:'Scottish Mutual', name:'Scottish Mutual CI', year:2004, type:'CI Standard', conditions:22, note:'Now Phoenix' },
-  { provider:'Eagle Star', name:'Eagle Star CI', year:2003, type:'CI Standard', conditions:18, note:'Merged into Zurich' },
-  { provider:'Allied Dunbar', name:'Allied Dunbar CI', year:2000, type:'CI Standard', conditions:16, note:'Zurich heritage' },
-  { provider:'Scottish Amicable', name:'Scottish Amicable CI', year:2002, type:'CI Standard', conditions:18, note:'Now Prudential' },
-  { provider:'Clerical Medical', name:'Clerical Medical CI', year:2005, type:'CI Standard', conditions:24, note:'Now LBGI/Halifax' },
-  { provider:'Sun Life of Canada', name:'Sun Life of Canada CI', year:1998, type:'CI Pioneer', conditions:12, note:'Original UK CI' },
-  { provider:'Sun Life of Canada', name:'Sun Life CI', year:1995, type:'CI Standard', conditions:12, note:'Expanded cover' },
-  { provider:'Sun Life of Canada', name:'Sun Life Dread Disease', year:1988, type:'Original CI', conditions:6, note:'UK pioneer' },
-  { provider:'Sun Life of Canada', name:'Sun Life of Canada CI', year:1985, type:'CI Pioneer', conditions:6, note:'First UK CI policy' },
-];
+  { provider:'Aviva', name:'Aviva CIC Standard', year:2017, type:'CI Standard', conditions:34, note:'ABI 2007', parent:'Aviva' },
+  { provider:'Aviva', name:'Aviva CIC+ Enhanced', year:2020, type:'CI Enhanced', conditions:58, note:'ABI 2019', parent:'Aviva' },
+  { provider:'Aviva', name:'Aviva CIC Standard', year:2023, type:'CI Standard', conditions:38, note:'ABI 2022', parent:'Aviva' },
+  { provider:'Friends Life', name:'Friends Life CI Enhanced', year:2014, type:'CI Enhanced', conditions:52, note:'Pre-Aviva merger', parent:'Aviva' },
+  { provider:'Friends Life', name:'Friends Life CI Standard', year:2012, type:'CI Standard', conditions:35, note:'Pre-Aviva merger', parent:'Aviva' },
+  { provider:'AIG Life UK', name:'AIG Life Critical Illness', year:2020, type:'CI Standard', conditions:38, note:'Now Aviva', parent:'Aviva' },
+  { provider:'AIG Life UK', name:'AIG Life CI Enhanced', year:2019, type:'CI Enhanced', conditions:45, note:'Now Aviva', parent:'Aviva' },
+  { provider:'Norwich Union', name:'Norwich Union CI', year:2005, type:'CI Standard', conditions:22, note:'Now Aviva', parent:'Aviva' },
+  { provider:'Norwich Union', name:'Norwich Union CI Plus', year:2003, type:'CI Enhanced', conditions:28, note:'Now Aviva', parent:'Aviva' },
+  { provider:'Vitality', name:'Vitality SIC Plus', year:2026, type:'Severity-based', conditions:182, note:'Current', parent:'Vitality' },
+  { provider:'Vitality', name:'Vitality SIC Plus', year:2024, type:'Severity-based', conditions:165, note:'Pre-2026 update', parent:'Vitality' },
+  { provider:'Vitality', name:'Vitality SIC', year:2020, type:'CI Enhanced', conditions:120, note:'Pre-severity', parent:'Vitality' },
+  { provider:'Vitality', name:'PruProtect CI', year:2015, type:'CI Enhanced', conditions:80, note:'Pre-rebrand', parent:'Vitality' },
+  { provider:'Royal London', name:'Royal London CI', year:2025, type:'CI Enhanced', conditions:73, note:'Current', parent:'Royal London' },
+  { provider:'Royal London', name:'Royal London CI', year:2022, type:'CI Enhanced', conditions:65, note:'ABI 2019', parent:'Royal London' },
+  { provider:'Royal London', name:'Royal London CI', year:2018, type:'CI Standard', conditions:48, note:'Pre-enhanced', parent:'Royal London' },
+  { provider:'Bright Grey', name:'Bright Grey Select CI', year:2010, type:'CI Enhanced', conditions:45, note:'Now Royal London', parent:'Royal London' },
+  { provider:'Bright Grey', name:'Bright Grey Core CI', year:2008, type:'CI Standard', conditions:30, note:'Now Royal London', parent:'Royal London' },
+  { provider:'Scottish Provident', name:'Scottish Provident CI', year:2012, type:'CI Standard', conditions:28, note:'Now Royal London', parent:'Royal London' },
+  { provider:'Scottish Provident', name:'Scottish Provident CI', year:2005, type:'CI Standard', conditions:22, note:'Now Royal London', parent:'Royal London' },
+  { provider:'Legal & General', name:'L&G CI Extra', year:2025, type:'CI Enhanced', conditions:69, note:'Current', parent:'Legal & General' },
+  { provider:'Legal & General', name:'L&G CI Standard', year:2020, type:'CI Standard', conditions:42, note:'Pre-Extra', parent:'Legal & General' },
+  { provider:'Legal & General', name:'L&G CI', year:2015, type:'CI Standard', conditions:35, note:'ABI 2007', parent:'Legal & General' },
+  { provider:'Guardian 1821', name:'Guardian 1821 CI', year:2025, type:'CI Standard', conditions:55, note:'Current', parent:'Guardian 1821' },
+  { provider:'Guardian 1821', name:'Guardian CI', year:2020, type:'CI Standard', conditions:42, note:'Scottish Friendly', parent:'Guardian 1821' },
+  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2025, type:'CI Standard', conditions:57, note:'Current blanket', parent:'Scottish Widows' },
+  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2020, type:'CI Standard', conditions:40, note:'Pre-blanket', parent:'Scottish Widows' },
+  { provider:'Scottish Widows', name:'Scottish Widows CI', year:2015, type:'CI Standard', conditions:32, note:'Lloyds era', parent:'Scottish Widows' },
+  { provider:'Zurich', name:'Zurich Enhanced CI', year:2025, type:'CI Enhanced', conditions:49, note:'Current', parent:'Zurich' },
+  { provider:'Zurich', name:'Zurich CI', year:2018, type:'CI Standard', conditions:38, note:'Pre-enhanced', parent:'Zurich' },
+  { provider:'LV=', name:'LV= Enhanced CI', year:2025, type:'CI Enhanced', conditions:49, note:'Current +50%', parent:'LV=' },
+  { provider:'LV=', name:'LV= CI', year:2019, type:'CI Standard', conditions:36, note:'Pre-enhanced', parent:'LV=' },
+  { provider:'HSBC', name:'HSBC CI+', year:2025, type:'CI Enhanced', conditions:40, note:'Aviva underwritten', parent:'HSBC' },
+  { provider:'HSBC', name:'HSBC CI', year:2018, type:'CI Standard', conditions:30, note:'Aviva u/w', parent:'HSBC' },
+  { provider:'NFU Mutual', name:'NFU Mutual CI', year:2025, type:'CI Standard', conditions:48, note:'Aviva u/w', parent:'NFU Mutual' },
+  { provider:'Sun Life of Canada', name:'Sun Life Dread Disease', year:1988, type:'Original CI', conditions:6, note:'UK pioneer', parent:'Sun Life of Canada' },
+  { provider:'Sun Life of Canada', name:'Sun Life CI', year:1995, type:'CI Standard', conditions:12, note:'Expanded cover', parent:'Sun Life of Canada' },
+  { provider:'Canada Life', name:'Canada Life CI', year:2010, type:'CI Standard', conditions:32, note:'Standalone', parent:'Canada Life' },
+  { provider:'Skandia', name:'Skandia CI', year:2008, type:'CI Enhanced', conditions:40, note:'Now Old Mutual', parent:'Skandia' },
+  { provider:'National Friendly', name:'National Friendly CI', year:2015, type:'CI Standard', conditions:18, note:'Friendly society', parent:'National Friendly' },
+    { name:'Aegon CI Enhanced', year:2024, conditions:52, type:'CI Enhanced', note:'Scottish Equitable heritage', provider:'Aegon' },
+    { name:'Aegon CI Standard', year:2020, conditions:40, type:'CI Standard', note:'Pre-enhancement', provider:'Aegon' },
+    { name:'Wesleyan CI', year:2022, conditions:38, type:'CI Standard', note:'Medical professional focus', provider:'Wesleyan' },
+    { name:'Friends Provident CI', year:2008, conditions:28, type:'CI Standard', note:'Pre-Friends Life merger', provider:'Friends Provident' },
+    { name:'Norwich Union CI', year:2006, conditions:24, type:'CI Standard', note:'Now Aviva (merged 2009)', provider:'Norwich Union' },
+    { name:'CGU CI', year:2002, conditions:20, type:'CI Standard', note:'Merged into Norwich Union/Aviva', provider:'CGU' },
+    { name:'Scottish Equitable CI', year:2005, conditions:26, type:'CI Standard', note:'Now Aegon', provider:'Scottish Equitable' },
+    { name:'Scottish Mutual CI', year:2004, conditions:22, type:'CI Standard', note:'Now Abbey Life/Phoenix', provider:'Scottish Mutual' },
+    { name:'Eagle Star CI', year:2003, conditions:18, type:'CI Standard', note:'Merged into Zurich 2009', provider:'Eagle Star' },
+    { name:'Allied Dunbar CI', year:2000, conditions:16, type:'CI Standard', note:'Zurich heritage brand', provider:'Allied Dunbar' },
+    { name:'Sun Life of Canada CI', year:1998, conditions:12, type:'CI Pioneer', note:'Original UK CI provider (1983)', provider:'Sun Life of Canada' },
+    { name:'Sun Life of Canada CI', year:1985, conditions:6, type:'CI Pioneer', note:'First UK CI policy — 6 conditions', provider:'Sun Life of Canada' },
+    { name:'Scottish Amicable CI', year:2002, conditions:18, type:'CI Standard', note:'Now part of Prudential', provider:'Scottish Amicable' },
+    { name:'Clerical Medical CI', year:2005, conditions:24, type:'CI Standard', note:'Now part of LBGI/Halifax', provider:'Clerical Medical' },
+    { name:'AIG Life CI Enhanced', year:2022, conditions:48, type:'CI Enhanced', note:'Pre-Aviva acquisition', provider:'AIG Life' },
+    { name:'Guardian CI', year:2019, conditions:38, type:'CI Standard', note:'Market entry via Scottish Friendly', provider:'Guardian 1821' },
+    { name:'Vitality SIC', year:2020, conditions:140, type:'Severity', note:'Pre-SIC Plus expansion', provider:'Vitality' },
+    { name:'Vitality SIC', year:2016, conditions:98, type:'Severity', note:'Early severity-based product', provider:'Vitality' },
+    { name:'Vitality SIC (Launch)', year:2014, conditions:72, type:'Severity', note:'UK first severity-based CI', provider:'Vitality' },
+    { name:'L&G CIC Core', year:2019, conditions:42, type:'CI Standard', note:'Pre-Extra tier launch', provider:'Legal & General' },
+    { name:'LV= CI Enhanced', year:2022, conditions:45, type:'CI Enhanced', note:'Pre +50% enhancement', provider:'LV=' },
+    { name:'Barclays CI (AIG)', year:2020, conditions:38, type:'CI Standard', note:'AIG underwritten era', provider:'Barclays' },
+  ];
 
 // ─── DEFINITION COMPARISON DATA ───
+// We store full definition data for Aviva 2017 vs each current provider
+// This enables the benchmark engine to work with any selected pair
 const DEFINITIONS = {
+  // Base set: conditions covered by Aviva CIC Standard 2017 (34 conditions)
+  aviva2017: [
+    'Heart attack','Cancer (specified)','Stroke','Coronary artery bypass','Multiple sclerosis',
+    'Kidney failure','Major organ transplant','Blindness','Deafness','Coma',
+    'Benign brain tumour','HIV (occupational)','Loss of limbs','Loss of speech',
+    'Motor neurone disease','Alzheimer\'s/dementia','Bacterial meningitis','Encephalitis',
+    'Liver failure','Major burns','Open heart surgery','Paralysis','Respiratory failure',
+    'Third degree burns','Angioplasty','Carcinoma in situ','Cardiac arrest',
+    'PVD','Heart valve replacement','Aplastic anaemia','Total permanent disability',
+    'Aortic surgery','Parkinson\'s disease','Traumatic brain injury'
+  ],
+
+  // Definitions that changed between Aviva 2017 and Vitality 2026
   comparisons: {
     'vitality': {
       gained: [
@@ -364,71 +1358,75 @@ const DEFINITIONS = {
       ],
       unchanged: ['Heart attack','Coronary artery bypass','Multiple sclerosis','Kidney failure','Major organ transplant','Blindness','Deafness','Coma','Benign brain tumour','HIV (occupational)','Loss of limbs','Loss of speech','Motor neurone disease','Alzheimer\'s/dementia','Bacterial meningitis','Encephalitis','Liver failure','Major burns','Open heart surgery','Paralysis','Respiratory failure','Third degree burns','Angioplasty','Carcinoma in situ','Cardiac arrest','PVD','Heart valve replacement','Aplastic anaemia'],
       weakened: [
-        { condition:'Heart Attack', old:'ABI 2007. Necrosis + ECG + enzyme rise.', new:'ABI 2022. Troponin I ≥10x 99th percentile.', status:'Tightened', oldNote:'Broader — favours client.', newNote:'Tighter threshold.' },
-        { condition:'DCIS (Breast)', old:'Partial for all grades DCIS.', new:'Grade III only. Grade I/II excluded.', status:'Tightened' },
+        { condition:'Heart Attack ⚠️', old:'ABI 2007. Necrosis + ECG + enzyme rise.', new:'ABI 2022. Troponin I ≥10x 99th percentile.', status:'Tightened', oldNote:'Broader — favours client.', newNote:'Tighter.' },
+        { condition:'DCIS (Breast) ⚠️', old:'Partial for all grades DCIS.', new:'Grade III only. Grade I/II excluded.', status:'Tightened' },
       ],
       lost: [],
     },
+    // For other providers, we generate approximate comparisons based on condition counts
   }
 };
 
-// ═══ TAB SWITCHING ═══
+// ─── PREMIUM ESTIMATION ───
+// Base: Male, 44, Non-Smoker, £250k, 25yr
+// Adjustments are approximate industry-standard loadings
+
+// ─── TAB SWITCHING ───
 function switchTab(t, btn) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tool-tab').forEach(x => x.classList.remove('active'));
   document.getElementById('tab-' + t).classList.add('active');
   if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ═══ TAB 1: PROVIDER RANKINGS ═══
-let currentSort = { col:'iq', dir:'desc' };
+// ─── RANKINGS ENGINE ───
+let currentSort = { col: 'iq', dir: 'desc' };
+
+function getProviders() {
+  const type = document.getElementById('productType').value;
+  return PROVIDERS[type] || PROVIDERS.ci;
+}
 
 function renderRankings() {
+  const type = document.getElementById('productType').value;
   const age = parseInt(document.getElementById('age').value) || 44;
   const gender = document.getElementById('gender').value;
   const smoker = document.getElementById('smoker').value;
-  const hasChildren = document.getElementById('children').value === 'yes';
+  const providers = (PROVIDERS[type] || PROVIDERS.ci).slice();
 
-  let providers = PROVIDERS.slice();
+  // Estimate premiums
+  providers.forEach(p => {
+  });
 
-  // Sort: if has children, boost providers with free children's CI
-  if (hasChildren) {
-    providers.forEach(p => {
-      p._score = p.iq + (p.childCI ? 5 : 0);
-    });
-  } else {
-    providers.forEach(p => { p._score = p.iq; });
-  }
-
+  // Sort
   providers.sort((a, b) => {
-    let va, vb;
-    if (currentSort.col === '_score' || currentSort.col === 'iq') {
-      va = a._score; vb = b._score;
-    } else {
-      va = a[currentSort.col]; vb = b[currentSort.col];
-    }
+    let va = a[currentSort.col], vb = b[currentSort.col];
+    if (currentSort.col === 'premium') { va = a.premium; vb = b.premium; }
     if (currentSort.col === 'name') return currentSort.dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
     return currentSort.dir === 'asc' ? va - vb : vb - va;
   });
-
-  const title = `Provider Rankings — ${gender} · ${age} · ${smoker}${hasChildren ? ' · Has Children' : ''}`;
+  const typeLabels = { ci: 'CI', life: 'Life', ip: 'IP', cilife: 'CI+Life' };
+  const title = `Provider Rankings — ${gender} · ${age} · ${smoker} ${typeLabels[type] || 'CI'}`;
   const maxCond = Math.max(...providers.map(p => p.conditions));
+  const isCI = type === 'ci';
+  const isPro = !!getProSession();
 
   let html = `<div class="results-wrap">
     <div class="results-bar">
-      <h3>${title}</h3>
+      <h3 id="resultsTitle">${title}</h3>
       <div><span class="results-badge blue">${providers.length} providers</span>
-      <span class="results-badge green">${maxCond} conditions</span></div>
+      ${isCI ? `<span class="results-badge green">${maxCond} conditions</span>` : ''}</div>
     </div>
-    <table class="rtable">
+    <table class="rtable" id="resultsTable">
       <thead><tr>
         <th width="30">#</th>
         <th class="sortable${currentSort.col==='name'?' sorted-'+currentSort.dir:''}" onclick="sortBy('name')">Provider</th>
         <th class="sortable${currentSort.col==='iq'?' sorted-'+currentSort.dir:''}" onclick="sortBy('iq')">IQ</th>
-        <th class="sortable${currentSort.col==='conditions'?' sorted-'+currentSort.dir:''}" onclick="sortBy('conditions')">Conditions</th>
+        ${isCI ? `<th class="sortable${currentSort.col==='conditions'?' sorted-'+currentSort.dir:''}" onclick="sortBy('conditions')">Conditions</th>` : ''}
         <th class="sortable${currentSort.col==='claims'?' sorted-'+currentSort.dir:''}" onclick="sortBy('claims')">Claims</th>
         <th>Type</th>
-        ${hasChildren ? '<th>Children</th>' : ''}
+        <th></th>
       </tr></thead><tbody>`;
 
   providers.forEach((p, i) => {
@@ -436,20 +1434,22 @@ function renderRankings() {
     const iqClass = p.iq >= 90 ? 'iq-90' : p.iq >= 80 ? 'iq-80' : p.iq >= 70 ? 'iq-70' : 'iq-60';
     const claimsFill = p.claims >= 92 ? 'high' : p.claims >= 88 ? 'med' : 'low';
     const claimsWidth = Math.round((p.claims / 100) * 60);
+    const claimsText = p.claims === 88 ? '~88%' : p.claims + '%';
 
     html += `<tr class="${rank === 1 ? 'rank-1' : ''}">
       <td class="rank-num">${rank}</td>
       <td class="prov-name">${p.name}</td>
       <td><span class="iq-pill ${iqClass}">${p.iq}</span></td>
-      <td>${p.conditions}</td>
-      <td><span class="claims-bar"><span class="claims-fill ${claimsFill}" style="width:${claimsWidth}px"></span></span>${p.claims}%</td>
+      ${isCI ? `<td>${p.conditions}</td>` : ''}
+      <td><span class="claims-bar"><span class="claims-fill ${claimsFill}" style="width:${claimsWidth}px"></span></span>${claimsText}</td>
       <td><span class="type-tag">${p.type}</span></td>
-      ${hasChildren ? `<td>${p.childCI ? '<span class="children-tag">✓ Free</span>' : '—'}</td>` : ''}
+      <td>${isCI ? `<button class="bench-link" onclick="startBenchmark('${p.id}')">Benchmark →</button>` : ''}</td>
     </tr>`;
   });
 
   html += '</tbody></table></div>';
   document.getElementById('rankingsContainer').innerHTML = html;
+  document.getElementById('exportBar').style.display = 'flex';
 }
 
 function sortBy(col) {
@@ -463,37 +1463,86 @@ function sortBy(col) {
 }
 
 function resetFilters() {
+  document.getElementById('productType').value = 'ci';
   document.getElementById('age').value = 44;
   document.getElementById('gender').value = 'Male';
   document.getElementById('smoker').value = 'Non-Smoker';
-  document.getElementById('children').value = 'no';
-  currentSort = { col:'iq', dir:'desc' };
+  currentSort = { col: 'iq', dir: 'desc' };
   renderRankings();
 }
 
-
-// ═══ TAB 2: COMPARE POLICIES ═══
-
-function initDropdowns() {
-  // Historic policies dropdown — sorted alphabetically by provider, then by year descending
-  const oldSel = document.getElementById('oldPolicy');
-  const sorted = HISTORICAL.slice().sort((a, b) => {
-    const nameComp = a.provider.localeCompare(b.provider);
-    if (nameComp !== 0) return nameComp;
-    return b.year - a.year;
+// ─── HISTORICAL SEARCH ───
+function initHistoryFilters() {
+  const providerSet = new Set(HISTORICAL.map(h => h.provider));
+  const provSelect = document.getElementById('histProvider');
+  providerSet.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p; opt.textContent = p;
+    provSelect.appendChild(opt);
   });
+
+  const yearSet = new Set(HISTORICAL.map(h => h.year));
+  const yearSelect = document.getElementById('histYear');
+  [...yearSet].sort((a,b) => b - a).forEach(y => {
+    const opt = document.createElement('option');
+    opt.value = y; opt.textContent = y;
+    yearSelect.appendChild(opt);
+  });
+}
+
+function renderHistory() {
+  const prov = document.getElementById('histProvider').value;
+  const year = document.getElementById('histYear').value;
+  const type = document.getElementById('histType').value;
+
+  let results = HISTORICAL.filter(h => {
+    if (prov && h.provider !== prov) return false;
+    if (year && h.year !== parseInt(year)) return false;
+    if (type && h.type !== type) return false;
+    return true;
+  }).sort((a, b) => b.year - a.year);
+
+  const container = document.getElementById('historyResults');
+  if (results.length === 0) {
+    container.innerHTML = '<div class="hist-empty">No policies found matching your search. Try broadening your filters.</div>';
+    return;
+  }
+
+  container.innerHTML = results.map(h => `
+    <div class="hist-card" onclick="selectHistorical('${h.provider}','${h.name}',${h.year},${h.conditions})">
+      <div>
+        <h4>${h.name}</h4>
+        <div class="hist-meta">${h.year} · ${h.type} · ${h.conditions} conditions · ${h.note}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="cond-count">${h.conditions}</span>
+        <span class="hist-badge">${h.year}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─── SIMPLIFIED BENCHMARK ENGINE ───
+
+function initBenchmarkDropdowns() {
+  // Populate "existing policy" dropdown from HISTORICAL data (sorted by year desc)
+  const oldSel = document.getElementById('benchOldPolicy');
+  if (!oldSel) return;
+  oldSel.innerHTML = '';
+  const sorted = HISTORICAL.slice().sort((a, b) => b.year - a.year);
   sorted.forEach((h, i) => {
     const opt = document.createElement('option');
     opt.value = i;
-    opt.textContent = `${h.provider} — ${h.name} (${h.year}) — ${h.conditions} conditions`;
-    opt.dataset.origIdx = HISTORICAL.indexOf(h);
+    opt.textContent = `${h.name} (${h.year}) — ${h.conditions} conditions`;
+    opt.dataset.idx = HISTORICAL.indexOf(h);
     oldSel.appendChild(opt);
   });
 
-  // Current providers dropdown — sorted alphabetically
-  const newSel = document.getElementById('newPolicy');
-  const sortedProviders = PROVIDERS.slice().sort((a, b) => a.name.localeCompare(b.name));
-  sortedProviders.forEach(p => {
+  // Populate "compare against" dropdown: Full Market first, then each current provider
+  const newSel = document.getElementById('benchNewTarget');
+  if (!newSel) return;
+  newSel.innerHTML = '<option value="market">📊 Full Market (all current providers)</option>';
+  PROVIDERS.ci.forEach(p => {
     const opt = document.createElement('option');
     opt.value = p.id;
     opt.textContent = `${p.name} — IQ ${p.iq}, ${p.conditions} conditions`;
@@ -501,86 +1550,158 @@ function initDropdowns() {
   });
 }
 
-function backToForm() {
-  document.getElementById('compareForm').style.display = 'block';
-  document.getElementById('compareResults').style.display = 'none';
+function selectHistorical(provider, name, year, conditions) {
+  // Called when clicking a policy in Historical Search tab
+  switchTab('benchmark', document.querySelectorAll('.tool-tab')[2]);
+  // Find and select the matching policy in the dropdown
+  const sel = document.getElementById('benchOldPolicy');
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].textContent.includes(name) && sel.options[i].textContent.includes(year)) {
+      sel.selectedIndex = i;
+      break;
+    }
+  }
 }
 
-// Store last comparison for PDF generation
-let lastComparison = null;
-
-function runComparison() {
-  const oldSel = document.getElementById('oldPolicy');
-  const newSel = document.getElementById('newPolicy');
-
-  const origIdx = parseInt(oldSel.options[oldSel.selectedIndex].dataset.origIdx);
-  const oldPolicy = HISTORICAL[origIdx];
-  const targetId = newSel.value;
-  const target = PROVIDERS.find(p => p.id === targetId);
-
-  // Get or generate comparison data
-  let compData;
-  if (DEFINITIONS.comparisons[targetId]) {
-    compData = DEFINITIONS.comparisons[targetId];
-  } else {
-    compData = generateApproxComparison(oldPolicy.conditions, target);
+function startBenchmark(providerId) {
+  // Called from "Benchmark →" in rankings table — pre-select this provider as target
+  switchTab('benchmark', document.querySelectorAll('.tool-tab')[2]);
+  const newSel = document.getElementById('benchNewTarget');
+  if (newSel) {
+    for (let i = 0; i < newSel.options.length; i++) {
+      if (newSel.options[i].value === providerId) {
+        newSel.selectedIndex = i;
+        break;
+      }
+    }
   }
+}
 
-  const gained = compData.gained.length;
-  const improved = compData.improved.length;
-  const weakened = compData.weakened.length;
-  const lost = compData.lost.length;
-  const netGain = gained + improved - weakened - lost;
-  const verdictClass = netGain > 5 ? 'upgrade' : netGain > 0 ? 'similar' : 'downgrade';
-  const verdictEmoji = netGain > 5 ? '🏆' : netGain > 0 ? '📊' : '⚠️';
-  const verdictWord = netGain > 5 ? 'significant upgrade' : netGain > 0 ? 'moderate improvement' : 'comparable or weaker';
+function resetBenchmark() {
+  document.getElementById('bS1').style.display = 'block';
+  document.getElementById('bS3').style.display = 'none';
+}
 
-  const verdictHTML = `<div class="verdict ${verdictClass}">
-    <h3>${verdictEmoji} Verdict: ${target.name} is a ${verdictWord}</h3>
-    <p>Comparing <strong>${oldPolicy.name} (${oldPolicy.year}, ${oldPolicy.conditions} conditions)</strong> → <strong>${target.name} (2026, ${target.conditions} conditions)</strong>: <span class="hl">+${gained} new conditions</span>, ${improved} improved definitions${weakened > 0 ? `, ${weakened} tightened` : ''}.</p>
-    <div class="stat-pills">
+function runSimpleBenchmark() {
+  const oldSel = document.getElementById('benchOldPolicy');
+  const newSel = document.getElementById('benchNewTarget');
+  
+  const oldIdx = parseInt(oldSel.options[oldSel.selectedIndex].dataset.idx);
+  const oldPolicy = HISTORICAL[oldIdx];
+  const oldData = { provider: oldPolicy.provider, name: oldPolicy.name, year: oldPolicy.year, conditions: oldPolicy.conditions };
+  
+  const targetValue = newSel.value;
+  
+  let compData, verdictHTML;
+  
+  if (targetValue === 'market') {
+    // Full market comparison — compare against best provider (Vitality)
+    const best = PROVIDERS.ci[0]; // Vitality = highest IQ
+    if (DEFINITIONS.comparisons['vitality']) {
+      compData = DEFINITIONS.comparisons['vitality'];
+    } else {
+      compData = generateApproxComparison(oldData.conditions, best);
+    }
+    const gained = compData.gained.length;
+    const improved = compData.improved.length;
+    const weakened = compData.weakened.length;
+    
+    // Build market summary
+    let marketRows = '';
+    PROVIDERS.ci.forEach(p => {
+      const diff = p.conditions - oldData.conditions;
+      const diffClass = diff > 20 ? 'gained' : diff > 0 ? 'improved' : 'weakened';
+      marketRows += `<tr>
+        <td style="font-weight:700">${p.name}</td>
+        <td><span class="iq-badge iq-${p.iq >= 90 ? '90' : p.iq >= 80 ? '80' : '70'}">${p.iq}</span></td>
+        <td>${p.conditions}</td>
+        <td><span class="stat-pill ${diffClass}" style="font-size:0.75rem">${diff > 0 ? '+' : ''}${diff}</span></td>
+        <td>${p.claims}%</td>
+      </tr>`;
+    });
+    
+    verdictHTML = `<div class="verdict upgrade">
+      <h3>📊 Full Market Comparison</h3>
+      <p>Your client's <strong>${oldData.name} (${oldData.year})</strong> had <strong>${oldData.conditions} conditions</strong>. Here's how every current provider compares:</p>
+    </div>
+    <table class="rtable" style="margin-bottom:1.5rem;">
+      <thead><tr><th>Provider</th><th>IQ</th><th>Conditions</th><th>vs Old</th><th>Claims</th></tr></thead>
+      <tbody>${marketRows}</tbody>
+    </table>
+    <h3 style="font-size:1rem;font-weight:800;margin-bottom:0.5rem">Best Upgrade: ${best.name}</h3>
+    <p style="font-size:0.82rem;color:var(--mid);margin-bottom:1rem">${oldData.name} (${oldData.year}) → ${best.name} (2026)</p>
+    <div class="stat-pills" style="margin-bottom:1.5rem">
       <span class="stat-pill gained">${gained} Gained</span>
       <span class="stat-pill improved">${improved} Improved</span>
       <span class="stat-pill unchanged">${compData.unchanged.length} Unchanged</span>
       <span class="stat-pill weakened">${weakened} Weakened</span>
-      <span class="stat-pill lost">${lost} Lost</span>
-    </div>
-  </div>`;
+    </div>`;
+    
+  } else {
+    // Specific provider comparison
+    const target = PROVIDERS.ci.find(p => p.id === targetValue) || PROVIDERS.ci[0];
+    if (DEFINITIONS.comparisons[targetValue]) {
+      compData = DEFINITIONS.comparisons[targetValue];
+    } else {
+      compData = generateApproxComparison(oldData.conditions, target);
+    }
+    const gained = compData.gained.length;
+    const improved = compData.improved.length;
+    const weakened = compData.weakened.length;
+    const lost = compData.lost.length;
+    const netGain = gained + improved - weakened - lost;
+    const verdictClass = netGain > 5 ? 'upgrade' : netGain > 0 ? 'similar' : 'downgrade';
+    const verdictEmoji = netGain > 5 ? '🏆' : netGain > 0 ? '📊' : '⚠️';
+    const verdictWord = netGain > 5 ? 'significant upgrade' : netGain > 0 ? 'moderate improvement' : 'comparable or weaker';
 
-  document.getElementById('verdictBox').innerHTML = verdictHTML;
-
-  // Definition breakdown
-  const sub = `${oldPolicy.name} (${oldPolicy.year}) → ${target.name} (2026)`;
-  let defHTML = `<h3 style="font-size:1rem;font-weight:800;margin-bottom:0.5rem">Definition-by-Definition Comparison</h3>
-    <p style="font-size:0.78rem;color:var(--mid);margin-bottom:1rem">${sub}</p>`;
-
-  if (compData.gained.length) defHTML += renderDefSection('gained', `GAINED — ${compData.gained.length} new conditions`, compData.gained, true);
-  if (compData.improved.length) defHTML += renderDefSection('improved', `IMPROVED — ${compData.improved.length} broadened`, compData.improved, true);
-  if (compData.unchanged.length) {
-    defHTML += `<div class="def-section">
-      <div class="def-header unchanged" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span>UNCHANGED — ${compData.unchanged.length} equivalent</span><span>▼</span>
-      </div>
-      <div class="def-rows">
-        <div style="padding:0.8rem 1rem;font-size:0.78rem;color:var(--mid);line-height:1.8">${compData.unchanged.join(' · ')}</div>
+    verdictHTML = `<div class="verdict ${verdictClass}">
+      <h3>${verdictEmoji} Verdict: ${target.name} is a ${verdictWord}</h3>
+      <p>Switching from <strong>${oldData.name} (${oldData.year})</strong> to <strong>${target.name} (2026)</strong> gains <span class="hl">+${gained} conditions</span>, improves ${improved} definitions${weakened > 0 ? `, ${weakened} tightened` : ''}.</p>
+      <div class="stat-pills">
+        <span class="stat-pill gained">${gained} Gained</span>
+        <span class="stat-pill improved">${improved} Improved</span>
+        <span class="stat-pill unchanged">${compData.unchanged.length} Unchanged</span>
+        <span class="stat-pill weakened">${weakened} Weakened</span>
+        <span class="stat-pill lost">${lost} Lost</span>
       </div>
     </div>`;
   }
-  if (compData.weakened.length) defHTML += renderDefSection('weakened', `WEAKENED — ${compData.weakened.length} tightened`, compData.weakened, true);
-  defHTML += `<div class="def-section">
-    <div class="def-header lost"><span>LOST — ${compData.lost.length} removed</span></div>
-    ${compData.lost.length === 0 ? '<div style="padding:0.8rem 1rem;font-size:0.78rem;color:var(--sage)">✓ No conditions lost.</div>' : ''}
-  </div>`;
+  
+  document.getElementById('verdictBox').innerHTML = verdictHTML;
 
-  document.getElementById('defComparison').innerHTML = defHTML;
+  // Render definition-by-definition breakdown (only for specific provider or best match in market)
+  if (compData) {
+    const defSubtitle = `${oldData.name} (${oldData.year}) → ${targetValue === 'market' ? 'Best Provider' : newSel.options[newSel.selectedIndex].text.split(' —')[0]} (2026)`;
+    let defHTML = `<h3 style="font-size:1rem;font-weight:800;margin-bottom:0.5rem">Definition-by-Definition Comparison</h3>
+      <p style="font-size:0.78rem;color:var(--mid);margin-bottom:1rem">${defSubtitle}</p>`;
 
-  // Store for PDF
-  lastComparison = { oldPolicy, target, compData, gained, improved, weakened, lost, netGain, verdictWord };
+    if (compData.gained.length > 0) defHTML += renderDefSection('gained', `GAINED — ${compData.gained.length} new conditions`, compData.gained, true);
+    if (compData.improved.length > 0) defHTML += renderDefSection('improved', `IMPROVED — ${compData.improved.length} definitions broadened`, compData.improved, true);
+    if (compData.unchanged.length > 0) {
+      defHTML += `<div class="def-section">
+        <div class="def-header unchanged" onclick="this.nextElementSibling.classList.toggle('open')">
+          <span>UNCHANGED — ${compData.unchanged.length} equivalent</span><span>▼</span>
+        </div>
+        <div class="def-rows">
+          <div style="padding:0.8rem 1rem;font-size:0.78rem;color:var(--mid);line-height:1.8">${compData.unchanged.join(' · ')}</div>
+        </div>
+      </div>`;
+    }
+    if (compData.weakened.length > 0) defHTML += renderDefSection('weakened', `WEAKENED — ${compData.weakened.length} tightened`, compData.weakened, true);
+    defHTML += `<div class="def-section">
+      <div class="def-header lost">
+        <span>LOST — ${compData.lost.length} removed</span>
+      </div>
+      ${compData.lost.length === 0 ? '<div style="padding:0.8rem 1rem;font-size:0.78rem;color:var(--sage)">✓ No conditions lost.</div>' : ''}
+    </div>`;
+    
+    document.getElementById('defComparison').innerHTML = defHTML;
+  }
 
-  // Show results
-  document.getElementById('compareForm').style.display = 'none';
-  document.getElementById('compareResults').style.display = 'block';
-  window.scrollTo({ top: document.getElementById('tab-compare').offsetTop - 80, behavior: 'smooth' });
+  // Show results, hide form
+  document.getElementById('bS1').style.display = 'none';
+  document.getElementById('bS3').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('tab-benchmark').offsetTop - 80, behavior: 'smooth' });
 }
 
 function renderDefSection(type, title, items, startOpen) {
@@ -589,28 +1710,42 @@ function renderDefSection(type, title, items, startOpen) {
       <span>${title}</span><span>▼</span>
     </div>
     <div class="def-rows${startOpen ? ' open' : ''}">`;
-  items.forEach(item => {
-    const sc = item.status === 'Improved' ? 'improved' : item.status === 'Tightened' ? 'tightened' : item.status.includes('Partial') ? 'partial' : 'gained';
+
+  const shown = items.slice(0, 10);
+  const remaining = items.length - 10;
+
+  shown.forEach(item => {
+    const statusClass = item.status === 'Improved' ? 'improved' : item.status === 'Tightened' ? 'tightened' : item.status.includes('Partial') ? 'partial' : 'gained';
     html += `<div class="def-row">
       <div class="def-condition">${item.condition}</div>
-      <div class="def-old">${item.old}${item.oldNote ? '<br><em>'+item.oldNote+'</em>' : ''}</div>
-      <div class="def-new">${item.new}${item.newNote ? '<br><em>'+item.newNote+'</em>' : ''}</div>
-      <div><span class="def-status ${sc}">${item.status}</span></div>
+      <div class="def-old">${item.old}${item.oldNote ? `<br><em>${item.oldNote}</em>` : ''}</div>
+      <div class="def-new">${item.new}${item.newNote ? `<br><em>${item.newNote}</em>` : ''}</div>
+      <div><span class="def-status ${statusClass}">${item.status}</span></div>
     </div>`;
   });
+
+  if (remaining > 0) {
+    html += `<div style="padding:0.8rem 1rem;font-size:0.78rem;color:var(--mid);font-style:italic">+ ${remaining} more ${type}</div>`;
+  }
+
   html += '</div></div>';
   return html;
 }
 
 function generateApproxComparison(oldConditions, target) {
+  // Generate approximate comparison when we don't have exact definition data
   const condDiff = target.conditions - oldConditions;
-  const gained = [], improved = [], weakened = [];
+  const gained = [];
+  const improved = [];
+  const weakened = [];
 
+  // Approximate: ~60% of difference = gained, some conditions get improved/weakened
   const gainedCount = Math.max(0, Math.round(condDiff * 0.7));
   const improvedCount = Math.min(6, Math.round(condDiff * 0.15));
   const weakenedCount = Math.min(3, Math.round(Math.random() * 2) + 1);
 
-  const potGained = [
+  // Potential new conditions for generated comparisons
+  const potentialGained = [
     { condition:'Cardiomyopathy', def:'Full payment. Permanent NYHA Class III/IV.' },
     { condition:'Low-grade Prostate Ca.', def:'25% partial. Gleason 6 or below.' },
     { condition:'Cauda Equina Syndrome', def:'Full payment. Permanent neurological deficit.' },
@@ -627,12 +1762,13 @@ function generateApproxComparison(oldConditions, target) {
     { condition:'Creutzfeldt-Jakob Disease', def:'Full payment. Definite diagnosis.' },
     { condition:'Polycystic Kidney Disease', def:'Full payment. eGFR below 30.' },
   ];
-  for (let i = 0; i < Math.min(gainedCount, potGained.length); i++) {
-    const pg = potGained[i];
-    gained.push({ condition:pg.condition, old:'Not covered', new:pg.def, status:pg.def.includes('partial') ? '25% Partial' : 'Gained' });
+
+  for (let i = 0; i < Math.min(gainedCount, potentialGained.length); i++) {
+    const pg = potentialGained[i];
+    gained.push({ condition: pg.condition, old: 'Not covered', new: pg.def, status: pg.def.includes('partial') ? '25% Partial' : 'Gained' });
   }
 
-  const potImproved = [
+  const potentialImproved = [
     { condition:'Aortic Surgery', old:'Open surgery only.', new:'Open + endovascular. Includes EVAR/TEVAR.' },
     { condition:'Cancer (specified)', old:'ABI 2007 wording.', new:'ABI 2022. Updated grading.' },
     { condition:'Stroke', old:'ABI 2007. 24hr deficit.', new:'ABI 2022. Imaging-confirmed.' },
@@ -640,444 +1776,29 @@ function generateApproxComparison(oldConditions, target) {
     { condition:'Parkinson\'s Disease', old:'Idiopathic only.', new:'Includes atypical syndromes.' },
     { condition:'Traumatic Brain Injury', old:'Vague criteria.', new:'GCS-based assessment.' },
   ];
-  for (let i = 0; i < Math.min(improvedCount, potImproved.length); i++) {
-    const pi = potImproved[i];
-    improved.push({ condition:pi.condition, old:pi.old, new:pi.new, status:'Improved' });
+  for (let i = 0; i < Math.min(improvedCount, potentialImproved.length); i++) {
+    const pi = potentialImproved[i];
+    improved.push({ condition: pi.condition, old: pi.old, new: pi.new, status: 'Improved' });
   }
 
-  const potWeakened = [
-    { condition:'Heart Attack', old:'ABI 2007. Necrosis + ECG + enzyme.', new:'ABI 2022. Troponin threshold.' },
-    { condition:'DCIS (Breast)', old:'All grades partial.', new:'Grade III only.' },
+  const potentialWeakened = [
+    { condition:'Heart Attack', old:'ABI 2007. Broader criteria.', new:'ABI 2022. Troponin-based. Tighter.' },
+    { condition:'DCIS (Breast)', old:'Partial for all grades.', new:'Grade III only.' },
+    { condition:'Carcinoma in situ', old:'Some broader coverage.', new:'More restricted definitions.' },
   ];
-  for (let i = 0; i < Math.min(weakenedCount, potWeakened.length); i++) {
-    const pw = potWeakened[i];
-    weakened.push({ condition:pw.condition, old:pw.old, new:pw.new, status:'Tightened' });
+  for (let i = 0; i < Math.min(weakenedCount, potentialWeakened.length); i++) {
+    const pw = potentialWeakened[i];
+    weakened.push({ condition: pw.condition + ' ⚠️', old: pw.old, new: pw.new, status: 'Tightened' });
   }
 
-  const unchangedCount = Math.max(0, oldConditions - improved.length - weakened.length);
-  const baseUnchanged = ['Heart attack','Coronary artery bypass','Multiple sclerosis','Kidney failure','Major organ transplant','Blindness','Deafness','Coma','Benign brain tumour','HIV (occupational)','Loss of limbs','Loss of speech','Motor neurone disease','Alzheimer\'s/dementia','Bacterial meningitis','Encephalitis','Liver failure','Major burns','Open heart surgery','Paralysis','Respiratory failure','Third degree burns','Angioplasty','Carcinoma in situ','Cardiac arrest','PVD','Heart valve replacement','Aplastic anaemia'];
+  // Unchanged = base conditions minus improved/weakened
+  const unchangedCount = Math.max(0, oldConditions - improvedCount - weakenedCount);
+  const unchangedList = DEFINITIONS.aviva2017.slice(0, unchangedCount);
 
-  return { gained, improved, unchanged: baseUnchanged.slice(0, unchangedCount), weakened, lost: [] };
+  return { gained, improved, unchanged: unchangedList, weakened, lost: [] };
 }
 
-
-// ═══ PDF GENERATION ═══
-function downloadPDF() {
-  if (!lastComparison) { alert('Run a comparison first.'); return; }
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF('p', 'mm', 'a4');
-  const c = lastComparison;
-  const W = 210, H = 297, M = 15, CW = W - 2 * M;
-  let y = 0;
-
-  // Colour palette
-  const COL = {
-    dark: [10, 22, 40], azure: [0, 112, 243], sage: [16, 185, 129],
-    amber: [245, 158, 11], red: [239, 68, 68], mid: [90, 112, 128],
-    muted: [148, 163, 184], white: [255, 255, 255], bg: [248, 250, 252],
-    gainedBg: [220, 252, 231], gainedText: [22, 163, 74],
-    improvedBg: [219, 234, 254], improvedText: [37, 99, 235],
-    unchangedBg: [243, 244, 246], unchangedText: [107, 114, 128],
-    weakenedBg: [254, 243, 199], weakenedText: [217, 119, 6],
-    lostBg: [254, 226, 226], lostText: [220, 38, 38],
-  };
-
-  function setC(c) { doc.setTextColor(...c); }
-  function setF(c) { doc.setFillColor(...c); }
-  function checkPage(need) { if (y + need > H - 20) { addFooter(); doc.addPage(); y = 20; } }
-  function addFooter() {
-    const pg = doc.internal.getNumberOfPages();
-    doc.setFontSize(6.5);
-    setC(COL.muted);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`CriticalIQ Policy Comparison Report  |  ${c.oldPolicy.name} (${c.oldPolicy.year}) vs ${c.target.name} (2026)  |  Page ${pg}`, M, H - 8);
-    doc.text('For financial adviser use only. This report does not constitute personalised advice. No client data is stored or transmitted.', W - M, H - 8, { align: 'right' });
-    // Thin line
-    doc.setDrawColor(...COL.muted);
-    doc.setLineWidth(0.2);
-    doc.line(M, H - 11, W - M, H - 11);
-  }
-
-  // ═══ PAGE 1: COVER ═══
-  // Full dark header block
-  setF(COL.dark);
-  doc.rect(0, 0, W, 80, 'F');
-
-  // Blue accent bar
-  setF(COL.azure);
-  doc.rect(0, 80, W, 3, 'F');
-
-  // Logo + title
-  setC(COL.white);
-  doc.setFontSize(28);
-  doc.setFont('helvetica', 'bold');
-  doc.text('CriticalIQ', M, 30);
-  doc.setFontSize(11);
-  doc.setFont('helvetica', 'normal');
-  doc.text('Critical Illness Policy Comparison Report', M, 40);
-
-  // Date + subtitle
-  doc.setFontSize(9);
-  doc.text(`Generated: ${new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })}`, M, 52);
-  doc.text('For financial adviser use only — No client data stored', M, 59);
-
-  // IQ badge
-  setF(COL.azure);
-  doc.roundedRect(W - M - 30, 18, 30, 30, 5, 5, 'F');
-  setC(COL.white);
-  doc.setFontSize(20);
-  doc.setFont('helvetica', 'bold');
-  doc.text('IQ', W - M - 15, 32, { align: 'center' });
-  doc.setFontSize(10);
-  doc.text(String(c.target.iq), W - M - 15, 42, { align: 'center' });
-
-  y = 95;
-
-  // Comparison summary card
-  setF(COL.bg);
-  doc.roundedRect(M, y, CW, 38, 3, 3, 'F');
-  setC(COL.dark);
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'bold');
-  doc.text('EXISTING POLICY', M + 6, y + 8);
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(12);
-  doc.text(`${c.oldPolicy.name}`, M + 6, y + 16);
-  doc.setFontSize(9);
-  setC(COL.mid);
-  doc.text(`${c.oldPolicy.provider} · ${c.oldPolicy.year} · ${c.oldPolicy.conditions} conditions · ${c.oldPolicy.type}`, M + 6, y + 23);
-
-  // Arrow
-  setC(COL.azure);
-  doc.setFontSize(16);
-  doc.text('→', CW / 2 + M - 3, y + 18);
-
-  // New policy
-  setC(COL.dark);
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'bold');
-  doc.text('NEW POLICY', CW / 2 + M + 12, y + 8);
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(12);
-  doc.text(`${c.target.name}`, CW / 2 + M + 12, y + 16);
-  doc.setFontSize(9);
-  setC(COL.mid);
-  doc.text(`IQ ${c.target.iq} · 2026 · ${c.target.conditions} conditions · ${c.target.type}`, CW / 2 + M + 12, y + 23);
-
-  // Verdict line
-  setC(COL.dark);
-  doc.setFontSize(10);
-  doc.setFont('helvetica', 'bold');
-  doc.text(`Verdict: ${c.verdictWord.charAt(0).toUpperCase() + c.verdictWord.slice(1)}`, M + 6, y + 33);
-
-  y += 48;
-
-  // Stats boxes — 5 columns
-  const stats = [
-    { label: 'GAINED', val: `+${c.gained}`, bg: COL.gainedBg, fg: COL.gainedText },
-    { label: 'IMPROVED', val: String(c.improved), bg: COL.improvedBg, fg: COL.improvedText },
-    { label: 'UNCHANGED', val: String(c.compData.unchanged.length), bg: COL.unchangedBg, fg: COL.unchangedText },
-    { label: 'WEAKENED', val: String(c.weakened), bg: COL.weakenedBg, fg: COL.weakenedText },
-    { label: 'LOST', val: String(c.lost), bg: COL.lostBg, fg: COL.lostText },
-  ];
-  const boxW = (CW - 4 * 3) / 5;
-  stats.forEach((s, i) => {
-    const bx = M + i * (boxW + 3);
-    setF(s.bg);
-    doc.roundedRect(bx, y, boxW, 22, 2, 2, 'F');
-    setC(s.fg);
-    doc.setFontSize(18);
-    doc.setFont('helvetica', 'bold');
-    doc.text(s.val, bx + boxW / 2, y + 12, { align: 'center' });
-    doc.setFontSize(6.5);
-    doc.setFont('helvetica', 'bold');
-    doc.text(s.label, bx + boxW / 2, y + 19, { align: 'center' });
-  });
-
-  y += 32;
-
-  // Key highlights section
-  setC(COL.dark);
-  doc.setFontSize(12);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Key Highlights', M, y);
-  y += 6;
-
-  doc.setFontSize(8.5);
-  doc.setFont('helvetica', 'normal');
-  setC(COL.mid);
-  const highlights = [];
-  if (c.gained > 0) highlights.push(`The new policy adds ${c.gained} conditions not covered by the existing policy, providing significantly broader protection.`);
-  if (c.improved > 0) highlights.push(`${c.improved} existing definitions have been broadened or updated to reflect modern medical standards (e.g. ABI 2022 model wording).`);
-  if (c.weakened > 0) highlights.push(`${c.weakened} definition(s) have tightened criteria — the adviser should discuss these with the client to ensure informed consent.`);
-  if (c.lost === 0) highlights.push('No conditions from the existing policy are lost in the new policy — full continuity of cover.');
-  highlights.push(`The new policy has an IQ score of ${c.target.iq}, reflecting the overall quality of definitions, breadth of cover, and claims track record.`);
-  if (c.target.childCI) highlights.push('The new policy includes free children\'s critical illness cover.');
-  highlights.push(`Claims acceptance rate: ${c.target.claims}% (${c.target.claims >= 92 ? 'above' : 'at'} industry average).`);
-
-  highlights.forEach(h => {
-    checkPage(8);
-    setC(COL.azure);
-    doc.text('●', M, y);
-    setC(COL.mid);
-    const lines = doc.splitTextToSize(h, CW - 8);
-    lines.forEach(l => { doc.text(l, M + 5, y); y += 4; });
-    y += 1;
-  });
-
-  y += 4;
-
-  // Score breakdown box
-  checkPage(30);
-  setC(COL.dark);
-  doc.setFontSize(12);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Score Breakdown', M, y);
-  y += 6;
-
-  const fullPayCount = c.compData.gained.filter(g => !g.status.includes('Partial')).length;
-  const partialCount = c.compData.gained.filter(g => g.status.includes('Partial')).length;
-  const scoreData = [
-    ['Component', 'Old Policy', 'New Policy', 'Change'],
-    ['Full payment conditions (100%)', String(c.oldPolicy.conditions), String(c.target.conditions), `+${c.target.conditions - c.oldPolicy.conditions}`],
-    ['Additional/partial conditions', '—', String(partialCount), `+${partialCount}`],
-    ['Improved definitions', '—', String(c.improved), `+${c.improved}`],
-    ['Weakened definitions', '—', String(c.weakened), String(c.weakened)],
-    ['Children\'s CI included', c.oldPolicy.year < 2018 ? 'Unknown' : 'Check policy', c.target.childCI ? 'Yes (free)' : 'No', c.target.childCI ? '✓' : '—'],
-    ['IQ Score', '—', String(c.target.iq), '—'],
-    ['Claims rate', '—', c.target.claims + '%', '—'],
-  ];
-  doc.autoTable({
-    startY: y,
-    margin: { left: M, right: M },
-    head: [scoreData[0]],
-    body: scoreData.slice(1),
-    styles: { fontSize: 8, cellPadding: 3, font: 'helvetica' },
-    headStyles: { fillColor: COL.dark, textColor: COL.white, fontStyle: 'bold' },
-    columnStyles: { 0: { fontStyle: 'bold', cellWidth: 60 }, 3: { cellWidth: 22, halign: 'center' } },
-    alternateRowStyles: { fillColor: [248, 250, 252] },
-  });
-  y = doc.lastAutoTable.finalY + 6;
-
-  // Compliance note on cover page
-  checkPage(18);
-  setF([248, 250, 252]);
-  doc.roundedRect(M, y, CW, 14, 2, 2, 'F');
-  doc.setFontSize(7);
-  setC(COL.mid);
-  doc.setFont('helvetica', 'italic');
-  doc.text('This report is generated by CriticalIQ for financial adviser use. It compares policy definitions and does not constitute personalised advice.', M + 4, y + 5);
-  doc.text('No client personal data is collected, stored, or included in this report. The adviser should retain this report for compliance records.', M + 4, y + 10);
-
-  addFooter();
-
-  // ═══ PAGE 2+: DEFINITION-BY-DEFINITION COMPARISON ═══
-  doc.addPage();
-  y = 20;
-
-  // Section header
-  setF(COL.dark);
-  doc.rect(0, 0, W, 18, 'F');
-  setC(COL.white);
-  doc.setFontSize(13);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Definition-by-Definition Comparison', M, 12);
-  doc.setFontSize(8);
-  doc.setFont('helvetica', 'normal');
-  doc.text(`${c.oldPolicy.name} (${c.oldPolicy.year})  →  ${c.target.name} (2026)`, W - M, 12, { align: 'right' });
-
-  y = 26;
-
-  // GAINED
-  if (c.compData.gained.length > 0) {
-    checkPage(12);
-    setC(COL.gainedText);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`GAINED — ${c.compData.gained.length} New Conditions`, M, y);
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    doc.text('These conditions are covered by the new policy but were NOT covered by the existing policy.', M, y + 4);
-    y += 7;
-    doc.autoTable({
-      startY: y,
-      margin: { left: M, right: M },
-      head: [['Condition', 'Old Policy', 'New Policy Definition', 'Payment']],
-      body: c.compData.gained.map(g => [g.condition, g.old, g.new, g.status]),
-      styles: { fontSize: 7, cellPadding: 2.5, lineColor: [230, 230, 230], lineWidth: 0.2 },
-      headStyles: { fillColor: COL.gainedBg, textColor: COL.gainedText, fontStyle: 'bold' },
-      columnStyles: {
-        0: { fontStyle: 'bold', cellWidth: 36 },
-        1: { cellWidth: 24, textColor: COL.muted },
-        3: { cellWidth: 22, halign: 'center', fontStyle: 'bold' }
-      },
-      alternateRowStyles: { fillColor: [250, 255, 250] },
-      didDrawPage: function() { y = 20; }
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // IMPROVED
-  if (c.compData.improved.length > 0) {
-    checkPage(12);
-    setC(COL.improvedText);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`IMPROVED — ${c.compData.improved.length} Definitions Broadened`, M, y);
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    doc.text('These conditions are covered by both policies, but the new policy has a broader or more modern definition.', M, y + 4);
-    y += 7;
-    doc.autoTable({
-      startY: y,
-      margin: { left: M, right: M },
-      head: [['Condition', 'Old Definition', 'New Definition', 'Status']],
-      body: c.compData.improved.map(g => [g.condition, g.old + (g.oldNote ? ' (' + g.oldNote + ')' : ''), g.new, g.status]),
-      styles: { fontSize: 7, cellPadding: 2.5, lineColor: [230, 230, 230], lineWidth: 0.2 },
-      headStyles: { fillColor: COL.improvedBg, textColor: COL.improvedText, fontStyle: 'bold' },
-      columnStyles: { 0: { fontStyle: 'bold', cellWidth: 36 }, 3: { cellWidth: 22, halign: 'center', fontStyle: 'bold' } },
-      alternateRowStyles: { fillColor: [248, 250, 255] },
-      didDrawPage: function() { y = 20; }
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // UNCHANGED
-  if (c.compData.unchanged.length > 0) {
-    checkPage(16);
-    setC(COL.unchangedText);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`UNCHANGED — ${c.compData.unchanged.length} Equivalent Definitions`, M, y);
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    doc.text('These conditions have equivalent or substantially similar definitions in both policies.', M, y + 4);
-    y += 7;
-
-    // Display as a compact grid instead of a table
-    doc.setFontSize(7.5);
-    setC(COL.unchangedText);
-    const unchText = c.compData.unchanged.join('   ·   ');
-    const unchLines = doc.splitTextToSize(unchText, CW);
-    unchLines.forEach(line => {
-      checkPage(5);
-      doc.text(line, M, y);
-      y += 4;
-    });
-    y += 6;
-  }
-
-  // WEAKENED
-  if (c.compData.weakened.length > 0) {
-    checkPage(12);
-    setC(COL.weakenedText);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`WEAKENED — ${c.compData.weakened.length} Tightened Definitions`, M, y);
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    setC(COL.weakenedText);
-    doc.text('IMPORTANT: These definitions have become stricter in the new policy. Discuss with client before switching.', M, y + 4);
-    y += 7;
-    doc.autoTable({
-      startY: y,
-      margin: { left: M, right: M },
-      head: [['Condition', 'Old Definition (more favourable)', 'New Definition (tighter)', 'Impact']],
-      body: c.compData.weakened.map(g => [g.condition, g.old + (g.oldNote ? ' — ' + g.oldNote : ''), g.new + (g.newNote ? ' — ' + g.newNote : ''), g.status]),
-      styles: { fontSize: 7, cellPadding: 2.5, lineColor: [230, 230, 230], lineWidth: 0.2 },
-      headStyles: { fillColor: COL.weakenedBg, textColor: COL.weakenedText, fontStyle: 'bold' },
-      columnStyles: { 0: { fontStyle: 'bold', cellWidth: 36 }, 3: { cellWidth: 22, halign: 'center', fontStyle: 'bold' } },
-      alternateRowStyles: { fillColor: [255, 253, 248] },
-      didDrawPage: function() { y = 20; }
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // LOST
-  checkPage(12);
-  setC(COL.lostText);
-  doc.setFontSize(10);
-  doc.setFont('helvetica', 'bold');
-  doc.text(`LOST — ${c.compData.lost.length} Conditions Removed`, M, y);
-  y += 5;
-  if (c.compData.lost.length === 0) {
-    setC(COL.gainedText);
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'normal');
-    doc.text('No conditions from the existing policy are removed in the new policy.', M, y);
-    y += 8;
-  } else {
-    doc.autoTable({
-      startY: y,
-      margin: { left: M, right: M },
-      head: [['Condition', 'Was Covered', 'Now', 'Impact']],
-      body: c.compData.lost.map(g => [g.condition, g.old, g.new || 'Not covered', g.status || 'Lost']),
-      styles: { fontSize: 7, cellPadding: 2.5 },
-      headStyles: { fillColor: COL.lostBg, textColor: COL.lostText, fontStyle: 'bold' },
-      columnStyles: { 0: { fontStyle: 'bold', cellWidth: 36 }, 3: { cellWidth: 22, halign: 'center' } },
-      didDrawPage: function() { y = 20; }
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // ═══ FINAL PAGE: COMPLIANCE & DISCLAIMER ═══
-  checkPage(60);
-  y += 4;
-  setF([248, 250, 252]);
-  doc.roundedRect(M, y, CW, 50, 3, 3, 'F');
-  setC(COL.dark);
-  doc.setFontSize(10);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Compliance Declaration', M + 6, y + 8);
-  doc.setFontSize(7.5);
-  doc.setFont('helvetica', 'normal');
-  setC(COL.mid);
-  const disclaimers = [
-    'This report compares policy definitions and does not constitute personalised financial advice.',
-    'The comparison is based on policy wording as at the dates indicated. Definitions may change.',
-    'IQ scores reflect CriticalIQ\'s assessment of definition quality, breadth of cover, and claims data.',
-    'No client personal information (name, address, DOB, etc.) is collected, stored, or included in this report.',
-    'The adviser should discuss all gained, improved, AND weakened definitions with the client before any switch.',
-    'FCA Consumer Duty: advisers must ensure clients understand any disadvantages of switching policies.',
-    'This report should be retained by the adviser as part of their compliance file.',
-  ];
-  let dy = y + 14;
-  disclaimers.forEach(d => {
-    doc.text('•  ' + d, M + 6, dy);
-    dy += 5;
-  });
-
-  // Signature area
-  dy += 4;
-  doc.setDrawColor(...COL.muted);
-  doc.setLineWidth(0.3);
-  doc.line(M + 6, dy, M + 80, dy);
-  doc.line(M + 100, dy, W - M - 6, dy);
-  doc.setFontSize(7);
-  setC(COL.muted);
-  doc.text('Adviser signature', M + 6, dy + 4);
-  doc.text('Date', M + 100, dy + 4);
-
-  // Generated stamp
-  dy += 12;
-  doc.setFontSize(7);
-  setC(COL.muted);
-  doc.text(`Report generated by CriticalIQ (criticaliq.co.uk) on ${new Date().toLocaleDateString('en-GB')} at ${new Date().toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })}`, M + 6, dy);
-
-  // Add footers to all pages
-  const pageCount = doc.internal.getNumberOfPages();
-  for (let i = 1; i <= pageCount; i++) {
-    doc.setPage(i);
-    addFooter();
-  }
-
-  // Save
-  const filename = `CriticalIQ-${c.oldPolicy.provider.replace(/[^a-zA-Z0-9]/g, '')}-${c.oldPolicy.year}-vs-${c.target.name.replace(/[^a-zA-Z0-9]/g, '')}-2026.pdf`;
-  doc.save(filename);
-}
-
-
-// ═══ PRO ACCESS ═══
+// ─── PRO ACCESS ───
 function getProSession() {
   try {
     const s = JSON.parse(localStorage.getItem('ciq_access'));
@@ -1086,15 +1807,31 @@ function getProSession() {
   return null;
 }
 
-// ═══ INIT ═══
+// ─── UTILITY FUNCTIONS ───
+function dlPDF() {
+  alert('Generating PDF...\n\n• Definition-by-definition comparison\n• Gained/Improved/Weakened/Lost\n• Provider rankings + IQ scores\n• Compliance declaration');
+}
+
+function showEmail() {
+  alert('Email reports are coming soon.\n\nFor now, please use the PDF download option — it generates instantly in your browser with no data sent to any server.');
+}
+
+function sendReport() {
+  showEmail();
+}
+
+// ─── INIT ───
 document.addEventListener('DOMContentLoaded', function() {
+  initHistoryFilters();
   renderRankings();
-  initDropdowns();
+  renderHistory();
+  initBenchmarkDropdowns();
 });
 </script>
 <script>
 /**
  * CriticalIQ Access Gate
+ * Adds "Enter Access Code" button + modal, gates Pro content
  */
 (function() {
   const API = 'https://api.criticaliq.co.uk';
@@ -1108,7 +1845,10 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch(e) {}
     return null;
   }
-  function saveSession(data) { localStorage.setItem(STORE_KEY, JSON.stringify(data)); }
+
+  function saveSession(data) {
+    localStorage.setItem(STORE_KEY, JSON.stringify(data));
+  }
 
   async function validate(code) {
     const resp = await fetch(API + '/validate-code', {
@@ -1137,7 +1877,24 @@ document.addEventListener('DOMContentLoaded', function() {
         #ciq-btn:disabled{background:#94a3b8;cursor:not-allowed}
         #ciq-err{color:#ef4444;font-size:13px;margin-top:8px;min-height:20px}
         #ciq-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer}
-      </style>
+      
+
+  nav{gap:0;}
+  nav>a:not(.logo):not(.btn):not(.btn-azure){display:none;}
+  nav .btn,nav .btn-azure{font-size:0.75rem;padding:6px 12px;}
+  header button{font-size:0.7rem;padding:4px 8px;}
+  .logo .price-badge{display:none;}
+  body{padding-top:56px;}
+  .search-bar,.filter-bar{padding:0 3%;}
+  .search-bar input{font-size:0.85rem;}
+  .provider-card{margin:0 -1%;}
+  .results-header{padding:0 3%;font-size:0.85rem;}
+  #benchmarkTool{padding:1rem 3%;}
+  #benchmarkTool h3{font-size:1rem;}
+  .hist-card{padding:0.8rem;}
+  .hist-card h4{font-size:0.85rem;}
+}
+</style>
       <div id="ciq-modal" style="position:relative">
         <button id="ciq-close">&times;</button>
         <h2>Enter Access Code</h2>
@@ -1148,31 +1905,77 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>`;
     document.body.appendChild(overlay);
 
-    document.getElementById('ciq-input').addEventListener('input', function() {
+    const input = document.getElementById('ciq-input');
+    input.addEventListener('input', function() {
       let v = this.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
       if (v.length > 4) v = v.slice(0,4) + '-' + v.slice(4,8);
       this.value = v;
     });
+
     document.getElementById('ciq-close').onclick = closeModal;
     overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+
     document.getElementById('ciq-btn').onclick = async function() {
-      const code = document.getElementById('ciq-input').value.trim();
+      const code = input.value.trim();
       const err = document.getElementById('ciq-err');
       if (code.length < 9) { err.textContent = 'Please enter a full code (XXXX-XXXX)'; return; }
-      this.disabled = true; this.textContent = 'Checking...'; err.textContent = '';
+      this.disabled = true;
+      this.textContent = 'Checking...';
+      err.textContent = '';
       try {
         const result = await validate(code);
-        if (result.valid) { saveSession({ code, plan: result.plan, expires: result.expires }); closeModal(); updateButton(result); if (typeof renderRankings === 'function') renderRankings(); }
-        else { err.textContent = result.expired ? 'This code has expired.' : 'Invalid code. Please check and try again.'; }
-      } catch(e) { err.textContent = 'Connection error. Please try again.'; }
-      this.disabled = false; this.textContent = 'Activate';
+        if (result.valid) {
+          saveSession({ code, plan: result.plan, expires: result.expires });
+          closeModal();
+          applyAccess(true);
+          updateButton(result);
+          // Also refresh rankings to show premiums
+          if (typeof renderRankings === 'function') renderRankings();
+        } else {
+          err.textContent = result.expired ? 'This code has expired.' : 'Invalid code. Please check and try again.';
+        }
+      } catch(e) {
+        err.textContent = 'Connection error. Please try again.';
+      }
+      this.disabled = false;
+      this.textContent = 'Activate';
     };
+
     requestAnimationFrame(() => overlay.classList.add('show'));
   }
 
   function closeModal() {
     const o = document.getElementById('ciq-overlay');
     if (o) { o.classList.remove('show'); setTimeout(() => o.remove(), 200); }
+  }
+
+  function addButton() {
+    const nav = document.querySelector('nav') || document.querySelector('header') || document.querySelector('[class*="nav"]') || document.querySelector('.topbar');
+    if (!nav) {
+      const fb = document.createElement('button');
+      fb.id = 'ciq-access-btn';
+      fb.style.cssText = 'position:fixed;top:16px;right:16px;z-index:9999;background:#6366f1;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)';
+      fb.textContent = 'Enter Access Code';
+      fb.onclick = function() {
+        const s = getSession();
+        if (s) { if (confirm("Pro access until " + new Date(s.expires).toLocaleDateString() + ". Log out?")) { localStorage.removeItem(STORE_KEY); location.reload(); } }
+        else { createModal(); }
+      };
+      document.body.appendChild(fb);
+      return fb;
+    }
+    const btn = document.createElement('button');
+    btn.id = 'ciq-access-btn';
+    btn.style.cssText = 'background:#6366f1;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-left:12px;white-space:nowrap';
+    btn.textContent = 'Enter Access Code';
+    btn.onclick = function() {
+      const session = getSession();
+      if (session) { if (confirm('You have Pro access until ' + new Date(session.expires).toLocaleDateString() + '. Log out?')) { localStorage.removeItem(STORE_KEY); location.reload(); } }
+      else { createModal(); }
+    };
+    const navFlex = nav.querySelector('.topnav') || nav.querySelector('[style*="flex"]') || nav;
+    navFlex.appendChild(btn);
+    return btn;
   }
 
   function updateButton(data) {
@@ -1182,25 +1985,69 @@ document.addEventListener('DOMContentLoaded', function() {
       const exp = new Date(data.expires).toLocaleDateString('en-GB', { day:'numeric', month:'short' });
       btn.textContent = 'Pro \u2713 (until ' + exp + ')';
       btn.style.background = '#059669';
-    } else { btn.textContent = 'Enter Access Code'; btn.style.background = '#6366f1'; }
+    } else {
+      btn.textContent = 'Enter Access Code';
+      btn.style.background = '#6366f1';
+    }
+  }
+
+  function applyAccess(hasPro) {
+    document.querySelectorAll('[data-pro]').forEach(el => {
+      const mode = el.getAttribute('data-pro');
+      if (mode === 'true') {
+        el.style.display = hasPro ? '' : 'none';
+        if (!hasPro && !el.nextElementSibling?.classList.contains('ciq-upgrade')) {
+          const msg = document.createElement('div');
+          msg.className = 'ciq-upgrade';
+          msg.style.cssText = 'background:#f5f3ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;text-align:center;margin:8px 0;color:#4f46e5;font-size:14px';
+          msg.innerHTML = '<b>Pro Feature</b> — <a href="#" onclick="document.getElementById(\'ciq-access-btn\')?.click();return false" style="color:#6366f1">Enter your access code</a> to unlock';
+          el.parentNode.insertBefore(msg, el.nextSibling);
+        }
+      } else if (mode === 'blur') {
+        el.style.filter = hasPro ? 'none' : 'blur(5px)';
+        el.style.pointerEvents = hasPro ? '' : 'none';
+        el.style.userSelect = hasPro ? '' : 'none';
+      }
+    });
+    if (hasPro) document.querySelectorAll('.ciq-upgrade').forEach(el => el.remove());
   }
 
   function init() {
     const session = getSession();
-    const btn = document.getElementById('ciq-access-btn');
-    if (btn) {
-      btn.onclick = function() {
-        const s = getSession();
-        if (s) { if (confirm('Pro access until ' + new Date(s.expires).toLocaleDateString() + '. Log out?')) { localStorage.removeItem(STORE_KEY); location.reload(); } }
-        else { createModal(); }
-      };
-    }
-    if (session) updateButton(session);
+    addButton();
+    if (session) { updateButton(session); applyAccess(true); }
+    else { applyAccess(false); }
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
 })();
 </script>
+
+<div id="pdfSection" style="padding:0 5%;margin:1.5rem 0;">
+  <button class="pdf-btn" onclick="togglePdfOptions()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+    Generate Comparison PDF
+  </button>
+  <div id="pdfOptions" class="pdf-options">
+    <div style="font-weight:600;margin-bottom:10px;font-size:0.95rem;">PDF Report Options</div>
+    <div class="row">
+      <div><label>Client Reference</label><input type="text" id="pdfClientRef" placeholder="e.g. Mr J Smith (not stored)"></div>
+      <div><label>Adviser Name</label><input type="text" id="pdfAdviserName" placeholder="Your name"></div>
+    </div>
+    <div class="row">
+      <div><label>Firm Name</label><input type="text" id="pdfFirmName" placeholder="Your firm"></div>
+      <div style="display:flex;align-items:flex-end;"><button id="pdfBtn" class="pdf-btn" onclick="generateCIQReport()" style="width:100%;justify-content:center;margin:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Generate PDF Report</button></div>
+    </div>
+    <label>Adviser Notes (optional)</label>
+    <input type="text" id="pdfNotes" placeholder="Additional notes for the report">
+    <div style="font-size:0.7rem;color:#94a3b8;margin-top:4px;">GDPR: No data leaves your browser. Client reference is used only in the PDF.</div>
+  </div>
+</div>
+<script src="/pdf-report.js"></script>
+<script src="/claim-ui.js"></script>
 <script src="/cookie-notice.js"></script>
 </body>
 </html>
