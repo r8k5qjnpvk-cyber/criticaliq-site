@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – CriticalIQ</title>
+  <meta name="description" content="Get in touch with the CriticalIQ team. Questions about subscriptions, feature requests, or partnership enquiries for the UK's most complete protection comparison tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://criticaliq.co.uk/contact.html">
+  <meta property="og:title" content="Contact – CriticalIQ">
+  <meta property="og:description" content="Get in touch with the CriticalIQ team. Questions, feature requests, or partnership enquiries.">
+  <meta property="og:site_name" content="CriticalIQ">
+  <meta property="og:image" content="https://criticaliq.co.uk/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact – CriticalIQ">
+  <meta name="twitter:description" content="Get in touch with the CriticalIQ team. Questions, feature requests, or partnership enquiries.">
+  <meta name="twitter:image" content="https://criticaliq.co.uk/og-image.png">
+  <link rel="canonical" href="https://criticaliq.co.uk/contact.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Outfit', sans-serif; color: #0E1A2B; background: #F8FAFC; line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E8ECF1;
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0E1A2B; font-weight: 700; font-size: 20px; }
+    .logo-icon { background: #0070F3; color: #fff; font-weight: 800; font-size: 13px; padding: 6px 8px; border-radius: 8px; letter-spacing: -0.5px; }
+    .logo span { color: #0070F3; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { text-decoration: none; color: #5A6B82; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #0070F3; }
+    .nav-cta {
+      background: #0070F3; color: #fff !important; border: none; border-radius: 8px;
+      padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #005BD4; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 64px 24px 80px; }
+    .page-label { color: #0070F3; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 40px 0 12px; color: #0E1A2B; }
+    p { color: #4A5568; font-size: 16px; margin-bottom: 16px; }
+    .subtitle { color: #5A6B82; font-size: 16px; margin-bottom: 40px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+    .contact-card {
+      background: #fff; border: 1px solid #E8ECF1; border-radius: 12px;
+      padding: 28px; transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: #C0D0E0; }
+    .contact-icon { font-size: 28px; margin-bottom: 12px; }
+    .contact-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .contact-card p { font-size: 14px; color: #5A6B82; margin: 0 0 12px; }
+    .contact-card a {
+      color: #0070F3; font-weight: 600; font-size: 14px; text-decoration: none;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+
+    .faq-section { margin-top: 48px; }
+    .faq-item {
+      background: #fff; border: 1px solid #E8ECF1; border-radius: 12px;
+      padding: 24px; margin-bottom: 12px;
+    }
+    .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #0E1A2B; }
+    .faq-item p { font-size: 15px; color: #5A6B82; margin: 0; }
+
+    footer { background: #0A1628; color: rgba(255,255,255,0.4); padding: 48px 24px 32px; font-size: 14px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.4); }
+    .footer-col h4 { color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.4); text-decoration: none; padding: 4px 0; font-size: 14px; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><div class="logo-icon">IQ</div>Critical<span>IQ</span></a>
+    <div class="nav-links">
+      <a href="/#providers">Providers</a>
+      <a href="/#conditions">Conditions</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/changelog.html">Change Log</a>
+      <a href="/#pricing" class="nav-cta">Subscribe / Enter Code</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-label">Contact</div>
+  <h1>Get in touch</h1>
+  <p class="subtitle">Questions about subscriptions, feature requests, partnerships, or press enquiries — we'd love to hear from you.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <h3>General enquiries</h3>
+      <p>Questions about CriticalIQ, feature requests, or feedback.</p>
+      <a href="mailto:hello@criticaliq.co.uk">hello@criticaliq.co.uk</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">💳</div>
+      <h3>Subscriptions</h3>
+      <p>Help with your account, billing, or access codes.</p>
+      <a href="mailto:hello@criticaliq.co.uk?subject=Subscription%20enquiry">Email about subscriptions →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🤝</div>
+      <h3>Partnerships</h3>
+      <p>Network deals, group licences, or integration enquiries.</p>
+      <a href="mailto:hello@criticaliq.co.uk?subject=Partnership%20enquiry">Email about partnerships →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📰</div>
+      <h3>Press & media</h3>
+      <p>Press enquiries, guest articles, or speaking requests.</p>
+      <a href="mailto:hello@criticaliq.co.uk?subject=Press%20enquiry">Email press team →</a>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I subscribe?</h3>
+      <p>Click "Subscribe / Enter Code" on any page, then choose monthly (£19/mo) or annual (£189/yr, saving £39). Payment is handled securely via Square.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I get a group licence for my network?</h3>
+      <p>Yes — we offer discounted group licences for adviser networks and larger firms. Email us with your network name and approximate number of advisers.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I have a suggestion or feature request</h3>
+      <p>We actively build based on adviser feedback. Drop us an email with your idea — we read every message and prioritise features that help the most advisers.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is CriticalIQ regulated?</h3>
+      <p>CriticalIQ is a comparison and research tool — we don't provide financial advice. We are not regulated by the FCA. The tool is designed for use by authorised financial advisers to support their own research and client recommendations.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="color:#fff"><div class="logo-icon">IQ</div>Critical<span>IQ</span></a>
+        <p style="margin-top:12px">The UK's most complete protection comparison platform. 27+ providers, 182 conditions, life cover and income protection.</p>
+        <p style="margin-top:8px">Email <a href="mailto:hello@criticaliq.co.uk" style="color:rgba(255,255,255,0.6);display:inline">hello@criticaliq.co.uk</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="/#providers">CI Policy Database</a>
+        <a href="/#conditions">Conditions Tracker</a>
+        <a href="/changelog.html">Change Log</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About</a>
+        <a href="/news.html">News & Updates</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/cookies.html">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 CriticalIQ · Croi Digital & Design (sole trader). England & Wales. For authorised financial advisers only. Not regulated by the FCA.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
